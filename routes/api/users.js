@@ -6,6 +6,7 @@ const Room = require('../../models/Room');
 
 //load input validation
 const validateFormInput = require('../../validation/form-validation');
+const validateRoomReservation = require('../../validation/room-reserve-validation');
 
 //@route   POST api/users/submit
 //@desc    subbmit question
@@ -33,40 +34,24 @@ module.exports = router;
 //@desc    subbmit reservation
 //@access  public(for now)
 
-// router.post('/reserve',(req,res)=>{
-//   const roomReservation = {
-//     year:req.body.year,
-//     month:req.body.month,
-//     day:req.body.day,
-//   };
-//
-//   const roomName = req.body.name;
-// //find room by name
-//   Room.findOne({name:roomName})
-//     .then(room => {
-//       if(!room){
-//         return res.status(404).json({msg:"room not found"});
-//       }else if(/*condition if date is take*/){
-//         return res.status(404).json({msg:"date for this room is not availible"});
-//       } else {
-//          room.ocupied.push({day:roomReservation.day,year:roomReservation.year,month:roomReservation.month});
-//          room.save();
-//          return res.json({msg:"success"});
-//       }
-//     });
-//   });
-
 
 router.post('/reserve',(req,res)=>{
+  const { errors, isValid } = validateRoomReservation(req.body);
+  //validate form Input
+  if(!isValid){
+    return res.status(400).json(errors);
+  }
+
   const roomReservation = {
     year:Number(req.body.year),
     month:Number(req.body.month),
     day:Number(req.body.day)
   };
 
-  const roomName = req.body.name;
+  const roomName = req.body.roomName;
+
 //find room by name
-  Room.findOne({name:roomName})
+  Room.findOne({roomName})
     .then(room => {
       if(!room){
         return res.status(404).json({msg:"room not found"});
@@ -91,7 +76,17 @@ router.post('/reserve',(req,res)=>{
         return res.status(404).json({msg:"the date for the room is taken"});
       } else {
         //if date not taken save to DB
-        room.ocupied.push({day:roomReservation.day,year:roomReservation.year,month:roomReservation.month});
+        room.ocupied.push({
+          day:roomReservation.day,
+          month:roomReservation.month,
+          year:roomReservation.year,
+          customer:{
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            phone:req.body.phone,
+            email:req.body.email || ''
+          }
+        });
         room.save();
         return res.json({msg:"success"});
       }

@@ -1,16 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 //Create Schema
 
 const RoomSchema = new Schema({
-  name:{
+  roomName:{
     type:String
   },
   maxGuests:{
     type:Number
   },
   ocupied:[{
+    id:{
+      type:mongoose.Schema.Types.ObjectId
+    },
     day:{
       type:Number
     },
@@ -19,6 +23,23 @@ const RoomSchema = new Schema({
     },
     month:{
       type:Number
+    },
+    customer:{
+      firstName:{
+        type:String,
+        required:true
+      },
+      lastName:{
+        type:String,
+        required:true
+      },
+      phone:{
+        type:String,
+        required:true
+      },
+      email:{
+        type:String,
+      }
     }
   }]
 });

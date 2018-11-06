@@ -30,18 +30,6 @@ require('./config/passport')(passport);
 app.use('/api/admin',admin);
 app.use('/api/users',users);
 
-// const Room = require('./models/Room');
-// const namesArr = ['pima','tanguis','mambo tango','tejidos peruanos','cuatro de la luna','seul 88','vichama room','cuarto del sol','shangai room','retro room'];
-// const pplArr = [2,4,3,2,2,2,2,2,2,3];
-//
-// for (var i=0;i<10;i++){
-//  let room = new Room({
-//    name:namesArr[i],
-//    maxGuests:pplArr[i],
-//    ocupied:[]
-//  });
-//  room.save();
-// }
 
 const port = process.env.PORT || 5000 ;
 

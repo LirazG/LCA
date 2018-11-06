@@ -6,6 +6,7 @@ const passport = require('passport');
 
 const keys = require('../../config/keys');
 const Admin = require('../../models/Admin');
+const Room = require('../../models/Room');
 
 //load input validation
 const validateAdminLoginInput = require('../../validation/admin-login');
@@ -57,12 +58,29 @@ router.post('/login', (req,res) => {
     })
   });
 
+
+  //@route   GET api/admin/deleteorder
+  //@desc    delete room reservation
+  //@access  public
+
+
+
+
+
+
+
+
 //@route   GET api/admin/applications
 //@desc    list of all form applications
 //@access  private
 
 router.get('/applications',passport.authenticate('jwt',{ session:false }),(req,res)=>{
-  res.json({msg:"success"});
+  Room.find({})
+  .then(allrooms => {
+    return res.json(allrooms);
+  })
+  .catch(err => res.json(err));
+
 });
 
 module.exports = router;
