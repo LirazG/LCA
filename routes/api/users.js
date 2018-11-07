@@ -3,10 +3,12 @@ const router = express.Router();
 
 const Apply = require('../../models/Apply');
 const Room = require('../../models/Room');
+const Field = require('../../models/Fields');
 
 //load input validation
 const validateFormInput = require('../../validation/form-validation');
 const validateRoomReservation = require('../../validation/room-reserve-validation');
+const validateFieldReservation = require('../../validation/field-reserve-validation');
 
 //@route   POST api/users/submit
 //@desc    subbmit question
@@ -30,12 +32,12 @@ router.post('/submit', (req,res) => {
 
 module.exports = router;
 
-//@route   POST api/users/reserve
-//@desc    subbmit reservation
+//@route   POST api/users/reserve/room
+//@desc    subbmit room reservation
 //@access  public(for now)
 
 
-router.post('/reserve',(req,res)=>{
+router.post('/reserve/room',(req,res)=>{
   const { errors, isValid } = validateRoomReservation(req.body);
   //validate form Input
   if(!isValid){
@@ -91,5 +93,73 @@ router.post('/reserve',(req,res)=>{
         return res.json({msg:"success"});
       }
 
+    });
+  });
+
+
+//@route   POST api/users/reserve/field
+//@desc    subbmit field reservation
+//@access  public(for now)
+
+
+router.post('/reserve/field',(req,res)=>{
+  const { errors, isValid } = validateFieldReservation(req.body);
+  //validate form Input
+  if(!isValid){
+    return res.status(400).json(errors);
+  }
+
+  const fieldReservation = {
+    year:Number(req.body.year),
+    month:Number(req.body.month),
+    day:Number(req.body.day),
+    hour:Number(req.body.hour)
+  };
+
+  const fieldName = req.body.fieldName;
+
+//find field by name
+  Field.findOne({fieldName})
+    .then(field => {
+      if(!field){
+        return res.status(404).json({msg:"field not found"});
+      }
+      //chack if date is taken
+      let length = field.ocupied.length;
+      let existOrNot = false;
+      for(let i = 0;i<length;i++){
+        if(field.ocupied[i].year !== fieldReservation.year){
+          continue;
+        }
+        if(field.ocupied[i].month !== fieldReservation.month){
+          continue;
+        }
+        if(field.ocupied[i].day !== fieldReservation.day){
+          continue;
+        }
+        if(field.ocupied[i].hour !== fieldReservation.hour){
+          continue;
+        }
+        existOrNot = true;
+      }
+
+      if(existOrNot){
+        return res.status(404).json({msg:"the time for the field is taken"});
+      } else {
+        //if date not taken save to DB
+        field.ocupied.push({
+          day:fieldReservation.day,
+          month:fieldReservation.month,
+          year:fieldReservation.year,
+          hour:fieldReservation.hour,
+          customer:{
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            phone:req.body.phone
+          }
+        });
+        field.save();
+        return res.json({msg:"success"});
+      }
     });
   });

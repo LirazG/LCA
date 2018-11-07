@@ -59,9 +59,9 @@ router.post('/login', (req,res) => {
   });
 
 
-  //@route   GET api/admin/deleteorder
+  //@route   DELETE api/admin/deleteorder
   //@desc    delete room reservation
-  //@access  public
+  //@access  private
 
 
 

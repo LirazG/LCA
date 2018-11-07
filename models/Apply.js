@@ -13,8 +13,8 @@ const ApplySchema = new Schema({
     required:true
   },
   phone : {
-    type:Number,
-    default:0
+    type:String,
+    required:true
   },
   question: {
     type:String,
