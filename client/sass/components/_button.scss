@@ -1,0 +1,100 @@
+.btn{
+  cursor: pointer;
+  width: fit-content;
+  display: block;
+  font-size: 1.6rem;
+  background: transparent;
+  padding: 5px 35px 5px 20px;
+  margin: auto;
+  transition: all .3s;
+  text-decoration: none;
+  position: relative;
+  border:none;
+  margin-top: 1rem;
+
+  &--red{
+    color:$color-white;
+    font-size: 1.8rem;
+    border-radius: 3rem;
+    padding: 1rem 3rem;
+    background-color: $color-fancy-red;
+    border:2px solid $color-fancy-red;
+    transition: all .3s;
+
+    &:hover,
+    &:active{
+      color:$color-fancy-red;
+      background-color:$color-white;
+      transition: all .3s;
+    }
+  }
+
+  &--white{
+    outline: solid 2px $color-white;
+    outline-offset: -1px;
+    color:$color-white;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+    background-size: 220%;
+
+    @include respond(phone){
+      padding:0.7rem 3.5rem 0.7rem 2.5rem;
+    }
+
+    &:hover,
+    &:active{
+      background-position: 100%;
+      color:$color-gold-text;
+      &::after{
+        border:solid $color-gold-text;
+      }
+    }
+
+    &::after{
+      position: absolute;
+      top:40%;
+      left:80%;
+      content: '';
+      border:solid $color-white;
+      position: absolute;
+      border-width: 0 3px 3px 0 !important;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-45deg);
+      transition: all .3s;
+    }
+  }
+
+  &--gold{
+    outline-offset: -1px;
+    outline: solid 2px $color-gold-text;
+    color:$color-gold-text;
+    padding: 15px 45px 15px 30px;
+    font-size:1.8rem;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-gold-text 50%);
+    background-size: 220%;
+
+
+    &:hover,
+    &:active{
+      background-position: 100%;
+      color:$color-white;
+
+      &::after{
+        border:solid $color-white;
+      }
+    }
+
+    &::after{
+      position: absolute;
+      top:45%;
+      left:80%;
+      content: '';
+      border:solid $color-gold-text;
+      position: absolute;
+      border-width: 0 3px 3px 0 !important;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-45deg);
+    }
+  }
+}

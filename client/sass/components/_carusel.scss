@@ -1,0 +1,86 @@
+.image{
+
+
+  &__container{
+    height:40rem;
+    width:40rem;
+    border-radius: 40rem;
+    background-color: $color-grey-bg;
+    margin-top: 4rem;
+    overflow: hidden;
+    position: relative;
+
+    @include respond(tab-port){
+      margin:auto;
+      margin-top: 4rem;
+    }
+
+    @include respond(phone){
+      height:34rem;
+      width:34rem;
+    }
+
+//carusel arrows
+
+    &--arrow--1{
+      position: absolute;
+      display: block;
+      top:50%;
+      right: 0;
+      z-index: 1;
+      border-style: solid;
+      border-color: $color-white;
+      border-width: 0 1rem 1rem 0;
+      padding:1.2rem;
+      border-radius: 1rem;
+      transform: rotate(-45deg) translateY(-50%);
+      opacity: .5;
+
+      &:hover{
+        opacity: .9;
+        cursor: pointer;
+      }
+    }
+
+    &--arrow--2{
+        position: absolute;
+        display: block;
+        top:50%;
+        left: 6%;
+        z-index: 1;
+        border-style: solid;
+        border-color: $color-white;
+        border-width: 0 1rem 1rem 0;
+        padding:1.2rem;
+        border-radius: 1rem;
+        transform: rotate(135deg) translateY(50%);
+        opacity: .5;
+
+        &:hover{
+          opacity: .9;
+          cursor: pointer;
+        }
+    }
+
+
+    &--img{
+      height:100%;
+      width:100%;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+// carusel fadein fadeout anumations
+
+.fade-in{
+  opacity:1;
+  transition: opacity 3s;
+}
+
+.fade-out{
+  opacity: 0;
+  transition: opacity 3s;
+}

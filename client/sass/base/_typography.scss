@@ -1,0 +1,225 @@
+body{
+  font-family: 'lato',sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color:$color-blackish;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heading2{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 5.5rem;
+  font-weight: 200;
+  line-height: 8rem;
+  letter-spacing: -2px;
+  padding-bottom: 2rem;
+  text-align: center;
+
+  &--white{
+    color:$color-white;
+    font-weight: 300;
+
+    @include respond(tab-port){
+      color: inherit;
+      font-weight: 200;
+    }
+  }
+
+  @include respond(tab-port){
+    font-size: 5rem;
+    width: 70%;
+    margin: auto;
+  }
+
+  @include respond(phone){
+    font-size: 4rem;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.heading3{
+  line-height: 5rem;
+  font-size: 4rem;
+  width:fit-content;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  text-align: center;
+  border-bottom: 1px solid $color-gold-text;
+  padding-bottom: 1rem;
+  margin:auto;
+
+  @include respond(tab-port){
+    font-size: 3.5rem;
+  }
+
+  @include respond(phone){
+    font-size: 2.9rem;
+  }
+}
+
+.heading4{
+  font-size:2.8rem;
+
+  @include respond(tab-port){
+    font-size: 2.5rem;
+  }
+
+  @include respond(phone){
+    font-size: 2.3rem;
+  }
+
+  @media(min-width: 61.25em){
+    //for the text to stertch and not cause Asymetry
+    width: 114%;
+    margin-left: -1rem;
+  }
+
+}
+
+.heading5{
+  width: fit-content;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2rem;
+  color:$color-white;
+  border-bottom: 1px solid $color-white;
+  padding-bottom: .5rem;
+  margin:auto;
+  margin-top: 1rem;
+
+  @include respond(tab-port){
+    font-size: 2.5rem;
+  }
+
+  &--noborder{
+    border:none;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+    @include respond(tab-port){
+      color: inherit;
+    }
+  }
+}
+
+.heading-cursive-big{
+  text-align: center;
+  color: darkslategrey;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 4rem;
+  font-weight: 100;
+  border-bottom: 1px solid $color-gold-text;
+  width: fit-content;
+  padding-bottom: 0.5rem;
+
+  @include respond(tab-port){
+    font-size: 3.7rem;
+  }
+
+  @include respond(phone){
+    font-size: 2.7rem;
+  }
+}
+
+.paragraph{
+  width:50%;
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 1s;
+
+  @include respond(tab-port){
+    width:70%;
+  }
+
+  @include respond(phone){
+    width:60%;
+
+  }
+
+  &__activated{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+  }
+}
+
+.paragraph-details{
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+  @media (min-width: 61.25em){
+    display: flex;
+  }
+}
+
+.paragraph-sports{
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 1rem 3rem;
+  text-align: center;
+
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 1s;
+
+  @include respond(tab-port){
+    width:70%;
+    margin: auto;
+  }
+
+  @include respond(phone){
+    width:100%;
+    margin:2rem auto;
+  }
+
+  &--activated{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+  }
+
+}
+
+
+// .red-fancy-text{
+//   font-family: 'Grand Hotel', cursive;
+//   color:$color-fancy-red;
+//   font-size: 4rem;
+//   letter-spacing: 2px;
+// }
+
+.visible{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.footer__text{
+  color: $color-white;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: .5rem;
+
+  @include respond(tab-port){
+    margin-right:10rem;
+    margin-top:2rem;
+    font-size: 1.8rem;
+  }
+
+  @include respond(phone){
+    margin:5rem 0;
+  }
+}
+
+
+
+
+
+
+
+//

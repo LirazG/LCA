@@ -1,0 +1,50 @@
+.clip{
+  width: 100vw;
+  height:65vh;
+  position: relative;
+
+  @include respond(big-tablet){
+    height:40vh;
+  }
+
+  @include respond(phone){
+    height:40vh;
+  }
+
+  &--left{
+    background-image: url('../src/img/salon-last-section-big.jpg');
+    width:100vw;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    margin-left: -10rem;
+    display: inline-block;
+    position: absolute;
+    top:0;
+    right:105%;
+    background-size: contain;
+
+    @include respond (tab-port){
+      width:110vw;
+      background-size: cover;
+      background-position: 100% 100% ;
+    }
+  }
+
+  &--right{
+    background-image: url('../src/img/parking-last-section-big.jpg');
+    width:100vw;
+    height: 100%;
+    clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left:90%;
+    background-position: 0 50%;
+
+    @include respond (tab-port){
+      background-size: cover;
+      background-position: 100% 100% ;
+    }
+
+  }
+}

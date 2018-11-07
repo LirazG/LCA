@@ -2,5 +2,3 @@
 package-lock.json
 adminconfig
 config
-client/node_modules
-client/package-lock.json

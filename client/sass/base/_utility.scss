@@ -1,0 +1,71 @@
+.u-margin-bottom-huge{
+  margin-bottom: 25rem !important;
+}
+
+.u-margin-bottom-big{
+  margin-bottom: 10rem !important;
+}
+
+.u-margin-bottom-medium{
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-small{
+  margin-bottom: 1.5rem !important;
+}
+
+.u-margin-top-medium{
+  margin-top: 5rem !important;
+}
+
+.u-margin-top-big{
+  margin-top: 10rem !important;
+  @include respond(tab-port){
+    margin-top: 5rem !important;
+  }
+}
+
+.u-margin-top-huge{
+  margin-top: 15rem !important;
+}
+
+
+.u-margin-left-small{
+  margin-left: 2rem !important;
+}
+
+.u-margin-left-big{
+  margin-left: 10rem !important;
+}
+
+.u-margin-left-huge{
+  margin-left: 30rem !important;
+}
+
+.u-text-center{
+  text-align: center !important;
+}
+
+.u-block-center{
+  display: block;
+  margin:auto;
+}
+
+.u-margin-right-small{
+  margin-right: 1rem !important;
+}
+
+.left-position-div{
+  position: absolute;
+  top:50%;
+  left: 30%;
+  transform: translate(-50%,-50%);
+}
+
+.form-invalid{
+  border-bottom: 2px solid $color-primary-red-light !important;
+}
+
+.form-valid{
+  border-bottom: 2px solid $color-primary-green-light !important;
+}

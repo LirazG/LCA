@@ -1,0 +1,103 @@
+.shaped-card{
+  width: 90%;
+  min-height:60rem;
+  margin: 0 auto;
+  box-shadow: 0 2rem 6rem rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 3px;
+  background-size: cover;
+  background-position: bottom;
+
+  &--1{
+    background-image:
+     linear-gradient(
+     100deg,
+      rgba(255,255,255,0.9) 0%,
+      rgba(255,255,255,0.9) 50%,
+      transparent 50%),
+      url('../src/img/parking-big.jpg');
+
+    @include respond(tab-port){
+      background-image:
+       linear-gradient(
+        rgba(255,255,255,0.8) 0%),
+        url('../src/img/parking-big.jpg');
+    }
+  }
+
+  &--2{
+    background-image:
+     linear-gradient(
+     100deg,
+      rgba(255,255,255,0.9) 0%,
+      rgba(255,255,255,0.9) 50%,
+      transparent 50%),
+      url('../src/img/events-pink.jpg');
+
+    @include respond(tab-port){
+      background-image:
+       linear-gradient(
+        rgba(255,255,255,0.8) 0%),
+        url('../src/img/events-pink.jpg');
+    }
+  }
+
+
+  &__text{
+    width:40%;
+    margin-left: 4rem;
+    opacity: 1;
+    padding-top: 5rem;
+
+    @include respond(tab-port){
+      width:80%;
+      display: block;
+      margin: auto;
+    }
+  }
+
+  &__shape{
+    width:35%;
+    height: 100%;
+  }
+
+}
+
+.form{
+
+  & > textarea:focus,
+  & > input:focus{
+      outline: none;
+  }
+
+  & > label{
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
+  & > input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border:none;
+    border-bottom:2px solid $color-gold-text;
+    border-radius: 3px;
+    padding:1rem;
+    margin-top: 0.5rem;
+  }
+
+  & > textarea{
+    resize:none;
+    width: 100%;
+    border:none;
+    border-bottom:2px solid $color-gold-text;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+  }
+
+  & > a{
+    width:15rem;
+    background-size:230%;
+  }
+
+}

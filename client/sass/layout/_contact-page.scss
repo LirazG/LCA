@@ -1,0 +1,115 @@
+
+.contact-us{
+  margin: 0 -10rem;
+
+  &__map{
+    width: 100%;
+    margin: 10rem auto;
+    border-top: 2px solid $color-gold-text;
+    border-bottom: 2px solid $color-gold-text;
+    border-left:none;
+    border-right:none;
+    @include respond(tab-port){
+      width: 100%;
+      display: block;
+    }
+    @include respond(phone){
+      width: 70%;
+      display: block;
+      border: 1px solid $color-gold-text;
+    }
+  }
+
+
+  &__first-section{
+    background-color: $color-grey-bg-dark;
+    width: 100%;
+    padding:5rem;
+  }
+
+  &__first-section * {
+    color: $color-white;
+  }
+
+  &__first-section  h5,
+  &__first-section  h2 {
+    font-weight: 500;
+  }
+
+  &__first-section .col-1-of-4{
+    padding: 2rem 0;
+    @include respond(tab-port){
+      margin-top: 4rem;
+    }
+    @include respond(phone){
+      margin-top: 2rem;
+    }
+  }
+
+  &__first-section .col-1-of-3:last-child{
+    @include respond(tab-port){
+      margin-bottom: 2rem;
+    }
+  }
+
+
+// 2nd section
+
+  &__second-section{
+
+    & *{
+      @include respond(phone){
+        width: 85%;
+        margin: auto;
+      }
+    }
+
+    & .form textarea,
+    & .form input {
+      border: 2px solid $color-gold-text;
+      @include respond(tab-port){
+        display: block;
+        width: 90%;
+        margin:auto;
+      }
+    }
+
+    & .form label{
+      @include respond(tab-port){
+        margin-left: 5%;
+      }
+    }
+  }
+
+
+
+}
+
+
+
+.icon-container{
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+  background-color: $color-grey-text;
+  margin:auto;
+  position: relative;
+
+  &:hover{
+    background-color: $color-white;
+    transition: all .3s;
+  }
+  &:hover  i{
+    color: $color-grey-text;
+    transition: all .3s;
+  }
+
+  & i{
+    font-size: 3.5rem;
+    color: $color-white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0);
+  }
+}

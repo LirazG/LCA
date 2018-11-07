@@ -1,0 +1,266 @@
+.navbar{
+  width:100%;
+  height: 15vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0 6rem 0;
+  top:0;
+  left: 0;
+  text-align: center;
+  background-color: transparent;
+  z-index: 100;
+  transition: background-color .5s, box-shadow .1s;
+  transform-origin: top;
+
+  @include respond (big-tablet){
+    height: 10vh;
+  }
+
+  &__background{
+    position:fixed;
+    top:20%;
+    left:50%;
+    transform: translate3d(-50%,0,0);
+    display: block;
+    border-radius: 5px;
+
+    background-color: rgba($color-blackish, 0.6);
+    min-width: 50%;
+    height:0px;
+    transition: height .7s;
+  }
+
+// functionallity for small screens
+
+  &__checkbox{
+    display: none;
+  }
+
+  &__checkbox:checked ~ &__background {
+    height: 75vh;
+    transition: height .7s;
+  }
+
+  &__checkbox:checked ~ &__itemlist {
+    display: block;
+    position: fixed;
+    top:55%;
+    transform: translate3d(0,-50%,0);
+    margin: auto;
+
+    animation-name: navButton;
+    animation-duration: 1s;
+    animation-fill-mode:both;
+  }
+
+  &__checkbox:checked ~ &__itemlist > &__itemlist__item{
+    display: block;
+    font-size: 2.2rem;
+  }
+
+//
+  &__button{
+    width:6rem;
+    transform: translate3d(-50%,0,0) !important;
+    display: none;
+    position: fixed;
+    top:2rem;
+    left:50%;
+
+    @include respond(tab-port){
+      display: block;
+    }
+
+    &--text{
+      color:$color-white;
+      font-weight: 300;
+      font-size: 2.2rem;
+    }
+  }
+
+  &__hamburger{
+
+    &__holder{
+      width:100%;
+      cursor: pointer;
+      margin: auto;
+
+      &:hover &--item{
+        &--1{
+          transform: translateY(-1px);
+        }
+        &--3{
+          transform: translateY(1px);
+        }
+      }
+    }
+
+
+
+    &__holder--item{
+      display: block;
+      height: 2px;
+      width: 30px;
+      background-color: $color-white;
+      margin:0 auto 6px auto;
+      transition: all .2s;
+    }
+  }
+
+  &__activated{
+    background-color: rgba($color-blackish, 0.5);
+    box-shadow: 0px 1px 10px $color-blackish;
+    transition: background-color .5s, box-shadow .1s;
+  }
+
+
+  &__left{
+    display: inline-block;
+
+    &__img--1{
+      width: 19%;
+      position: fixed;
+      top:0.7rem;
+
+      display: block;
+
+      @include respond(tab-port){
+        display: none;
+      }
+
+      @include respond(big-tablet){
+        @include respond(tab-land){
+          top:3%;
+        }
+      }
+    }
+
+    &__img--2{
+      width: calc(3% + 6rem);
+      position: fixed;
+      top:calc(4% - 0.7rem);
+      left:2rem;
+      display: none;
+
+      @media(max-width: 61.25em){
+        display:block;
+      }
+
+      @include respond(big-tablet){
+        top:calc(2% - 0.7rem);
+      }
+
+      @include respond(phone){
+        width: calc(5% + 6rem);
+      }
+      // @include respond(big-tablet){
+      //   top:3.5rem;
+      // }
+
+    }
+  }
+
+
+  &__itemlist{
+    display:block;
+    width:100%;
+    margin-top: 0.85rem;
+    margin-top: 2rem;
+
+
+    @include respond(tab-port){
+      display:none;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    &__item{
+      display: inline-block;
+      padding:1rem;
+
+      @include respond(big-tablet){
+        margin: 4rem 0;
+      }
+
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+
+      &__link{
+        text-decoration: none;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color:$color-white;
+        font-size: 1.9rem;
+        position: relative;
+        border-bottom: 0px solid $color-white;
+        transition: all .3s;
+
+        @include respond(big-tablet){
+          @include respond(tab-port){
+            font-size: 4rem;
+          }
+        }
+
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left:0;
+          width:0px;
+          border-bottom:1px solid $color-white;
+        }
+
+        &:hover::after{
+          animation: navhover .2s forwards;
+        }
+
+        &:hover{
+          color:$color-gold-text-light;
+        }
+
+      }
+    }
+  }
+
+  &__rightsection{
+    display: block;
+    width: fit-content;
+    position: fixed;
+    top:3%;
+    right:2rem;
+
+    @include respond(phone){
+      top:2rem !important;
+    }
+
+    @include respond(big-tablet){
+      @include respond(tab-land){
+        top:3%;
+      }
+    }
+
+  }
+
+  &__languagelink{
+    text-decoration: none;
+    color:$color-white;
+
+    @include respond(phone){
+      font-size: 1.4rem;
+    }
+
+    &:nth-of-type(1){
+      border-right: 1px solid $color-white;
+      padding-right: 0.5rem;
+    }
+    &:nth-of-type(2){
+      padding-left: 0.5rem;
+    }
+
+    &:hover{
+      color: $color-gold-text-light;
+    }
+  }
+}

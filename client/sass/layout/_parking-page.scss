@@ -1,0 +1,112 @@
+.parking-info{
+
+  position: relative;
+  min-height: 20rem;
+  margin: 10rem 0;
+
+
+  &:last-child{
+    margin: 10rem 0 15rem 0;
+  }
+
+  &__container{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 100%;
+    overflow: hidden;
+    position: absolute;
+    left:0;
+    top:0;
+
+    @include respond(tab-port){
+      position:static;
+      margin: auto;
+    }
+
+    &--right{
+      right:0;
+      left: auto;
+    }
+
+    &--img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__text{
+    width: 70%;
+
+    @include respond(tab-port){
+      width:100%;
+      margin-top: 2rem;
+    }
+
+    &::before{
+      content: '';
+      width: 30rem;
+      height: 30rem;
+      border-radius: 100%;
+      float: left;
+      @include clearfix;
+      shape-outside: circle(50% at 50% 50%);
+      margin-left: 2rem;
+      @include respond(tab-port){
+        display: none;
+      }
+    }
+  }
+
+  &__text--right{
+    width: 70%;
+    float: right;
+    @include clearfix;
+
+    @include respond(tab-port){
+      width: 100%;
+      float: none;
+      margin-top: 2rem;
+    }
+
+
+    &::before{
+      content: '';
+      width: 30rem;
+      height: 30rem;
+      border-radius: 100%;
+      float: right;
+      @include clearfix;
+      shape-outside: circle(50% at 50% 50%);
+      margin-right: 2rem;
+      @include respond(tab-port){
+        display: none;
+      }
+    }
+  }
+
+
+  &__text > *{
+    text-align:inherit;
+    line-height: 3.8rem;
+    @include respond(tab-port){
+      text-align: center;
+    }
+  }
+
+  &__text--right > *{
+    text-align:right;
+    line-height: 3.8rem;
+    @include respond(tab-port){
+      text-align: center;
+    }
+  }
+
+  &__phone{
+    padding-top: 15rem;
+    text-align: center;
+
+    & > *{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.sports-page{
+  margin: 0 -10rem;
+
+  &__description{
+    position: relative;
+    min-height:160vh;
+
+    @include respond(big-tablet){
+      min-height: 110vh;
+    }
+
+    @include respond(tab-land){
+      @media (min-height:1000px){
+        min-height: 65vh;
+      }
+    }
+
+    &__bg-video{
+      display: block;
+      width:150%;
+      position: absolute;
+      top:0;
+      z-index: 1;
+      left:50%;
+      transform: translate3d(-50%,0,0);
+
+      @include respond(tab-port){
+        position: relative;
+        width:100%;
+        clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
+      }
+
+      &__content{
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        @include respond(tab-port){
+          opacity: 1;
+        }
+
+      }
+    }
+
+    &__text{
+      width: 96%;
+      position: absolute;
+      top:10%;
+      left: 50%;
+      transform: translate3d(-50%,0,0);
+      z-index: 50;
+
+      @include respond(tab-port){
+        position: relative;
+      }
+
+      &--element{
+        @include respond(tab-port){
+          margin-left: 20%;
+        }
+
+        @include respond(phone){
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

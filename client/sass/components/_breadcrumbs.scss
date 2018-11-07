@@ -1,0 +1,48 @@
+.breadcrumbs{
+  position: fixed;
+  display: block;
+  z-index: 500;
+  top:30%;
+  left:0;
+  transition: opacity .5s;
+  opacity: 0;
+
+  @include respond(phone){
+    display: none;
+  }
+
+  &--visible{
+    opacity: 1;
+    transition: opacity .5s;
+  }
+
+  &__text{
+    color:$color-black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+    transform: rotate(-90deg);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 8rem;
+    width:10rem;
+  }
+
+  &__bullet{
+    width: 5px;
+    height: 5px;
+    background-color: $color-grey-text;
+    display: block;
+    margin: 4rem auto 4rem auto;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .2s;
+
+    &--activated{
+      background-color: transparent;
+      box-shadow: 0 0 0 3px $color-grey-text;
+      transition: all .2s;
+    }
+  }
+}

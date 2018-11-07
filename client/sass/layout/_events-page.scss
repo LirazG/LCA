@@ -1,0 +1,28 @@
+.events{
+
+  &__first-text{
+    @include respond(phone){
+      width: 60%;
+      margin: auto;
+    }
+  }
+
+  @include respond(tab-port){
+    & .col-1-of-3{
+      margin-left: 20%;
+    }
+  }
+
+  @include respond(phone){
+    & .col-1-of-3{
+      margin: auto;
+    }
+  }
+
+
+  & .heading4,
+  & .paragraph{
+    width: 100%;
+  }
+
+}

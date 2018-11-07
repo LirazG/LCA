@@ -1,0 +1,54 @@
+.image-display{
+  position: relative;
+  min-height: 50rem;
+  margin-top: 5rem;
+
+  &__item{
+    width: 45rem;
+    height: 30rem;
+    border-radius: 3px;
+    transition: transform .3s;
+    z-index: 1;
+    position: absolute;
+    overflow: none;
+
+    @include respond(tab-port){
+      position: static;
+      display: block;
+      margin:5rem auto;
+      width: 60rem;
+      height:40rem;
+    }
+
+    @include respond(phone){
+      width: 40rem;
+      height:30rem;
+    }
+
+    &:hover,
+    &:active{
+      transform: scale(1.2);
+      transition: transform .3s;
+      z-index: 2;
+      @include respond(phone){
+        transform: scale(1.1);
+      }
+    }
+
+    &--1{
+      top:0;
+      left:10%;
+    }
+
+    &--2{
+      top:20%;
+      left:25%;
+    }
+
+    &--3{
+      top:40%;
+      left:40%;
+    }
+  }
+
+}

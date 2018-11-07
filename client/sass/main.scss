@@ -1,0 +1,35 @@
+@import "abstracts/mixins.scss";
+@import "abstracts/variables.scss";
+@import "abstracts/animations.scss";
+
+@import "base/base.scss";
+@import "base/typography.scss";
+@import "base/utility.scss";
+
+@import "layout/grid.scss";
+@import "layout/navbar.scss";
+@import "layout/home.scss";
+@import "layout/footer.scss";
+@import "layout/sport-page.scss";
+@import "layout/loader-screen.scss";
+@import "layout/parking-page.scss";
+@import "layout/contact-page.scss";
+@import "layout/events-page.scss";
+@import "layout/bar-page.scss";
+
+
+
+@import "components/button.scss";
+@import "components/carusel.scss";
+@import "components/text-wrapper.scss";
+@import "components/main-display-component.scss";
+@import "components/seperator.scss";
+@import "components/clip-elements.scss";
+@import "components/card.scss";
+@import "components/breadcrumbs.scss";
+@import "components/real-life-photo.scss";
+@import "components/flip-card.scss";
+@import "components/gallery.scss";
+@import "components/welcome.scss";
+@import "components/shaped-card.scss";
+@import "components/image-display.scss";

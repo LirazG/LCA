@@ -1,0 +1,92 @@
+.bar{
+
+  & .gallery{
+    margin: 0 -10rem;
+  }
+
+  &  .paragraph{
+    padding:1rem;
+    width:70%;
+  }
+
+  &__first-section{
+    position: relative;
+
+    &__logo{
+      width: 30rem;
+      position: absolute;
+      top:100%;
+      left:50%;
+      transform: translate3d(-50%,0,0);
+      transition: transform .5s;
+
+      &:hover,
+      &:active{
+        transform: translate3d(-50%,0,0) scale(1.1);
+        transition: transform .5s;
+      }
+    }
+  }
+
+  &__menu{
+
+  height: 110vh;
+
+  @include respond(tab-port){
+    height: 210vh;
+  }
+  @include respond(phone){
+    height: 150vh;
+  }
+
+    & .flip-card{
+      height: 100vh;
+      @include respond(phone){
+        height: 70vh;
+        width: 100%;
+      }
+    }
+
+    & .flip-card__side{
+      height: 100vh;
+      @include respond(phone){
+        height: 70vh;
+      }
+    }
+
+    & .flip-card__side--back{
+      @include respond(tab-port){
+        clip-path:none;
+        height: inherit;
+        top:100%;
+      }
+    }
+
+    & .flip-card__side--front{
+      transform:none;
+    }
+
+    &--pic{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__events .paragraph{
+    width: 100%;
+  }
+
+  &__events .heading4{
+    width: 100%;
+  }
+
+  &__events .col-1-of-3{
+    @include respond(tab-port){
+      margin-left: 20%;
+    }
+
+    @include respond(phone){
+      margin-left: auto;
+    }
+  }
+}

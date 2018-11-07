@@ -1,0 +1,98 @@
+.card{
+  height: 30rem;
+  width: 90%;
+  background: $color-grey-text;
+  border-radius: 50rem;
+  margin:auto;
+  filter:drop-shadow(0px 5px 10px $color-grey-text);
+
+  @include respond (tab-port){
+    margin-top: 15rem;
+    height: 70rem;
+    width: 100%;
+  }
+
+  @include respond (phone){
+    margin-top: 15rem;
+    height: 70rem;
+    width: 90%;
+  }
+
+
+  &:hover{
+    transform: translateY(-36px);
+    filter:drop-shadow(0px 5px 5px $color-grey-text);
+    @include respond (phone){
+      transform:translateY(0);
+      filter:none;
+    }
+  }
+
+
+  &__pic{
+    width:30rem;
+    height: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    @include clearfix;
+    transition: transform 1s;
+    position: relative;
+
+    @include respond (tab-port){
+      height: 30rem;
+      position: absolute;
+      top:4%;
+      left:50%;
+      transform: translate3d(-50%,0,0);
+    }
+
+    @include respond (phone){
+      height: 20rem;
+      width:20rem;
+    }
+
+
+    &--img--1{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      left:0;
+
+
+      @include respond (tab-port){
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+
+  }
+
+  &__text{
+    font-size: 1.7rem;
+    color: $color-white;
+    width: calc(100% - 35rem);
+    display: inline-block;
+    margin-top:2rem;
+    margin-left: 2rem;
+    line-height: 3.2rem;
+    text-align: center;
+
+    @include respond (tab-port){
+      width: calc(90%);
+      position: absolute;
+      top:45%;
+      left:50%;
+      transform: translate3d(-53%,0,0);
+    }
+
+    @include respond (phone){
+      top:35%;
+    }
+
+
+  }
+}

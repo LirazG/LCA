@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  padding:0;
+  margin:0;
+  box-sizing: inherit;
+
+}
+
+html{
+  font-size: 62.5%;
+
+  @include respond(tab-land){
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port){
+    font-size: 50%;
+  }
+
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-grey-bg-test;
+  overflow-x:hidden;
+  cursor: default;
+  padding:0 10rem;
+
+  @include respond(phone){
+      padding:0;
+  }
+}

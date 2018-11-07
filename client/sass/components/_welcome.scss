@@ -1,0 +1,87 @@
+.welcome{
+
+  overflow: hidden;
+  height: 100vh;
+  margin: auto -10rem;
+
+
+  @include respond(big-tablet){
+    height:80vh;
+  }
+
+  @include respond(phone){
+    height:80vh;
+  }
+
+  &__img{
+    width: 100%;
+    height:100%;
+    background-position: 50% 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &--home{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/pool-big.jpg');
+    }
+
+    &--sports{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/football-big.jpg');
+    }
+
+    &--parking{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/parking-big.jpg');
+    }
+
+    &--about{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/front-hotel-big.jpg');
+
+      filter: grayscale(.9);
+    }
+
+    &--contact{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/contact-welcome.jpg');
+      background-position: center;
+    }
+
+    &--events{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/salon-big.jpg');
+
+    }
+
+    &--bar{
+      background-image:  linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/bar-welcome.jpg');
+      background-position: 50% 60%;
+
+    }
+
+  }
+}

@@ -1,0 +1,38 @@
+.text-wrapper{
+  margin:10rem 0;
+
+  &__img{
+    width:50%;
+    margin:auto;
+    height: 0;
+    padding-bottom: 38%;
+
+    @include respond(phone){
+      width:65%;
+      padding-bottom: 45%;
+      margin-bottom: 5rem;
+    }
+
+
+    &--img{
+      display: block;
+      height: 100%;
+      width:100%;
+      filter: grayscale(.5);
+      border-radius: 4px;
+
+    }
+  }
+}
+
+
+
+.text-wrapper > .paragraph{
+  text-align: center;
+  margin:auto;
+  margin-top: 1.5rem;
+}
+
+.text-wrapper > .heading3{
+  margin:auto;
+}
