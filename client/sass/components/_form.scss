@@ -1,0 +1,116 @@
+.form{
+
+  & > textarea:focus,
+  & > input:focus{
+      outline: none;
+  }
+
+  & > label{
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
+  & > input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border:none;
+    border-bottom:2px solid $color-gold-text;
+    border-radius: 3px;
+    padding:1rem;
+    margin-top: 0.5rem;
+  }
+
+  & > textarea{
+    resize:none;
+    width: 100%;
+    border:none;
+    border-bottom:2px solid $color-gold-text;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+  }
+
+  & > a{
+    width:15rem;
+    background-size:230%;
+  }
+
+}
+
+.form-invalid{
+  border-bottom: 2px solid $color-primary-red-light !important;
+}
+
+.form-valid{
+  border-bottom: 2px solid $color-primary-green-light !important;
+}
+
+.form-validation{
+  font-size: 1.5rem;
+  color: $color-primary-red-light;
+}
+
+.form-success{
+  height:100%;
+  width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-blackish, 0.8);
+  z-index: 9999;
+  display: none; //modal disactivate
+
+  &--display{
+    display: block; // modal activation on form submit
+  }
+
+  &__message{
+    background-color: $color-white;
+    height:40rem;
+    width:80rem;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0) scale(0); // modal message disactivated
+    z-index: 10000;
+    border-radius: 5px;
+    transition: scale 1s;
+
+    &--display{
+      transform: translate3d(-50%,-50%,0) scale(1); // modal message activation on form submit
+      transition: all 0.8s;
+    }
+
+    &__success{
+
+      &--icon{
+        color: $color-primary-green-light;
+        font-size: 10rem;
+        position: absolute;
+        top:5%;
+        left:50%;
+        transform: translate3d(-50%,0,0);
+      }
+
+      &--text{
+        color: $color-primary-green-light;
+        font-size: 3rem;
+        text-align: center;
+        position: absolute;
+        bottom:30%;
+      }
+    }
+
+    &__cancel{
+      position: absolute;
+      top:2%;
+      right:2%;
+      cursor: pointer;
+
+      &--icon{
+        color: $color-primary-red-light;
+        font-size: 5rem;
+      }
+    }
+  }
+}

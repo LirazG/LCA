@@ -74,6 +74,14 @@
       }
     }
 
+    & .form .form-invalid{
+      border: 2px solid $color-primary-red-light !important;
+    }
+
+    & .form .form-valid{
+      border: 2px solid $color-primary-green-light !important;
+    }
+
     & .form label{
       @include respond(tab-port){
         margin-left: 5%;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
 
 import WelcomePic from './welcome-pic.js';
+import CustomForm from './custom-form.js';
 
 class AboutUs extends Component {
 
@@ -56,22 +57,7 @@ class AboutUs extends Component {
               </p>
             </div>
             <div className="col-1-of-2">
-              <form action="" method='post' className="form">
-
-                <label htmlFor="name">Nombre:</label>
-                <input type="text" id="name" name="name" required/>
-
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-
-                <label htmlFor="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" required />
-
-                <label htmlFor="question">Mensaje:</label>
-                <textarea name="message" rows="10" cols="30" name="question" id="question" required></textarea>
-
-                <a type="submit" className="btn btn--gold">Enviar</a>
-              </form>
+              <CustomForm />
             </div>
           </div>
         </section>
