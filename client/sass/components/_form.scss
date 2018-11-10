@@ -37,6 +37,7 @@
 
 }
 
+// validation of form input- display
 .form-invalid{
   border-bottom: 2px solid $color-primary-red-light !important;
 }
@@ -44,12 +45,14 @@
 .form-valid{
   border-bottom: 2px solid $color-primary-green-light !important;
 }
+//
 
 .form-validation{
   font-size: 1.5rem;
   color: $color-primary-red-light;
 }
 
+//modal css
 .form-success{
   height:100%;
   width:100%;
@@ -63,7 +66,7 @@
   &--display{
     display: block; // modal activation on form submit
   }
-
+//
   &__message{
     background-color: $color-white;
     height:40rem;
@@ -75,6 +78,16 @@
     z-index: 10000;
     border-radius: 5px;
     transition: scale 1s;
+
+    @include respond(tab-port){
+      height:35rem;
+      width:70rem;
+    }
+
+    @include respond(phone){
+      height:50rem;
+      width:90%;
+    }
 
     &--display{
       transform: translate3d(-50%,-50%,0) scale(1); // modal message activation on form submit

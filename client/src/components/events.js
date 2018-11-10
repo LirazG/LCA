@@ -5,8 +5,8 @@ import WelcomePic from './welcome-pic.js';
 import ShapedCard from './shaped-picture-card.js';
 
 import Pic1 from '../img/events-pink.jpg';
-import Pic2 from '../img/salon-outside.jpg';
-import Pic3 from '../img/salon-last-section-big.jpg';
+import Pic2 from '../img/events-display-2.jpg';
+import Pic3 from '../img/events-display-1.jpg';
 
 
 class Events extends Component {
