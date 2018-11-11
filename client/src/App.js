@@ -15,6 +15,7 @@ import Bar from './components/bar/bar.js';
 import Events from './components/events.js';
 import Navbar from './components/navbar.js';
 import Footer from './components/footer.js';
+import SportsReservation from './components/sports/reserve.js';
 
 
 
@@ -61,6 +62,12 @@ class App extends Component {
               <Route exact path='/' component={Home}/>
               <Route path='/about' component={AboutUs}/>
               <Route path='/hotel' component={Hotel}/>
+
+              <Route exact path='/sports/reservation/big' component={SportsReservation}/>
+              <Route exact path='/sports/reservation/small' component={SportsReservation}/>
+              <Route exact path='/sports/reservation/other' component={SportsReservation}/>
+              <Route path="/sports/reservation/*" component={Sports} />
+
               <Route path='/sports' component={Sports}/>
               <Route path='/bar' component={Bar}/>
               <Route path='/parking' component={Parking}/>

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
-
+import { Link } from 'react-router-dom';
 
 class FlipCard extends Component {
 
   constructor(props){
     super(props);
 
+    this.fieldName = this.props.fieldName;
   }
-
-
 
   render() {
     return (
@@ -36,10 +35,11 @@ class FlipCard extends Component {
             <li className="flip-card__details--li flip-card__details--li--2"><b>Día:</b>{this.props.list[5]}</li>
             <li className="flip-card__details--li flip-card__details--li--2"><b>Noche:</b>{this.props.list[6]}</li>
           </ul>
-          <a className="btn btn--red u-margin-top-medium">Reservar!</a>
+          <Link to={'/sports/reservation/'+this.props.fieldName} className="btn btn--red u-margin-top-medium" params={this.props.fieldName}>Reservar!</Link>
         </div>
 
       </div>
+
     );
   }
 }

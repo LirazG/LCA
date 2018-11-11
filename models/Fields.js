@@ -21,8 +21,8 @@ const FieldSchema = new Schema({
     month:{
       type:Number
     },
-    hour:{
-      type:Number
+    hours:{
+      type:[Number]
     },
     customer:{
       firstName:{

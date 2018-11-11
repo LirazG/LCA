@@ -773,7 +773,7 @@ body {
       color: #000;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 1.3rem;
-      font-weight: 200;
+      font-weight: 300;
       transform: rotate(-90deg);
       display: block;
       text-transform: uppercase;
@@ -1523,7 +1523,7 @@ body {
     color: #000;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.3rem;
-    font-weight: 200;
+    font-weight: 300;
     transform: rotate(-90deg);
     display: block;
     text-transform: uppercase;
@@ -1578,7 +1578,6 @@ body {
 .flip-card {
   height: 55rem;
   perspective: 150rem;
-  position: relative;
   width: 100%; }
   @media (max-width: 61.25em) {
     .flip-card {

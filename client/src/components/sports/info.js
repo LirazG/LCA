@@ -13,7 +13,6 @@ import Pic2 from '../../img/SStest1.jpg';
 import Pic3 from '../../img/seperator2.jpg';
 
 
-
 class Info extends Component {
 
   constructor(props){
@@ -48,6 +47,7 @@ class Info extends Component {
         ' 20.00 soles.',
         ' 25.00 soles.'
       ]
+
     }
 
     this.paragraph = React.createRef();
@@ -67,6 +67,8 @@ class Info extends Component {
   fadeCaller = ()=> {
     this.props.fadeIn.call(this,this.element,this.stateActive,this.stateRegular);
   }
+
+
 
 
   render() {
@@ -103,17 +105,17 @@ class Info extends Component {
 
             <div className="col-1-of-3 row sports-page__description__text--element">
               <h5 className="heading5 heading5--noborder">I.Cancha chica-fútbol</h5>
-              <FlipCard pic={Pic1} list={this.state.properties1}/>
+              <FlipCard pic={Pic1} list={this.state.properties1} fieldName={'small'} />
             </div>
 
             <div className="col-1-of-3 row sports-page__description__text--element">
               <h5 className="heading5 heading5--noborder">II.Cancha grande-fútbol</h5>
-              <FlipCard pic={Pic2} list={this.state.properties2}/>
+              <FlipCard pic={Pic2} list={this.state.properties2} fieldName={'big'} />
             </div>
 
             <div className="col-1-of-3 row sports-page__description__text--element">
               <h5 className="heading5 heading5--noborder">III.volley – basquet - fronton</h5>
-              <FlipCard pic={Pic3} list={this.state.properties3}/>
+              <FlipCard pic={Pic3} list={this.state.properties3} fieldName={'other'} />
             </div>
           </div>
 

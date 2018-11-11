@@ -113,7 +113,8 @@ router.post('/reserve/field',(req,res)=>{
     year:Number(req.body.year),
     month:Number(req.body.month),
     day:Number(req.body.day),
-    hour:Number(req.body.hour)
+    hourCheckin:Number(req.body.hourCheckin),
+    hourCheckout:Number(req.body.hourCheckout)
   };
 
   const fieldName = req.body.fieldName;
@@ -127,7 +128,10 @@ router.post('/reserve/field',(req,res)=>{
       //chack if date is taken
       let length = field.ocupied.length;
       let existOrNot = false;
+      let continueOrNot = true;
+
       for(let i = 0;i<length;i++){
+
         if(field.ocupied[i].year !== fieldReservation.year){
           continue;
         }
@@ -137,9 +141,21 @@ router.post('/reserve/field',(req,res)=>{
         if(field.ocupied[i].day !== fieldReservation.day){
           continue;
         }
-        if(field.ocupied[i].hour !== fieldReservation.hour){
+
+        for(let j = fieldReservation.hourCheckin; j < fieldReservation.hourCheckout; j++){
+          // counter to check if hours between checkin and checkout are availible
+          let counter = fieldReservation.hourCheckin;
+          if(!field.ocupied[i].hours.includes(counter)){
+            counter++;
+          } else {
+            continueOrNot = false;
+          }
+        }
+
+        if(continueOrNot){
           continue;
         }
+
         existOrNot = true;
       }
 
@@ -147,11 +163,17 @@ router.post('/reserve/field',(req,res)=>{
         return res.status(404).json({msg:"the time for the field is taken"});
       } else {
         //if date not taken save to DB
+        let newHourArr = [];
+        let counter = fieldReservation.hourCheckin
+        for(let i = fieldReservation.hourCheckin; i<fieldReservation.hourCheckout; i++){
+          newHourArr.push(counter);
+          counter++;
+        }
         field.ocupied.push({
           day:fieldReservation.day,
           month:fieldReservation.month,
           year:fieldReservation.year,
-          hour:fieldReservation.hour,
+          hours:newHourArr,
           customer:{
             firstName: req.body.firstName,
             lastName: req.body.lastName,
