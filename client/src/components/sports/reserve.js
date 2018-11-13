@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WelcomePic from '../welcome-pic.js';
+import axios from 'axios';
 
 // Date picker dependencies
 import DatePicker from "react-datepicker";
@@ -17,34 +18,76 @@ class SportsReservation extends Component {
 
     this.state={
       // date calender start value to current date
-      startDate: moment(),
-      startDate2: moment(),
+      Date: moment(),
+      timeExclude: [],
       select:this.currentField
     }
+    this.handleDateChange = this.handleDateChange.bind(this);
+  }
 
-    this.handleDateChangeCheckin = this.handleDateChangeCheckin.bind(this);
-    this.handleDateChangeCheckout = this.handleDateChangeCheckout.bind(this);
+
+
+  componentDidMount(){
+    axios.get('/api/users/reserve/field')
+      .then(res =>{
+        if(this.currentField === 'small'){
+          //save data to component variable
+          this.currentDatesForField = res.data[0].dates;
+          console.log(this.currentDatesForField)
+        } else if(this.currentField === 'other'){
+          //save data to component variable
+          this.currentDatesForField = res.data[1].dates;
+          console.log(this.currentDatesForField)
+        } else {
+          //save data to component variable
+          this.currentDatesForField = res.data[2].dates;
+          console.log(this.currentDatesForField)
+        }
+        this.handleDateChange(this.state.Date);
+      })
+      .catch(err => {console.log(err)});
   }
 
 
   //reservation dates functionallty
-    handleDateChangeCheckin(date) {
-      this.setState({
-        startDate: date
+    handleDateChange(date) {
+      console.log('s',this.state.Date)
+      this.setState({Date: date,timeExclude: []},()=>{
+        const currentDate = {
+          year:this.state.Date.format('YYYY'),
+          month:this.state.Date.format('MM'),
+          day:this.state.Date.format('DD')
+        }
+
+        //initialize hour array
+        var hourArray = [...this.state.timeExclude];
+        for(let i in this.currentDatesForField){
+          //chack for taken hours in the day
+          if(this.currentDatesForField[i].year === Number(currentDate.year) && this.currentDatesForField[i].month === Number(currentDate.month) && this.currentDatesForField[i].day === Number(currentDate.day)){
+            // create takes hours array
+            hourArray = [...hourArray,...this.currentDatesForField[i].hours];
+            console.log(hourArray)
+          }
+        }
+        //convert array for moment object to fit to Datepicker excludeTimes
+        const momentArray = hourArray.map( item =>{
+          return moment().hours(item).minutes(0).seconds(0);
+        });
+        this.setState({
+          timeExclude: momentArray
+        },()=>{console.log(this.state.timeExclude)});
       });
     }
 
-    handleDateChangeCheckout(date) {
-      this.setState({
-        startDate2: date
-      });
-    }
+
 
     // change the url according to field taken
     selectUrlHandler = (e) =>{
       console.log(e.target.value)
        window.location.pathname = `/sports/reservation/${e.target.value}`
     }
+
+
 
   render() {
     return (
@@ -63,23 +106,21 @@ class SportsReservation extends Component {
           </select>
 
           <DatePicker
-            selected={this.state.startDate}
-            onChange={this.handleDateChangeCheckin}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={60}
-            dateFormat="LLL"
+            selected={this.state.Date}
+            onChange={this.handleDateChange}
+            dateFormat="DD/MM/YYYY HH:00"
             timeCaption="time"
+            minDate={moment()}
           />
 
           <DatePicker
-            selected={this.state.startDate2}
-            onChange={this.handleDateChangeCheckout}
+            onChange={this.handleChange}
             showTimeSelect
-            timeFormat="HH:mm"
+            showTimeSelectOnly
             timeIntervals={60}
-            dateFormat="LLL"
-            timeCaption="time"
+            timeFormat="HH:mm"
+            timeCaption="Time"
+            excludeTimes={this.state.timeExclude}
           />
         </form>
       </main>

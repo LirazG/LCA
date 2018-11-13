@@ -10,6 +10,34 @@ const validateFormInput = require('../../validation/form-validation');
 const validateRoomReservation = require('../../validation/room-reserve-validation');
 const validateFieldReservation = require('../../validation/field-reserve-validation');
 
+
+//@route   GET api/users/reserve/field
+//@desc    get all the takes dates
+//@access  public
+
+router.get('/reserve/field', (req,res) => {
+  Field.find({})
+    .then(fields => {
+      let dates =[];
+      dates = fields.map((field)=>{
+        var obj = {fieldName:field.fieldName,dates:{}}
+        for(let i in field.ocupied){
+          if(Number(i)>-1){
+            obj.dates[i] = {
+              year:field.ocupied[i].year,
+              month:field.ocupied[i].month,
+              day:field.ocupied[i].day,
+              hours:field.ocupied[i].hours
+            };
+          }
+        }
+        return obj;
+      });
+      res.send(dates)
+    });
+});
+
+
 //@route   POST api/users/submit
 //@desc    subbmit question
 //@access  public
