@@ -58,8 +58,6 @@ router.post('/submit', (req,res) => {
   res.json({msg:"success"});
 });
 
-module.exports = router;
-
 //@route   POST api/users/reserve/room
 //@desc    subbmit room reservation
 //@access  public(for now)
@@ -188,7 +186,7 @@ router.post('/reserve/field',(req,res)=>{
       }
 
       if(existOrNot){
-        return res.status(404).json({msg:"the time for the field is taken"});
+        return res.status(400).json({msg:"the time for the field is taken"});
       } else {
         //if date not taken save to DB
         let newHourArr = [];
@@ -213,3 +211,6 @@ router.post('/reserve/field',(req,res)=>{
       }
     });
   });
+
+
+module.exports = router;

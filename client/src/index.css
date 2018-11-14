@@ -1872,6 +1872,18 @@ body {
 .form-valid {
   border-bottom: 2px solid #9BC53D !important; }
 
+.react-datepicker-wrapper > .form-invalid {
+  border: 2px solid #E55934 !important; }
+
+.react-datepicker-wrapper > .form-valid {
+  border: 2px solid #9BC53D !important; }
+
+.react-datepicker__input-container > .form-invalid {
+  border: 2px solid #E55934 !important; }
+
+.react-datepicker__input-container > .form-valid {
+  border: 2px solid #9BC53D !important; }
+
 .form-validation {
   font-size: 1.5rem;
   color: #E55934; }
@@ -1930,3 +1942,32 @@ body {
       .form-success__message__cancel--icon {
         color: #E55934;
         font-size: 5rem; }
+
+.react-datepicker-wrapper {
+  display: block !important; }
+  .react-datepicker-wrapper > input:focus,
+  .react-datepicker-wrapper > input:active,
+  .react-datepicker-wrapper > select:focus {
+    border: 2px solid #9BC53D;
+    outline: none; }
+  .react-datepicker-wrapper > label {
+    font-size: 1.8rem;
+    font-weight: 300; }
+  .react-datepicker-wrapper > select,
+  .react-datepicker-wrapper > input {
+    display: block;
+    border: 2px solid #D9A816;
+    border-radius: 3px;
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem; }
+
+.react-datepicker__input-container > input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 2px solid #D9A816;
+  border-radius: 3px;
+  padding: 1rem;
+  margin-top: 0.5rem; }

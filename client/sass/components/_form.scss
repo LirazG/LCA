@@ -45,7 +45,23 @@
 .form-valid{
   border-bottom: 2px solid $color-primary-green-light !important;
 }
-//
+
+.react-datepicker-wrapper > .form-invalid{
+  border: 2px solid $color-primary-red-light !important;
+}
+
+.react-datepicker-wrapper > .form-valid{
+  border: 2px solid $color-primary-green-light !important;
+}
+
+.react-datepicker__input-container > .form-invalid {
+  border: 2px solid $color-primary-red-light !important;
+}
+
+.react-datepicker__input-container > .form-valid {
+  border: 2px solid $color-primary-green-light !important;
+}
+
 
 .form-validation{
   font-size: 1.5rem;
