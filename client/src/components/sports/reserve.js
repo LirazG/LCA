@@ -19,10 +19,16 @@ class SportsReservation extends Component {
     this.state={
       // date calender start value to current date
       Date: moment(),
+      StartTime: moment(),
+      EndTime: moment(),
       timeExclude: [],
+      minCheckInTime:moment(),
+      maxCheckOutTime:moment(),
       select:this.currentField
     }
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleTimeCheckIn = this.handleTimeCheckIn.bind(this);
+    this.handleTimeCheckOut = this.handleTimeCheckOut.bind(this);
   }
 
 
@@ -51,7 +57,6 @@ class SportsReservation extends Component {
 
   //reservation dates functionallty
     handleDateChange(date) {
-      console.log('s',this.state.Date)
       this.setState({Date: date,timeExclude: []},()=>{
         const currentDate = {
           year:this.state.Date.format('YYYY'),
@@ -75,11 +80,42 @@ class SportsReservation extends Component {
         });
         this.setState({
           timeExclude: momentArray
-        },()=>{console.log(this.state.timeExclude)});
+        });
       });
     }
 
 
+    //reservation time functionallty
+    handleTimeCheckIn(date){
+      let newMinDate = date.hour();
+      let hourArray = this.state.timeExclude.map((item)=>{
+        return item.hour();
+      });
+      this.setState({StartTime:date,minCheckInTime:moment().hour(newMinDate)},()=>{
+        //calculate the checkout time availible for user dispaly
+        let i = this.state.StartTime.hour();
+        if(i === 23){
+          this.setState({maxCheckOutTime:moment().hour(24),EndTime:moment().hour(24)})
+          return;
+        }
+        for(i ; i < 23 ; i++){
+          if(hourArray.includes(i)){
+            this.setState({maxCheckOutTime:moment().hour(i)});
+            return;
+          }
+          if(i === 22){
+            this.setState({maxCheckOutTime:moment().hour(23)});
+            return;
+          }
+        }
+      });
+    }
+
+
+    handleTimeCheckOut(date){
+      this.setState({EndTime:date});
+    }
+//
 
     // change the url according to field taken
     selectUrlHandler = (e) =>{
@@ -108,20 +144,35 @@ class SportsReservation extends Component {
           <DatePicker
             selected={this.state.Date}
             onChange={this.handleDateChange}
-            dateFormat="DD/MM/YYYY HH:00"
+            dateFormat="DD/MM/YYYY"
             timeCaption="time"
             minDate={moment()}
           />
 
           <DatePicker
-            onChange={this.handleChange}
+            selected={this.state.StartTime}
+            onChange={this.handleTimeCheckIn}
             showTimeSelect
             showTimeSelectOnly
             timeIntervals={60}
-            timeFormat="HH:mm"
-            timeCaption="Time"
+            dateFormat="HH:00"
+            timeCaption="Hora"
+            timeFormat="HH:00"
             excludeTimes={this.state.timeExclude}
           />
+          <DatePicker
+            selected={this.state.EndTime}
+            onChange={this.handleTimeCheckOut}
+            minTime={this.state.minCheckInTime}
+            maxTime={this.state.maxCheckOutTime}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={60}
+            dateFormat="HH:00"
+            timeCaption="Hora"
+            timeFormat="HH:00"
+          />
+
         </form>
       </main>
     );
