@@ -327,7 +327,7 @@ body {
   margin: 0 auto; }
   @media (min-width: 93.75em) {
     .row {
-      max-width: 1340px; } }
+      max-width: 1440px; } }
   .row:not(:first-child) {
     margin-top: 8rem; }
     @media (min-height: 63.5em) {
@@ -1943,6 +1943,18 @@ body {
         color: #E55934;
         font-size: 5rem; }
 
+#fields input,
+#fields select,
+#fields .react-datepicker__input-container {
+  width: 100%; }
+
+.form__assurance {
+  width: 100%; }
+  .form__assurance--p {
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem; }
+
 .react-datepicker-wrapper {
   display: block !important; }
   .react-datepicker-wrapper > input:focus,
@@ -1959,7 +1971,6 @@ body {
     border: 2px solid #D9A816;
     border-radius: 3px;
     padding: 1rem;
-    margin: auto;
     margin-bottom: 1rem;
     margin-top: 0.5rem; }
 

@@ -81,16 +81,24 @@ class SportsReservation extends Component {
           if(this.currentDatesForField[i].year === Number(currentDate.year) && this.currentDatesForField[i].month === Number(currentDate.month) && this.currentDatesForField[i].day === Number(currentDate.day)){
             // create takes hours array
             hourArray = [...hourArray,...this.currentDatesForField[i].hours];
-            console.log(hourArray)
           }
         }
         //convert array for moment object to fit to Datepicker excludeTimes
         const momentArray = hourArray.map( item =>{
           return moment().hours(item).minutes(0).seconds(0);
         });
+
+        const closedHoursArr = [
+          moment().hour(2).minutes(0).seconds(0),
+          moment().hour(3).minutes(0).seconds(0),
+          moment().hour(4).minutes(0).seconds(0),
+          moment().hour(5).minutes(0).seconds(0),
+          moment().hour(6).minutes(0).seconds(0),
+          moment().hour(7).minutes(0).seconds(0)
+        ]
         this.setState({
-          timeExclude: momentArray
-        });
+          timeExclude: [...momentArray,...closedHoursArr]
+        },()=>{console.log(this.state.timeExclude)});
       });
     }
 
@@ -105,7 +113,7 @@ class SportsReservation extends Component {
         //calculate the checkout time availible for user dispaly
         let i = this.state.StartTime.hour();
         if(i === 23){
-          this.setState({maxCheckOutTime:moment().hour(24),EndTime:moment().hour(24)})
+          this.setState({maxCheckOutTime:moment().hour(23).minutes(59),EndTime:moment().hour(23).minutes(59)})
           return;
         }
         for(i ; i < 23 ; i++){
@@ -114,7 +122,7 @@ class SportsReservation extends Component {
             return;
           }
           if(i === 22){
-            this.setState({maxCheckOutTime:moment().hour(23)});
+            this.setState({maxCheckOutTime:moment().hour(23).minutes(59)});
             return;
           }
         }
@@ -129,7 +137,7 @@ class SportsReservation extends Component {
 
     // change the url according to field taken
     selectUrlHandler = (e) =>{
-      console.log(e.target.value)
+       console.log(e.target.value)
        window.location.pathname = `/sports/reservation/${e.target.value}`
     }
 
@@ -140,6 +148,18 @@ class SportsReservation extends Component {
         [e.target.name] : e.target.value
       });
     }
+
+
+// determine if display minutes or not according to end time choose
+
+    displayFormatCalculator = () =>{
+      if(this.state.EndTime.format('HH:mm') === '23:59'){
+        return "HH:mm"
+      } else {
+        return "HH:00"
+      }
+    }
+
 
 //submit reservation
     formSubmit = (e) => {
@@ -154,13 +174,14 @@ class SportsReservation extends Component {
         month: this.state.Date.format('MM'),
         day: this.state.Date.format('DD'),
         hourCheckin : String(this.state.StartTime.format('HH')),
-        hourCheckout : String(this.state.EndTime.format('HH'))
+        hourCheckout : String(this.state.EndTime.format('HH:mm'))
       }
 
 
-      if(newFieldReservation.hourCheckout === '00'){
+      if(newFieldReservation.hourCheckout === '23:59'){
         newFieldReservation.hourCheckout = '24';
       }
+
 
         axios.post('/api/users/reserve/field',newFieldReservation)
           .then(res =>{
@@ -176,7 +197,7 @@ class SportsReservation extends Component {
               errors:{},
               select:this.currentField
             },()=>{
-              window.location.pathname = window.location.pathname.slice(0,7)
+               window.location.pathname = window.location.pathname.slice(0,7)
             });
           })
           .catch(err =>{
@@ -215,6 +236,16 @@ class SportsReservation extends Component {
   render() {
 
     const {errors} = this.state;
+    let calculator = 0;
+    let end = this.state.EndTime.format('HH:mm')
+    if(end === '23:59'){
+      end = 24
+    } else {
+      end = this.state.EndTime.format('HH')
+    }
+    if(end - this.state.StartTime.format('HH') > 0){
+      calculator = end - this.state.StartTime.format('HH');
+    }
 
     return (
       <main className="sports-reservation-page">
@@ -225,85 +256,100 @@ class SportsReservation extends Component {
           <hr className="u-margin-top-big"/>
         </div>
 
-        <div className="row u-text-center">
-          <form id="fields" className="form">
+        <div className="row">
+          <div className="col-1-of-2">
+            <form id="fields" className="form">
 
-            <div className="react-datepicker-wrapper">
-            <label htmlFor="type">Tipo de cancha:</label>
-            <select id="type" form="fields" defaultValue={this.currentField} onChange={this.selectUrlHandler}>
-              <option value="big" >Cancha fútbol grande</option>
-              <option value="small" >Cancha fútbol chica</option>
-              <option value="other" >Cancha volley / basquet / fronton</option>
-            </select>
+              <div className="react-datepicker-wrapper">
+              <label htmlFor="type">Tipo de cancha:</label>
+              <select id="type" form="fields" defaultValue={this.currentField} onChange={this.selectUrlHandler}>
+                <option value="big" >Cancha fútbol grande</option>
+                <option value="small" >Cancha fútbol chica</option>
+                <option value="other" >Cancha volley / basquet / fronton</option>
+              </select>
+              </div>
+
+              <label htmlFor="date">Fecha</label>
+              <DatePicker
+                id="date"
+                selected={this.state.Date}
+                onChange={this.handleDateChange}
+                dateFormat="DD/MM/YYYY"
+                timeCaption="time"
+                minDate={moment()}
+                withPortal
+              />
+
+              <label htmlFor="checkin">Hora de entrada:</label>
+              <DatePicker
+                id="checkin"
+                selected={this.state.StartTime}
+                onChange={this.handleTimeCheckIn}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={60}
+                dateFormat="HH:00"
+                timeCaption="Hora"
+                timeFormat="HH:00"
+                className={this.state.form4}
+                excludeTimes={this.state.timeExclude}
+                withPortal
+              />
+              {(<div className="form-validation">{errors.Checkout}</div>)}
+
+              <label htmlFor="checkout">Hora de salida:</label>
+              <DatePicker
+                id="checkout"
+                selected={this.state.EndTime}
+                onChange={this.handleTimeCheckOut}
+                minTime={this.state.minCheckInTime}
+                maxTime={this.state.maxCheckOutTime}
+                injectTimes={[moment().hour(23).minutes(59)]}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={60}
+                dateFormat={this.displayFormatCalculator()}
+                timeCaption="Hora"
+                timeFormat="HH:mm"
+                className={this.state.form4}
+                withPortal
+              />
+              {errors.hourCheckout && (<div className="form-validation">{errors.hourCheckout}</div>)}
+
+              <div className="react-datepicker-wrapper">
+                <label htmlFor="name">Nombre:</label>
+                <input className={this.state.form2} type="text" id="name" name="firstName" value={this.state.firstName} onChange={this.onChange} />
+                {errors.firstName && (<div className="form-validation">{errors.firstName}</div>)}
+              </div>
+
+              <div className="react-datepicker-wrapper">
+                <label htmlFor="last-name">Apellido:</label>
+                <input className={this.state.form3} type="text" id="last-name" name="lastName" value={this.state.lastName} onChange={this.onChange} />
+                {errors.lastName && (<div className="form-validation">{errors.lastName}</div>)}
+              </div>
+
+              <div className="react-datepicker-wrapper">
+                <label htmlFor="phone">Teléfono:</label>
+                <input className={this.state.form1} type="text" id="phone" name="phone" value={this.state.phone} onChange={this.onChange} />
+                {errors.phone && (<div className="form-validation">{errors.phone}</div>)}
+              </div>
+
+              <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
+
+            </form>
+          </div>
+
+          <div className="col-1-of-2">
+            <div className="form__assurance">
+              <h2 className="heading2">Mi reserva</h2>
+              <p className="form__assurance--p">Nombre: <b>{this.state.firstName}</b></p>
+              <p className="form__assurance--p">Apellido: <b>{this.state.lastName}</b></p>
+              <p className="form__assurance--p">Teléfono: <b>{this.state.phone}</b></p>
+              <p className="form__assurance--p">Hora de entrada: <b>{this.state.StartTime.format('HH:00')}</b></p>
+              <p className="form__assurance--p">Hora de salida: {end === 24 && <b>{this.state.EndTime.format('HH:mm')}</b>}{end !== 24 && <b>{this.state.EndTime.format('HH:00')}</b>}</p>
+              <p className="form__assurance--p">Total horas: <b>{calculator}</b></p>
             </div>
-
-            <label htmlFor="date">Fecha</label>
-            <DatePicker
-              id="date"
-              selected={this.state.Date}
-              onChange={this.handleDateChange}
-              dateFormat="DD/MM/YYYY"
-              timeCaption="time"
-              minDate={moment()}
-              withPortal
-            />
-
-            <label htmlFor="checkout">Hora de entrada:</label>
-            <DatePicker
-              id="checkin"
-              selected={this.state.StartTime}
-              onChange={this.handleTimeCheckIn}
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={60}
-              dateFormat="HH:00"
-              timeCaption="Hora"
-              timeFormat="HH:00"
-              className={this.state.form4}
-              excludeTimes={this.state.timeExclude}
-              withPortal
-            />
-            {(<div className="form-validation">{errors.Checkout}</div>)}
-
-            <label htmlFor="checkout">Hora de salida:</label>
-            <DatePicker
-              id="checkout"
-              selected={this.state.EndTime}
-              onChange={this.handleTimeCheckOut}
-              minTime={this.state.minCheckInTime}
-              maxTime={this.state.maxCheckOutTime}
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={60}
-              dateFormat="HH:00"
-              timeCaption="Hora"
-              timeFormat="HH:00"
-              className={this.state.form4}
-              withPortal
-            />
-            {(<div className="form-validation">{errors.hourCheckout}</div>)}
-
-            <div className="react-datepicker-wrapper">
-              <label htmlFor="name">Nombre:</label>
-              <input className={this.state.form2} type="text" id="name" name="firstName" value={this.state.firstName} onChange={this.onChange}/>
-              {(<div className="form-validation">{errors.firstName}</div>)}
-            </div>
-
-            <div className="react-datepicker-wrapper">
-              <label htmlFor="last-name">Apellido:</label>
-              <input className={this.state.form3} type="text" id="last-name" name="lastName" value={this.state.lastName} onChange={this.onChange}/>
-              {(<div className="form-validation">{errors.lastName}</div>)}
-            </div>
-
-            <div className="react-datepicker-wrapper">
-              <label htmlFor="phone">Teléfono:</label>
-              <input className={this.state.form1} type="text" id="phone" name="phone" value={this.state.phone} onChange={this.onChange}/>
-              {(<div className="form-validation">{errors.phone}</div>)}
-            </div>
-
-            <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
-
-          </form>
+          </div>
         </div>
 
       </main>

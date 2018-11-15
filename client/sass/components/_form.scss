@@ -143,3 +143,27 @@
     }
   }
 }
+
+
+//////////////////////// field reservation form
+#fields input,
+#fields select,
+#fields .react-datepicker__input-container{
+  width: 100%;
+}
+
+
+//////////////////////// form asuurance
+
+.form__assurance{
+  width: 100%;
+  // border: 2px solid $color-gold-text;
+  // border-radius: 3px;
+
+
+  &--p{
+    font-size: 3rem;
+    font-weight: 300;
+    padding:1rem;
+  }
+}

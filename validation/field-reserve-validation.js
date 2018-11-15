@@ -34,7 +34,7 @@ module.exports = function validateFieldReservation(data){
     errors.hourCheckout = 'check out hour is required';
   }
 
-  if(Number(data.hourCheckin) > Number(data.hourCheckout) && Number(data.hourCheckin)!== 23 && Number(data.hourCheckout)!== 0){
+  if(Number(data.hourCheckin) > Number(data.hourCheckout) && (Number(data.hourCheckin)!== 23 || Number(data.hourCheckout)!== 0)){
     errors.hourCheckout = 'check in hour is after the checkout hour';
   }
 
