@@ -152,6 +152,13 @@
   width: 100%;
 }
 
+#fields{
+  @include respond(phone){
+    width: 85%;
+    margin: auto;
+  }
+}
+
 
 //////////////////////// form asuurance
 

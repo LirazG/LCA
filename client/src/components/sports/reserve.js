@@ -180,8 +180,12 @@ class SportsReservation extends Component {
 
       if(newFieldReservation.hourCheckout === '23:59'){
         newFieldReservation.hourCheckout = '24';
+      } else {
+        console.log(newFieldReservation.hourCheckout.slice(0, newFieldReservation.hourCheckout.length));
+        newFieldReservation.hourCheckout = newFieldReservation.hourCheckout.slice(0, newFieldReservation.hourCheckout.length-3)
       }
 
+      console.log(newFieldReservation)
 
         axios.post('/api/users/reserve/field',newFieldReservation)
           .then(res =>{
@@ -257,7 +261,7 @@ class SportsReservation extends Component {
         </div>
 
         <div className="row">
-          <div className="col-1-of-2">
+          <div className="col-1-of-2 u-margin-top-medium">
             <form id="fields" className="form">
 
               <div className="react-datepicker-wrapper">
@@ -318,29 +322,27 @@ class SportsReservation extends Component {
 
               <div className="react-datepicker-wrapper">
                 <label htmlFor="name">Nombre:</label>
-                <input className={this.state.form2} type="text" id="name" name="firstName" value={this.state.firstName} onChange={this.onChange} />
+                <input maxLength="30"  className={this.state.form2} type="text" id="name" name="firstName" value={this.state.firstName} onChange={this.onChange} />
                 {errors.firstName && (<div className="form-validation">{errors.firstName}</div>)}
               </div>
 
               <div className="react-datepicker-wrapper">
                 <label htmlFor="last-name">Apellido:</label>
-                <input className={this.state.form3} type="text" id="last-name" name="lastName" value={this.state.lastName} onChange={this.onChange} />
+                <input maxLength="30"  className={this.state.form3} type="text" id="last-name" name="lastName" value={this.state.lastName} onChange={this.onChange} />
                 {errors.lastName && (<div className="form-validation">{errors.lastName}</div>)}
               </div>
 
               <div className="react-datepicker-wrapper">
                 <label htmlFor="phone">Teléfono:</label>
-                <input className={this.state.form1} type="text" id="phone" name="phone" value={this.state.phone} onChange={this.onChange} />
+                <input maxLength="30"  className={this.state.form1} type="text" id="phone" name="phone" value={this.state.phone} onChange={this.onChange} />
                 {errors.phone && (<div className="form-validation">{errors.phone}</div>)}
               </div>
-
-              <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
 
             </form>
           </div>
 
-          <div className="col-1-of-2">
-            <div className="form__assurance">
+          <div className="col-1-of-2 u-margin-top-medium">
+            <div className="form__assurance u-text-center">
               <h2 className="heading2">Mi reserva</h2>
               <p className="form__assurance--p">Nombre: <b>{this.state.firstName}</b></p>
               <p className="form__assurance--p">Apellido: <b>{this.state.lastName}</b></p>
@@ -350,6 +352,11 @@ class SportsReservation extends Component {
               <p className="form__assurance--p">Total horas: <b>{calculator}</b></p>
             </div>
           </div>
+        </div>
+
+        <div className="row u-text-center">
+          <h2 className="heading2">Sección de pago</h2>
+          <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
         </div>
 
       </main>

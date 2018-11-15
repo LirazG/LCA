@@ -1948,6 +1948,11 @@ body {
 #fields .react-datepicker__input-container {
   width: 100%; }
 
+@media (max-width: 37.5em) {
+  #fields {
+    width: 85%;
+    margin: auto; } }
+
 .form__assurance {
   width: 100%; }
   .form__assurance--p {
