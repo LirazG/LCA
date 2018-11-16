@@ -112,8 +112,16 @@
 
     &__success{
 
+      & .btn {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate3d(-50%,0,0);
+      }
+
       &--icon{
         color: $color-primary-green-light;
+        width: auto;
         font-size: 10rem;
         position: absolute;
         top:5%;
@@ -127,10 +135,14 @@
         text-align: center;
         position: absolute;
         bottom:30%;
+        @include respond(phone){
+          bottom: 25%;
+        }
       }
     }
 
     &__cancel{
+      width: auto;
       position: absolute;
       top:2%;
       right:2%;

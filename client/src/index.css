@@ -1921,8 +1921,14 @@ body {
     .form-success__message--display {
       transform: translate3d(-50%, -50%, 0) scale(1);
       transition: all 0.8s; }
+    .form-success__message__success .btn {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0); }
     .form-success__message__success--icon {
       color: #9BC53D;
+      width: auto;
       font-size: 10rem;
       position: absolute;
       top: 5%;
@@ -1934,7 +1940,11 @@ body {
       text-align: center;
       position: absolute;
       bottom: 30%; }
+      @media (max-width: 37.5em) {
+        .form-success__message__success--text {
+          bottom: 25%; } }
     .form-success__message__cancel {
+      width: auto;
       position: absolute;
       top: 2%;
       right: 2%;

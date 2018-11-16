@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import WelcomePic from '../welcome-pic.js';
 import axios from 'axios';
 
@@ -32,7 +33,9 @@ class SportsReservation extends Component {
       form1:'',
       form2:'',
       form3:'',
-      form4:''
+      form4:'',
+      modal:'form-success ',
+      message:"form-success__message ",
     }
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleTimeCheckIn = this.handleTimeCheckIn.bind(this);
@@ -199,9 +202,9 @@ class SportsReservation extends Component {
               lastName:'',
               phone:'',
               errors:{},
+              modal:"form-success form-success--display",
+              message:"form-success__message form-success__message--display",
               select:this.currentField
-            },()=>{
-               window.location.pathname = window.location.pathname.slice(0,7)
             });
           })
           .catch(err =>{
@@ -240,8 +243,10 @@ class SportsReservation extends Component {
   render() {
 
     const {errors} = this.state;
-    let calculator = 0;
-    let end = this.state.EndTime.format('HH:mm')
+    let calculator,priceCounter = 0;
+    let day,night;
+    let start = this.state.StartTime.format('HH');
+    let end = this.state.EndTime.format('HH:mm');
     if(end === '23:59'){
       end = 24
     } else {
@@ -250,13 +255,34 @@ class SportsReservation extends Component {
     if(end - this.state.StartTime.format('HH') > 0){
       calculator = end - this.state.StartTime.format('HH');
     }
+    if(this.currentField === 'big'){
+      day = 80;
+      night = 100;
+    } else if (this.currentField === 'small'){
+      day = 30;
+      night = 40;
+    } else {
+      day = 20;
+      night = 25;
+    }
+    for(let i = start; i < end ; i++){
+      if(i < 19){
+        priceCounter = priceCounter + day;
+      } else {
+        priceCounter = priceCounter + night;
+      }
+    }
 
     return (
       <main className="sports-reservation-page">
         <WelcomePic classProp={'welcome__img welcome__img--sports'}/>
         <div className="row">
           <h2 className="heading2">Reservar un campo</h2>
-          <h4 className="heading5--noborder u-text-center">*Mínimo de una hora</h4>
+          <div className="u-text-center">
+            <h5 className="heading5--noborder">Precio día: <b>{day} soles</b> (08:00 - 19:00)</h5>
+            <h5 className="heading5--noborder">Precio noche: <b>{night} soles</b> (19:00 - 02:00)</h5>
+            <h5 className="heading5--noborder">*Mínimo de una hora</h5>
+          </div>
           <hr className="u-margin-top-big"/>
         </div>
 
@@ -350,6 +376,7 @@ class SportsReservation extends Component {
               <p className="form__assurance--p">Hora de entrada: <b>{this.state.StartTime.format('HH:00')}</b></p>
               <p className="form__assurance--p">Hora de salida: {end === 24 && <b>{this.state.EndTime.format('HH:mm')}</b>}{end !== 24 && <b>{this.state.EndTime.format('HH:00')}</b>}</p>
               <p className="form__assurance--p">Total horas: <b>{calculator}</b></p>
+              <p className="form__assurance--p">Precio total : <b>{priceCounter} soles</b></p>
             </div>
           </div>
         </div>
@@ -357,6 +384,17 @@ class SportsReservation extends Component {
         <div className="row u-text-center">
           <h2 className="heading2">Sección de pago</h2>
           <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
+        </div>
+
+
+        <div className={this.state.modal}></div>
+
+        <div className={this.state.message}>
+          <div className="form-success__message__success u-block-center">
+            <i className="fas fa-check-circle form-success__message__success--icon"></i>
+            <p className="form-success__message__success--text">Su reserva registrada con éxito,porfavor disfrute de su estancia!</p>
+            <Link to="/sports" className="btn btn--red">Continuar</Link>
+          </div>
         </div>
 
       </main>
