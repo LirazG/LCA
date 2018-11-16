@@ -36,4 +36,81 @@
     padding:1rem;
     margin-top: 0.5rem;
   }
+
+  &__month-container{
+    width: 40rem;
+    height: 40rem;
+  }
+
+//calender DATE header
+
+  &__current-month{
+    font-size: 1.7rem !important;
+  }
+
+  &__navigation {
+    border: 1.2rem solid transparent !important;
+
+    &--next{
+      border-left-color: #ccc !important;
+    }
+
+    &--previous{
+      border-right-color: #ccc !important;
+    }
+
+  }
+
+//calender DATE css
+  &__month{
+    width: 100%;
+    height: 30rem;
+    margin: none;
+  }
+
+  &__header{
+    width: 100%;
+    height: 10rem;
+  }
+
+  &__week{
+    width: 100%;
+    height: 16.666666666%;
+  }
+
+  &__day,
+  &__day-name{
+    width:5.35rem !important;
+    line-height: 4.83rem !important;
+    font-size: 1.1rem;
+  }
+
+
+  //TIME picker header css
+
+  &-time__header{
+    font-size: 2.5rem !important;
+    padding-top: 1.5rem;
+  }
+
+  //TIME picker css
+
+  &__time-container{
+    width: 14rem !important;
+    height: 20%;
+  }
+
+  &__time-list,
+  &__time-box{
+    width: 100% !important;
+    height: calc(33rem + (1.7rem / 2)) !important;
+
+
+    &-item{
+      width: 100% !important;
+      height: 5rem !important;
+      font-size: 1.5rem !important;
+      padding: 5px 0 !important;
+    }
+  }
 }
