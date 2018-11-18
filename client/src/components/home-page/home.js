@@ -101,8 +101,8 @@ class Home extends Component {
 
   horizontalScrollTranslate(element){
     if(element){
-      let elementPosition = element.offsetTop+element.offsetHeight;
-      let viewPosition = window.pageYOffset+window.innerHeight;
+      let elementPosition = element.offsetTop + element.offsetHeight;
+      let viewPosition = window.pageYOffset + window.innerHeight;
       if(elementPosition-200 <= viewPosition && window.innerWidth > 450){
         element.style.transform = `translate(${(elementPosition-viewPosition)}px,-15vh) rotate(${(elementPosition-viewPosition)}deg)`;
       } else if(elementPosition-200 <= viewPosition && window.innerWidth < 450){
