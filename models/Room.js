@@ -15,14 +15,27 @@ const RoomSchema = new Schema({
     id:{
       type:mongoose.Schema.Types.ObjectId
     },
-    day:{
-      type:Number
+    checkIn:{
+      dayCheckin:{
+        type:Number
+      },
+      yearCheckin:{
+        type:Number
+      },
+      monthCheckin:{
+        type:Number
+      }
     },
-    year:{
-      type:Number
-    },
-    month:{
-      type:Number
+    checkOut:{
+      dayCheckout:{
+        type:Number
+      },
+      yearCheckout:{
+        type:Number
+      },
+      monthCheckout:{
+        type:Number
+      }
     },
     customer:{
       firstName:{

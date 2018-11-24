@@ -1138,6 +1138,18 @@ body {
   .bar__events .col-1-of-3 {
     margin-left: auto; } }
 
+.reservation-picture {
+  height: 30vw; }
+  @media (max-width: 61.25em) {
+    .reservation-picture {
+      height: 40vw; } }
+  @media (max-width: 37.5em) {
+    .reservation-picture {
+      height: 50vw; } }
+  .reservation-picture__image {
+    width: 100%;
+    height: 100%; }
+
 .btn {
   cursor: pointer;
   width: fit-content;
@@ -1761,6 +1773,9 @@ body {
     .welcome__img--bar {
       background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/bar-welcome.jpg");
       background-position: 50% 60%; }
+    .welcome__img--hotel {
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/hotel-welcome.jpg");
+      background-position: 50% 70%; }
 
 .shaped-card {
   width: 90%;
@@ -2051,7 +2066,7 @@ body {
     padding: 5px 0 !important; }
 
 .room {
-  height: 70rem; }
+  height: 80rem; }
   @media (max-width: 61.25em) {
     .room {
       height: 110rem; } }

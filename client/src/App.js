@@ -9,6 +9,7 @@ import AboutUs from './components/about.js';
 import ContactUs from './components/contact.js';
 import Home from './components/home-page/home.js';
 import Hotel from './components/hotel/hotel.js';
+import HotelReservation from './components/hotel/reserve.js';
 import Sports from './components/sports/sports.js';
 import Parking from './components/parking/parking.js';
 import Bar from './components/bar/bar.js';
@@ -61,8 +62,9 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route path='/about' component={AboutUs}/>
+              <Route path='/hotel/reservation/:value' component={HotelReservation}/>
               <Route path='/hotel' component={Hotel}/>
-
+              
               <Route exact path='/sports/reservation/big' component={SportsReservation}/>
               <Route exact path='/sports/reservation/small' component={SportsReservation}/>
               <Route exact path='/sports/reservation/other' component={SportsReservation}/>

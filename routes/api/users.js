@@ -12,7 +12,7 @@ const validateFieldReservation = require('../../validation/field-reserve-validat
 
 
 //@route   GET api/users/reserve/field
-//@desc    get all the takes dates
+//@desc    get all the taken dates
 //@access  public
 
 router.get('/reserve/field', (req,res) => {
@@ -58,6 +58,30 @@ router.post('/submit', (req,res) => {
   res.json({msg:"success"});
 });
 
+//@route   GET api/users/reserve/room
+//@desc    get taken dates for a room
+//@access  public
+
+router.get('/reserve/room', (req,res)=>{
+  Room.find({})
+    .then( rooms =>{
+      const newRoomDataArray = [];
+      for(let i in rooms){
+        let obj = {};
+        let key = rooms[i].roomName;
+        obj[key] = [];
+        for(let j = 0; j < rooms[i].ocupied.length; j++){
+          obj[key].push({checkIn:rooms[i].ocupied[j].checkIn,checkOut:rooms[i].ocupied[j].checkOut})
+        }
+        newRoomDataArray.push(obj);
+      }
+      res.json(newRoomDataArray) ;
+    })
+    .catch(err => {return res.status(400)})
+});
+
+
+
 //@route   POST api/users/reserve/room
 //@desc    subbmit room reservation
 //@access  public(for now)
@@ -71,9 +95,12 @@ router.post('/reserve/room',(req,res)=>{
   }
 
   const roomReservation = {
-    year:Number(req.body.year),
-    month:Number(req.body.month),
-    day:Number(req.body.day)
+    yearCheckin:Number(req.body.yearCheckin),
+    monthCheckin:Number(req.body.monthCheckin),
+    dayCheckin:Number(req.body.dayCheckin),
+    dayCheckout:Number(req.body.dayCheckout),
+    monthCheckout:Number(req.body.monthCheckout),
+    yearCheckout:Number(req.body.yearCheckout)
   };
 
   const roomName = req.body.roomName;
@@ -87,27 +114,56 @@ router.post('/reserve/room',(req,res)=>{
       //chack if date is taken
       let length = room.ocupied.length;
       let existOrNot = false;
-      for(let i = 0;i<length;i++){
-        if(room.ocupied[i].year !== roomReservation.year){
+      let continueOrNot = true;
+      //calculate how many days customer stays
+      let oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+      let checkIn = new Date(roomReservation.yearCheckin,roomReservation.monthCheckin,roomReservation.dayCheckin).setHours(0, 0, 0);
+      let checkOut = new Date(roomReservation.yearCheckout,roomReservation.monthCheckout,roomReservation.dayCheckout).setHours(0, 0, 0);
+
+      let numberOfDatesToLoop = Math.round(Math.abs((new Date(checkIn).getTime() - new Date(checkOut).getTime())/(oneDay)));
+
+
+      for(let i = 0;i < length;i++){
+        let counter = checkIn;
+        let roomCheckin = new Date(room.ocupied[i].checkIn.yearCheckin,room.ocupied[i].checkIn.monthCheckin,room.ocupied[i].checkIn.dayCheckin).setHours(0, 0, 0);
+        let roomCheckout = new Date(room.ocupied[i].checkOut.yearCheckout,room.ocupied[i].checkOut.monthCheckout,room.ocupied[i].checkOut.dayCheckout).setHours(0, 0, 0);
+
+        for(let j = 0; j < numberOfDatesToLoop; j++){
+          if(counter >= roomCheckin && counter < roomCheckout){
+            console.log('date is taken');
+            console.log(new Date(counter).getFullYear(),new Date(counter).getMonth(),new Date(counter).getDate())
+            continueOrNot = false;
+            break;
+          } else {
+            counter = new Date(counter).setDate(new Date(counter).getDate() + 1);
+          }
+        }
+
+        if(continueOrNot){
           continue;
         }
-        if(room.ocupied[i].month !== roomReservation.month){
-          continue;
-        }
-        if(room.ocupied[i].day !== roomReservation.day){
-          continue;
-        }
+
         existOrNot = true;
+        break;
       }
 
+///////////
+
       if(existOrNot){
-        return res.status(404).json({msg:"the date for the room is taken"});
+        return res.status(400).json({msg:"the dates for the room is taken"});
       } else {
         //if date not taken save to DB
         room.ocupied.push({
-          day:roomReservation.day,
-          month:roomReservation.month,
-          year:roomReservation.year,
+          checkIn:{
+            dayCheckin:roomReservation.dayCheckin,
+            yearCheckin:roomReservation.yearCheckin,
+            monthCheckin:roomReservation.monthCheckin
+          },
+          checkOut:{
+            dayCheckout:roomReservation.dayCheckout,
+            yearCheckout:roomReservation.yearCheckout,
+            monthCheckout:roomReservation.monthCheckout
+          },
           customer:{
             firstName: req.body.firstName,
             lastName: req.body.lastName,

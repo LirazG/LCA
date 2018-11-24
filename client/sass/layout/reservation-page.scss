@@ -1,0 +1,16 @@
+.reservation-picture{
+  height: 30vw;
+
+  @include respond(tab-port){
+    height: 40vw;
+  }
+
+  @include respond(phone){
+    height: 50vw;
+  }
+
+  &__image{
+    width: 100%;
+    height: 100%;
+  }
+}

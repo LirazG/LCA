@@ -58,7 +58,6 @@ class SportsReservation extends Component {
         } else {
           //save data to component variable
           this.currentDatesForField = res.data[2].dates;
-          console.log(this.currentDatesForField)
         }
         this.handleDateChange(this.state.Date);
       })
@@ -77,10 +76,9 @@ class SportsReservation extends Component {
         }
 
         //initialize hour array
-        var hourArray = [...this.state.timeExclude];
+        var hourArray = [];
         for(let i in this.currentDatesForField){
           //chack for taken hours in the day
-          // console.log(this.currentDatesForField[i].day,Number(currentDate.day))
           if(this.currentDatesForField[i].year === Number(currentDate.year) && this.currentDatesForField[i].month === Number(currentDate.month) && this.currentDatesForField[i].day === Number(currentDate.day)){
             // create takes hours array
             hourArray = [...hourArray,...this.currentDatesForField[i].hours];
@@ -140,7 +138,6 @@ class SportsReservation extends Component {
 
     // change the url according to field taken
     selectUrlHandler = (e) =>{
-       console.log(e.target.value)
        window.location.pathname = `/sports/reservation/${e.target.value}`
     }
 
@@ -187,8 +184,6 @@ class SportsReservation extends Component {
         console.log(newFieldReservation.hourCheckout.slice(0, newFieldReservation.hourCheckout.length));
         newFieldReservation.hourCheckout = newFieldReservation.hourCheckout.slice(0, newFieldReservation.hourCheckout.length-3)
       }
-
-      console.log(newFieldReservation)
 
         axios.post('/api/users/reserve/field',newFieldReservation)
           .then(res =>{
