@@ -325,6 +325,12 @@ body {
   left: 30%;
   transform: translate(-50%, -50%); }
 
+.display-off {
+  display: none; }
+
+.display-on {
+  display: block; }
+
 .row {
   max-width: 1140px;
   margin: 0 auto; }
@@ -1149,6 +1155,15 @@ body {
   .reservation-picture__image {
     width: 100%;
     height: 100%; }
+
+.reservation-list {
+  display: inline-block;
+  width: 15%;
+  margin-top: 2rem;
+  margin-right: 2.5%;
+  margin-left: 2.5%; }
+  .reservation-list .btn {
+    width: 100%; }
 
 .btn {
   cursor: pointer;
@@ -2066,7 +2081,7 @@ body {
     padding: 5px 0 !important; }
 
 .room {
-  height: 80rem; }
+  height: 90rem; }
   @media (max-width: 61.25em) {
     .room {
       height: 110rem; } }

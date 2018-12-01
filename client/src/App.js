@@ -9,6 +9,7 @@ import AboutUs from './components/about.js';
 import ContactUs from './components/contact.js';
 import Home from './components/home-page/home.js';
 import Hotel from './components/hotel/hotel.js';
+import RoomsInfo from './components/hotel/room-info.js';
 import HotelReservation from './components/hotel/reserve.js';
 import Sports from './components/sports/sports.js';
 import Parking from './components/parking/parking.js';
@@ -18,14 +19,17 @@ import Navbar from './components/navbar.js';
 import Footer from './components/footer.js';
 import SportsReservation from './components/sports/reserve.js';
 
-
-
 class App extends Component {
   constructor(){
     super();
 
     this.counter = 0;
+    this.routes = [];
+    for(let i in RoomsInfo){
+      this.routes.push(RoomsInfo[i].details.name);
+    }
   }
+
 
   componentDidMount(){
     if(document.getElementsByClassName('loader')[0]){
@@ -53,7 +57,10 @@ class App extends Component {
     }
   }
 
+
+
   render() {
+
     return (
       <Router>
         <ScrollToTop>
@@ -62,9 +69,11 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route path='/about' component={AboutUs}/>
-              <Route path='/hotel/reservation/:value' component={HotelReservation}/>
+              <Route exact path={'/hotel/reservation/:value'} component={HotelReservation} />
+
+
               <Route path='/hotel' component={Hotel}/>
-              
+
               <Route exact path='/sports/reservation/big' component={SportsReservation}/>
               <Route exact path='/sports/reservation/small' component={SportsReservation}/>
               <Route exact path='/sports/reservation/other' component={SportsReservation}/>

@@ -29,6 +29,13 @@ class HotelReservation extends Component {
 
 
   componentWillMount(){
+    // check if url is bad and redirect if so
+    let routesArray = ['pima','tanguis','mambo tango','cuarto de la luna','cuarto del sol','seul 88','retro room','vichama room','tejidos peruanos','shangai room'];
+    if(!routesArray.includes(this.props.match.params.value)){
+      window.location.pathname = '/hotel'
+    }
+
+    //fetch room data
     this.images = (require.context('../../img/hotel-page-img', false, /\.(png|jpe?g|svg)$/));
     this.images = this.images.keys().map(this.images)
 
@@ -43,6 +50,7 @@ class HotelReservation extends Component {
 
 
   componentDidMount(){
+
 // fetch taken dates from server
     axios.get('/api/users/reserve/room')
       .then(res =>{
@@ -55,7 +63,6 @@ class HotelReservation extends Component {
           }
         }
         this.setForbiddenDates();
-
       }).catch(err =>{console.log(err)});
   }
 
@@ -243,10 +250,10 @@ class HotelReservation extends Component {
               <p className="form__assurance--p">Nombre: <b>{this.state.firstName}</b></p>
               <p className="form__assurance--p">Apellido: <b>{this.state.lastName}</b></p>
               <p className="form__assurance--p">Teléfono: <b>{this.state.phone}</b></p>
-              <p className="form__assurance--p">Check-in: <b>{this.state.checkIn.format('YYYY/MM/DD')}</b></p>
-              <p className="form__assurance--p">Check-out: <b>{this.state.checkOut.format('YYYY/MM/DD')}</b></p>
-              <p className="form__assurance--p">Total dias: <b>{this.state.checkOut.diff(this.state.checkIn, 'days')}</b></p>
-              <p className="form__assurance--p">Precio total : <b> soles</b></p>
+              <p className="form__assurance--p">Check-in: <b>{this.state.checkIn.format('DD/MM/YYYY')}</b></p>
+              <p className="form__assurance--p">Check-out: <b>{this.state.checkOut.format('DD/MM/YYYY')}</b></p>
+              <p className="form__assurance--p">noches total: <b>{this.state.checkOut.startOf('day').diff(this.state.checkIn.startOf('day'), 'days')}</b></p>
+              <p className="form__assurance--p">Precio total: <b>{this.state.checkOut.startOf('day').diff(this.state.checkIn.startOf('day'), 'days') * this.roomPrice} soles</b></p>
             </div>
           </div>
 
