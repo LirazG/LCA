@@ -57,6 +57,17 @@ change order: base+ typograpy > general layout + grid > page layout > components
     transform: translateY(100px);
     filter: drop-shadow(2px 45px 5px rgba(44, 44, 44, 0.25)); } }
 
+@keyframes blink {
+  0% {
+    display: none;
+    opacity: 0; }
+  50% {
+    display: block;
+    opacity: 0; }
+  100% {
+    display: block;
+    opacity: 1; } }
+
 .no-fade-card {
   opacity: 0;
   transform: translateY(40px);
@@ -531,9 +542,6 @@ body {
     position: fixed;
     top: 3%;
     right: 2rem; }
-    @media (max-width: 37.5em) {
-      .navbar__rightsection {
-        top: 2rem !important; } }
 
 @media (min-height: 63.5em) and (max-width: 75em) {
   .navbar__rightsection {
@@ -1158,12 +1166,36 @@ body {
 
 .reservation-list {
   display: inline-block;
-  width: 15%;
+  width: 25%;
   margin-top: 2rem;
   margin-right: 2.5%;
   margin-left: 2.5%; }
+  @media (max-width: 61.25em) {
+    .reservation-list {
+      width: 45%; } }
+  @media (max-width: 37.5em) {
+    .reservation-list {
+      width: 90%; } }
   .reservation-list .btn {
     width: 100%; }
+
+.arrow {
+  border: solid #2c2c2c;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 10px;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards; }
+  .arrow--down {
+    transform: rotate(45deg); }
+    .arrow--down--1 {
+      animation-delay: .5s; }
+    .arrow--down--2 {
+      animation-delay: 1s; }
+    .arrow--down--3 {
+      animation-delay: 1.5s; }
 
 .btn {
   cursor: pointer;
@@ -1195,10 +1227,8 @@ body {
     outline-offset: -1px;
     color: #fff;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-    background-size: 220%; }
-    @media (max-width: 37.5em) {
-      .btn--white {
-        padding: 0.7rem 3.5rem 0.7rem 2.5rem; } }
+    background-size: 220%;
+    padding: 0.7rem 3.5rem 0.7rem 2.5rem; }
     .btn--white:hover, .btn--white:active {
       background-position: 100%;
       color: #D9A816; }

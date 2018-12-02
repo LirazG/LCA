@@ -232,7 +232,7 @@
     right:2rem;
 
     @include respond(phone){
-      top:2rem !important;
+    //  top:2rem !important;
     }
 
     @include respond(big-tablet){

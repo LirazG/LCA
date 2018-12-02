@@ -16,8 +16,8 @@ class HotelReservation extends Component {
     super(props);
 
     this.state = {
-      checkIn:this.props.checkIn || moment(),
-      checkOut:this.props.checkOut || moment(),
+      checkIn:this.props.location.checkInDate || moment(),
+      checkOut:this.props.location.checkOutDate || moment(),
       dateExclude:[],
       firstName:'',
       lastName:'',

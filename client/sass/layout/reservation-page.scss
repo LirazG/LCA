@@ -17,12 +17,48 @@
 
 .reservation-list{
   display: inline-block;
-  width: 15%;
+  width: 25%;
   margin-top: 2rem;
   margin-right: 2.5%;
   margin-left: 2.5%;
 
+  @include respond(tab-port){
+    width: 45%;
+  }
+
+  @include respond(phone){
+    width: 90%;
+  }
+
   & .btn{
     width: 100%;
+  }
+}
+
+.arrow{
+  border: solid $color-blackish;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 10px;
+
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+
+  &--down{
+    transform: rotate(45deg);
+
+    &--1{
+      animation-delay: .5s;
+    }
+
+    &--2{
+      animation-delay: 1s;
+    }
+
+    &--3{
+      animation-delay: 1.5s;
+    }
   }
 }

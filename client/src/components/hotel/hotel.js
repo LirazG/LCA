@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Room from './room.js';
 import WelcomePic from '../welcome-pic.js';
+import Seperator from '../seperator.js';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+// image
+import SeperatorImg from '../../img/seperator-hotel-reserve.jpg';
 //import information about the rooms
 import RoomInfo from './room-info';
 
@@ -23,6 +25,7 @@ class Hotel extends Component {
     this.state = {
       checkIn:moment(),
       checkOut:moment().add(1, 'days'),
+      display:' display-off',
       //list of availible rooms by user picked dates - array of display
       arrayOfAvailibleRooms:['pima','tanguis','mambo tango','cuarto de la luna','cuarto del sol','seul 88','retro room','vichama room','tejidos peruanos','shangai room']
     }
@@ -100,6 +103,7 @@ class Hotel extends Component {
         }
       }
     });
+    this.setState({display:' display-on'});
   }
 
 
@@ -135,22 +139,39 @@ class Hotel extends Component {
           <button className="btn btn--gold u-margin-top-medium" onClick={this.checkAvailabillity}>Buscar</button>
         </div>
 
-        <div className="row">
+
+        <div className={'row u-margin-top-medium u-margin-bottom-medium' + this.state.display}>
           <h3 className="heading3">disponible para ti:</h3>
-          <div>
+          <div className="u-text-center">
             {this.state.arrayOfAvailibleRooms.map((item,i) =>{
+              let newTo = {
+                pathname:'/hotel/reservation/' + item,
+                checkInDate:this.state.checkIn,
+                checkOutDate:this.state.checkOut
+              }
               return (
                 <div className='reservation-list' key={i}>
-                  <Link to={'/hotel/reservation/' + item} className="btn btn--gold">{item}</Link>
+                  <Link to={newTo} className="btn btn--gold">{item}</Link>
                 </div>
               )
             })}
           </div>
         </div>
 
-        <div className="row">
-          <h2 className="heading2">Avitaciones</h2>
+        <div className="row u-text-center u-margin-top-medium u-margin-bottom-medium">
+          <h2 className="heading2">Más información</h2>
+          <div>
+            <i className="arrow arrow--down arrow--down--1"></i>
+          </div>
+          <div>
+            <i className="arrow arrow--down arrow--down--2"></i>
+          </div>
+          <div>
+            <i className="arrow arrow--down arrow--down--3"></i>
+          </div>
         </div>
+
+        <Seperator bgimage={SeperatorImg}/>
 
         <div className="row">
           <div className="col-1-of-2">

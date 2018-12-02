@@ -68,6 +68,24 @@
   }
 }
 
+@keyframes blink{
+  0%{
+    display: none;
+    opacity: 0;
+  }
+
+  50%{
+    display: block;
+    opacity: 0;
+  }
+
+  100%{
+    display: block;
+    opacity: 1;
+  }
+
+}
+
 
 // ANIMATION CLASSES CHANGE
 
