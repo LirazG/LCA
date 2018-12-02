@@ -111,6 +111,66 @@
     }
 
     &__success{
+      height: 100%;
+      overflow: hidden;
+      border-radius: 3px;
+
+      &--field-reserve{
+        width: 50%;
+        height: 100%;
+        background-image: url('../src/img/grass-min.jpg');
+        background-size: cover;
+        float: right;
+        margin: auto;
+
+        & .btn--red{
+          position: static !important;
+          width: 50%;
+          transform: translate3d(0,50%,0) !important;
+
+          @include respond(phone){
+            width: 80%;
+          }
+        }
+
+        & .heading3{
+          font-weight: 500;
+          margin-top: 2rem;
+        }
+      }
+
+      &--hotel-reserve{
+        width: 50%;
+        height: 100%;
+        background-image: url('../src/img/manonbed.jpg');
+        background-size: cover;
+        float: left;
+
+        & .btn--red{
+          background-color: $color-gold-text;
+          border-color: $color-gold-text;
+          position: static !important;
+          width: 50%;
+          transform: translate3d(0,165%,0) !important;
+
+          @include respond(phone){
+            width: 80%;
+          }
+
+          &:hover,
+          &:active{
+            color:$color-gold-text;
+            background-color: $color-white;
+            border:solid 2px $color-gold-text;
+          }
+        }
+
+        & .heading3{
+          font-weight: 500;
+          color: $color-white;
+          margin-top: 2rem;
+        }
+      }
 
       & .btn {
         position: absolute;

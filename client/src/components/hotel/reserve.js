@@ -23,7 +23,9 @@ class HotelReservation extends Component {
       lastName:'',
       phone:'',
       email:'',
-      errors:{}
+      errors:{},
+      modal:"form-success",
+      message:"form-success__message"
     }
   }
 
@@ -159,7 +161,9 @@ class HotelReservation extends Component {
           lastName:'',
           phone:'',
           email:'',
-          errors:{}
+          errors:{},
+          modal:"form-success form-success--display",
+          message:"form-success__message form-success__message--display"
         });
       })
         .catch(err =>{
@@ -167,6 +171,14 @@ class HotelReservation extends Component {
         })
   }
 
+  modalCancel = () => {
+    this.setState({
+      modal:"form-success",
+      message:"form-success__message"
+    },()=>{
+      window.location.pathname = '/hotel';
+    });
+  }
 
 
   render() {
@@ -262,6 +274,18 @@ class HotelReservation extends Component {
         <div className="row u-text-center">
           <h2 className="heading2">Sección de pago</h2>
           <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
+        </div>
+
+        <div className={this.state.modal} onClick={this.modalCancel}></div>
+
+        <div className={this.state.message}>
+          <div className="form-success__message__success">
+            <i className="fas fa-check-circle form-success__message__success--icon"></i>
+            <p className="form-success__message__success--text">Gracias por contactarnos, nos pondremos en contacto con usted lo antes posible.</p>
+          </div>
+          <div className="form-success__message__cancel" onClick={this.modalCancel}>
+            <i className="fas fa-times form-success__message__cancel--icon"></i>
+          </div>
         </div>
 
       </main>

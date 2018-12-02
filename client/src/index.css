@@ -2003,28 +2003,72 @@ body {
     .form-success__message--display {
       transform: translate3d(-50%, -50%, 0) scale(1);
       transition: all 0.8s; }
-    .form-success__message__success .btn {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translate3d(-50%, 0, 0); }
-    .form-success__message__success--icon {
-      color: #9BC53D;
-      width: auto;
-      font-size: 10rem;
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translate3d(-50%, 0, 0); }
-    .form-success__message__success--text {
-      color: #9BC53D;
-      font-size: 3rem;
-      text-align: center;
-      position: absolute;
-      bottom: 30%; }
-      @media (max-width: 37.5em) {
-        .form-success__message__success--text {
-          bottom: 25%; } }
+    .form-success__message__success {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 3px; }
+      .form-success__message__success--field-reserve {
+        width: 50%;
+        height: 100%;
+        background-image: url("../src/img/grass-min.jpg");
+        background-size: cover;
+        float: right;
+        margin: auto; }
+        .form-success__message__success--field-reserve .btn--red {
+          position: static !important;
+          width: 50%;
+          transform: translate3d(0, 50%, 0) !important; }
+          @media (max-width: 37.5em) {
+            .form-success__message__success--field-reserve .btn--red {
+              width: 80%; } }
+        .form-success__message__success--field-reserve .heading3 {
+          font-weight: 500;
+          margin-top: 2rem; }
+      .form-success__message__success--hotel-reserve {
+        width: 50%;
+        height: 100%;
+        background-image: url("../src/img/manonbed.jpg");
+        background-size: cover;
+        float: left; }
+        .form-success__message__success--hotel-reserve .btn--red {
+          background-color: #D9A816;
+          border-color: #D9A816;
+          position: static !important;
+          width: 50%;
+          transform: translate3d(0, 165%, 0) !important; }
+          @media (max-width: 37.5em) {
+            .form-success__message__success--hotel-reserve .btn--red {
+              width: 80%; } }
+          .form-success__message__success--hotel-reserve .btn--red:hover, .form-success__message__success--hotel-reserve .btn--red:active {
+            color: #D9A816;
+            background-color: #fff;
+            border: solid 2px #D9A816; }
+        .form-success__message__success--hotel-reserve .heading3 {
+          font-weight: 500;
+          color: #fff;
+          margin-top: 2rem; }
+      .form-success__message__success .btn {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0); }
+      .form-success__message__success--icon {
+        color: #9BC53D;
+        width: auto;
+        font-size: 10rem;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0); }
+      .form-success__message__success--text {
+        color: #9BC53D;
+        font-size: 3rem;
+        text-align: center;
+        position: absolute;
+        bottom: 30%; }
+        @media (max-width: 37.5em) {
+          .form-success__message__success--text {
+            bottom: 25%; } }
     .form-success__message__cancel {
       width: auto;
       position: absolute;

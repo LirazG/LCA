@@ -143,6 +143,7 @@ class Hotel extends Component {
         <div className={'row u-margin-top-medium u-margin-bottom-medium' + this.state.display}>
           <h3 className="heading3">disponible para ti:</h3>
           <div className="u-text-center">
+          {this.state.arrayOfAvailibleRooms.length === 0 ? (<div style={{width:'100%'}} className="heading4 u-margin-top-medium">Perdon, no hay espacio disponible para esta fecha</div>):null}
             {this.state.arrayOfAvailibleRooms.map((item,i) =>{
               let newTo = {
                 pathname:'/hotel/reservation/' + item,

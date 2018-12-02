@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 import LogoSmall from '../img/logo-small.png';
-
-
+import ReserveFieldPic from '../img/grass-min.jpg';
 
 class Navbar extends Component {
 
@@ -11,10 +10,14 @@ class Navbar extends Component {
 
     super();
 
-    this.state = {navbar:'navbar'};
+    this.state = {
+      navbar:'navbar',
+      modal:"form-success",
+      message:"form-success__message"
+    };
+
     this.navbarChanger = this.navbarChanger.bind(this);
     this.navbarDeactivateSmallScreens = this.navbarDeactivateSmallScreens.bind(this);
-
     this.checkbox = React.createRef();
   }
 
@@ -59,13 +62,47 @@ class Navbar extends Component {
     } else {
       this.checkbox.current.checked = false;
     }
+  }
 
+  reserveButtonAction = (e) => {
+    //e.preventDefault();
+    this.setState({
+      modal:"form-success form-success--display",
+      message:"form-success__message form-success__message--display"
+    })
+  }
+
+  modalCancel = () =>{
+    this.setState({
+      modal:"form-success",
+      message:"form-success__message"
+    });
   }
 
 
   render() {
     return (
       <nav className={this.state.navbar}>
+
+        <div className={this.state.modal} onClick={this.modalCancel}></div>
+        <div className={this.state.message}>
+          <div className="form-success__message__success">
+            <div className="form-success__message__success--field-reserve">
+              <h3 className="heading3">Canchas</h3>
+              <Link onClick={this.modalCancel} to='/sports/reservation/big' className="btn btn--red">Grande</Link>
+              <Link onClick={this.modalCancel} to='/sports/reservation/small' className="btn btn--red">Chica</Link>
+              <Link onClick={this.modalCancel} to='/sports/reservation/other' className="btn btn--red">Otros</Link>
+            </div>
+            <div className="form-success__message__success--hotel-reserve">
+              <h4 className="heading3">Hotel</h4>
+              <Link onClick={this.modalCancel} to='/hotel' className="btn btn--red">Avitaciones</Link>
+            </div>
+          </div>
+          <div className="form-success__message__cancel" onClick={this.modalCancel}>
+            <i className="fas fa-times form-success__message__cancel--icon"></i>
+          </div>
+        </div>
+
         <Link to="/" className="navbar__left">
           <img alt="logo" className="navbar__left__img--1" src={Logo} />
           <img alt="logo-small" className="navbar__left__img--2" src={LogoSmall} />
@@ -99,7 +136,7 @@ class Navbar extends Component {
           <div className="navbar__rightsection__content">
             <a href="#" className="navbar__languagelink">English</a>
             <a href="#" className="navbar__languagelink">Español</a>
-            <a href="#" className="btn btn--white">Reservar</a>
+            <a onClick={this.reserveButtonAction} className="btn btn--white">Reservar</a>
           </div>
         </div>
       </nav>

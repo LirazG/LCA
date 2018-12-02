@@ -14,7 +14,7 @@ import Breadcrumbs from './breadcrumbs.js';
 //picturs
 import ImgHotelSection from '../../img/hotel-page-img/hotel4.jpg';
 import ImgSportsSection from '../../img/welcome-pictures/football-big-welcome.jpg';
-import ImgBarSection from '../../img/bar-big-test.jpg';
+import ImgBarSection from '../../img/bar-home-section.jpg';
 import Soccer from '../../img/small-soccer.png';
 import BascketBall from '../../img/small-bascketball.png';
 import VolleyBall from '../../img/small-volleyball.png';
