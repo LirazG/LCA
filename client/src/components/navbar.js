@@ -96,9 +96,11 @@ class Navbar extends Component {
         </ul>
 
         <div className="navbar__rightsection">
-          <a href="#" className="navbar__languagelink">English</a>
-          <a href="#" className="navbar__languagelink">Español</a>
-          <a href="#" className="btn btn--white">Reservar</a>
+          <div className="navbar__rightsection__content">
+            <a href="#" className="navbar__languagelink">English</a>
+            <a href="#" className="navbar__languagelink">Español</a>
+            <a href="#" className="btn btn--white">Reservar</a>
+          </div>
         </div>
       </nav>
     );

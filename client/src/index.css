@@ -466,11 +466,10 @@ body {
     box-shadow: 0px 1px 10px #2c2c2c;
     transition: background-color .5s, box-shadow .1s; }
   .navbar__left {
-    display: inline-block; }
+    display: inline-block;
+    width: 25%; }
     .navbar__left__img--1 {
-      width: 19%;
-      position: fixed;
-      top: 0.7rem;
+      width: 100%;
       display: block; }
       @media (max-width: 61.25em) {
         .navbar__left__img--1 {
@@ -480,25 +479,18 @@ body {
   .navbar__left__img--1 {
     top: 3%; } }
     .navbar__left__img--2 {
-      width: calc(3% + 6rem);
-      position: fixed;
-      top: calc(4% - 0.7rem);
-      left: 2rem;
-      display: none; }
+      width: calc(5vw + 5rem);
+      display: none;
+      margin-left: 2rem;
+      margin-top: 1rem; }
       @media (max-width: 61.25em) {
         .navbar__left__img--2 {
           display: block; } }
-      @media (min-height: 63.5em) {
-        .navbar__left__img--2 {
-          top: calc(2% - 0.7rem); } }
-      @media (max-width: 37.5em) {
-        .navbar__left__img--2 {
-          width: calc(5% + 6rem); } }
   .navbar__itemlist {
     display: block;
-    width: 100%;
-    margin-top: 0.85rem;
-    margin-top: 2rem; }
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; }
     @media (max-width: 61.25em) {
       .navbar__itemlist {
         display: none;
@@ -538,20 +530,17 @@ body {
           color: #EBCB0D; }
   .navbar__rightsection {
     display: block;
-    width: fit-content;
-    position: fixed;
-    top: 3%;
-    right: 2rem; }
-
-@media (min-height: 63.5em) and (max-width: 75em) {
-  .navbar__rightsection {
-    top: 3%; } }
+    width: calc(25% - 2rem);
+    margin-right: 2rem; }
+    .navbar__rightsection__content {
+      float: right; }
+    @media (max-width: 61.25em) {
+      .navbar__rightsection {
+        width: 73%; } }
   .navbar__languagelink {
     text-decoration: none;
-    color: #fff; }
-    @media (max-width: 37.5em) {
-      .navbar__languagelink {
-        font-size: 1.4rem; } }
+    color: #fff;
+    font-size: 1.6rem; }
     .navbar__languagelink:nth-of-type(1) {
       border-right: 1px solid #fff;
       padding-right: 0.5rem; }
@@ -1229,6 +1218,9 @@ body {
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
     background-size: 220%;
     padding: 0.7rem 3.5rem 0.7rem 2.5rem; }
+    @media (max-width: 37.5em) {
+      .btn--white {
+        padding: 0.7rem 2.5rem 0.7rem 1.5rem; } }
     .btn--white:hover, .btn--white:active {
       background-position: 100%;
       color: #D9A816; }
