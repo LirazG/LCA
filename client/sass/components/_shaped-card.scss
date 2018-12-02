@@ -19,13 +19,13 @@
       rgba(255,255,255,0.9) 0%,
       rgba(255,255,255,0.9) 50%,
       transparent 50%),
-      url('../src/img/parking-big.jpg');
+      url('../src/img/welcome-pictures/parking-big-welcome.jpg');
 
     @include respond(tab-port){
       background-image:
        linear-gradient(
         rgba(255,255,255,0.8) 0%),
-        url('../src/img/parking-big.jpg');
+        url('../src/img/welcome-pictures/parking-big-welcome.jpg');
     }
   }
 

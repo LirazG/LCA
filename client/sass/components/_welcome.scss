@@ -26,7 +26,7 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/pool-big.jpg');
+      url('../src/img/welcome-pictures/pool-big-welcome.jpg');
     }
 
     &--sports{
@@ -34,7 +34,15 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/football-big.jpg');
+      url('../src/img/welcome-pictures/football-big-welcome.jpg');
+
+      @include respond(tab-port){
+        background-position: 55%;
+      }
+
+      @include respond(phone){
+        background-position: 60%;
+      }
     }
 
     &--parking{
@@ -42,7 +50,7 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/parking-big.jpg');
+      url('../src/img/welcome-pictures/parking-big-welcome.jpg');
     }
 
     &--about{
@@ -50,9 +58,16 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/front-hotel-big.jpg');
-
+      url('../src/img/welcome-pictures/front-hotel-big-welcome.jpg');
       filter: grayscale(.9);
+
+      @include respond(tab-port){
+        background-position: 35%;
+      }
+
+      @include respond(phone){
+        background-position:40%;
+      }
     }
 
     &--contact{
@@ -60,8 +75,16 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/contact-welcome.jpg');
+      url('../src/img/welcome-pictures/contact-welcome.jpg');
       background-position: center;
+
+      @include respond(tab-port){
+        background-position: 82%;
+      }
+
+      @include respond(phone){
+        background-position: 80%;
+      }
     }
 
     &--events{
@@ -69,7 +92,7 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/events-welcome.jpg');
+      url('../src/img/welcome-pictures/events-welcome.jpg');
       background-position: center 40%;
 
     }
@@ -79,8 +102,16 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/bar-welcome.jpg');
+      url('../src/img/welcome-pictures/bar-welcome.jpg');
       background-position: 50% 60%;
+
+      @include respond(tab-port){
+        background-position: 55%;
+      }
+
+      @include respond(phone){
+        background-position: 40%;
+      }
     }
 
     &--hotel{
@@ -88,8 +119,12 @@
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
-      url('../src/img/hotel-welcome.jpg');
+      url('../src/img/welcome-pictures/hotel-welcome.jpg');
       background-position: 50% 70%;
+
+      @include respond(tab-port){
+        background-position: 40%;
+      }
     }
 
   }

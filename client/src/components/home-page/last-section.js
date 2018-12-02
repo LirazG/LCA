@@ -10,7 +10,6 @@ import Pic2 from '../../img/salon-icon.jpg';
 
 import Card from '../card.js';
 
-
 class LastSection extends Component {
 
   constructor(props){

@@ -8,8 +8,6 @@ class ShapedCard extends Component {
     super(props);
   }
 
-
-
   render() {
     return (
       <LazyLoad offsetVertical={700} debounce={false}>

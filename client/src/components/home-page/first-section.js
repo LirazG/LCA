@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
-import Front from '../../img/front-hotel-big.jpg';
-
-
+import Front from '../../img/welcome-pictures/front-hotel-big-welcome.jpg';
 
 class firstSection extends Component {
 

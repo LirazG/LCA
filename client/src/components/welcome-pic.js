@@ -11,9 +11,7 @@ class WelcomePic extends Component {
   render() {
     return (
         <section className="welcome">
-          <div className={this.props.classProp}>
-
-          </div>
+          <div className={this.props.classProp}></div>
         </section>
     );
   }

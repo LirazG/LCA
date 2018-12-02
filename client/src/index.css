@@ -865,7 +865,7 @@ body {
   width: 100%;
   height: 100%;
   background-image: black;
-  background-image: radial-gradient(closest-corner, transparent -80%, #000 90%), url("../src/img/pool-big.jpg");
+  background-image: radial-gradient(closest-corner, transparent -80%, #000 90%), url("../src/img/welcome-pictures/pool-big-welcome.jpg");
   background-size: cover; }
   @media (max-width: 37.5em) {
     .loader {
@@ -1793,26 +1793,53 @@ body {
     background-size: cover;
     background-attachment: fixed; }
     .welcome__img--home {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/pool-big.jpg"); }
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/pool-big-welcome.jpg"); }
     .welcome__img--sports {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/football-big.jpg"); }
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/football-big-welcome.jpg"); }
+      @media (max-width: 61.25em) {
+        .welcome__img--sports {
+          background-position: 55%; } }
+      @media (max-width: 37.5em) {
+        .welcome__img--sports {
+          background-position: 60%; } }
     .welcome__img--parking {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/parking-big.jpg"); }
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/parking-big-welcome.jpg"); }
     .welcome__img--about {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/front-hotel-big.jpg");
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/front-hotel-big-welcome.jpg");
       filter: grayscale(0.9); }
+      @media (max-width: 61.25em) {
+        .welcome__img--about {
+          background-position: 35%; } }
+      @media (max-width: 37.5em) {
+        .welcome__img--about {
+          background-position: 40%; } }
     .welcome__img--contact {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/contact-welcome.jpg");
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/contact-welcome.jpg");
       background-position: center; }
+      @media (max-width: 61.25em) {
+        .welcome__img--contact {
+          background-position: 82%; } }
+      @media (max-width: 37.5em) {
+        .welcome__img--contact {
+          background-position: 80%; } }
     .welcome__img--events {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/events-welcome.jpg");
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/events-welcome.jpg");
       background-position: center 40%; }
     .welcome__img--bar {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/bar-welcome.jpg");
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/bar-welcome.jpg");
       background-position: 50% 60%; }
+      @media (max-width: 61.25em) {
+        .welcome__img--bar {
+          background-position: 55%; } }
+      @media (max-width: 37.5em) {
+        .welcome__img--bar {
+          background-position: 40%; } }
     .welcome__img--hotel {
-      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/hotel-welcome.jpg");
+      background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0)), url("../src/img/welcome-pictures/hotel-welcome.jpg");
       background-position: 50% 70%; }
+      @media (max-width: 61.25em) {
+        .welcome__img--hotel {
+          background-position: 40%; } }
 
 .shaped-card {
   width: 90%;
@@ -1827,10 +1854,10 @@ body {
     .shaped-card {
       min-height: 75rem; } }
   .shaped-card--1 {
-    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../src/img/parking-big.jpg"); }
+    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../src/img/welcome-pictures/parking-big-welcome.jpg"); }
     @media (max-width: 61.25em) {
       .shaped-card--1 {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.8) 0%), url("../src/img/parking-big.jpg"); } }
+        background-image: linear-gradient(rgba(255, 255, 255, 0.8) 0%), url("../src/img/welcome-pictures/parking-big-welcome.jpg"); } }
   .shaped-card--2 {
     background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../src/img/events-form.jpg");
     background-position: left; }

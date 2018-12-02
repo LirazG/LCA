@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 
 //components for the home page
@@ -12,10 +11,9 @@ import BarDescription from './bar-description.js';
 import LastSection from './last-section.js';
 import Breadcrumbs from './breadcrumbs.js';
 
-
 //picturs
-import ImgHotelSection from '../../img/test2.jpg';
-import ImgSportsSection from '../../img/football-big.jpg';
+import ImgHotelSection from '../../img/hotel-page-img/hotel4.jpg';
+import ImgSportsSection from '../../img/welcome-pictures/football-big-welcome.jpg';
 import ImgBarSection from '../../img/bar-big-test.jpg';
 import Soccer from '../../img/small-soccer.png';
 import BascketBall from '../../img/small-bascketball.png';

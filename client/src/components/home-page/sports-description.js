@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
-import Pic1 from '../../img/test.jpg';
-import Pic2 from '../../img/test1.jpg';
+import Pic1 from '../../img/sport-description.jpg';
+import Pic2 from '../../img/sport-description2.jpg';
 
 class SportsDescription extends Component {
 

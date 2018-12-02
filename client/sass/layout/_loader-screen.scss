@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   background-image: rgb(0,0,0);
-  background-image: radial-gradient(closest-corner, transparent -80%, $color-black 90%),url('../src/img/pool-big.jpg');
+  background-image: radial-gradient(closest-corner, transparent -80%, $color-black 90%),url('../src/img/welcome-pictures/pool-big-welcome.jpg');
   background-size: cover;
 
   @include respond(phone){
