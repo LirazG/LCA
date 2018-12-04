@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazy-load';
 
 import WelcomePic from './welcome-pic.js';
 import CustomForm from './custom-form.js';
@@ -64,7 +63,8 @@ class AboutUs extends Component {
 
         <iframe height="500"
                 src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Av%20Mariscal%20Castilla%20276%20-%20Huacho+(La%20Casa%20De%20Algodon)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed"
-                className="contact-us__map">
+                className="contact-us__map"
+                title="map">
         </iframe>
 
       </main>

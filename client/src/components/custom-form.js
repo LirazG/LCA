@@ -116,12 +116,10 @@ class CustomForm extends Component {
         {(<div className="form-validation">{errors.phone}</div>)}
 
         <label htmlFor="question">Tu pregunta:</label>
-        <textarea className={this.state.form4} name="message" value={this.state.question} onChange={this.onChange} rows="10" cols="30" name="question" id="question" ></textarea>
+        <textarea className={this.state.form4} value={this.state.question} onChange={this.onChange} rows="10" cols="30" name="question" id="question" ></textarea>
         {(<div className="form-validation">{errors.question}</div>)}
 
         <button onClick={this.onClick} type="submit" className="btn btn--gold">Enviar</button>
-
-
 
         <div className={this.state.modal} onClick={this.modalCancel}></div>
 

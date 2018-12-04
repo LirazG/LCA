@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazy-load';
 
 class GalleryModel extends Component {
 
@@ -37,10 +36,10 @@ class GalleryModel extends Component {
 
         <div  className="modal">
           <div className="modal__body">
-            <a href="#" className="modal__icons modal__icons__close" onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
-            {hasPrev && <a href="#" className="modal__icons modal__icons__prev" onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
-            {hasNext && <a href="#" className="modal__icons modal__icons__next" onClick={findNext} onKeyDown={this.handleKeyDown}>&rsaquo;</a>}
-            <img src={src} className="modal__image"/>
+            <a className="modal__icons modal__icons__close" onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
+            {hasPrev && <a className="modal__icons modal__icons__prev" onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
+            {hasNext && <a className="modal__icons modal__icons__next" onClick={findNext} onKeyDown={this.handleKeyDown}>&rsaquo;</a>}
+            <img src={src} className="modal__image" alt="gallery item"/>
           </div>
         </div>
       </div>

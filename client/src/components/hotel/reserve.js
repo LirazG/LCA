@@ -194,7 +194,7 @@ class HotelReservation extends Component {
           <h2 className="heading2">Reservar avitacion - {this.props.match.params.value.charAt(0).toUpperCase() + this.props.match.params.value.slice(1)}</h2>
           <h5 className="heading5--noborder u-text-center u-margin-bottom-medium">Precio: <b>{this.roomPrice} soles</b> por noche</h5>
             <div className="reservation-picture">
-              <img className="reservation-picture__image" src={this.roomImage} alt="room picture"/>
+              <img className="reservation-picture__image" src={this.roomImage} alt="room-display"/>
             </div>
           <hr className="u-margin-top-big"/>
         </div>

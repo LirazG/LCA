@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
-
-import LogoBar from '../../img/logo-bar.png';
-//props for card component
+import Card from '../card.js';
 
 // card pics
 import Pic1 from '../../img/parking-icon.jpg';
 import Pic2 from '../../img/salon-icon.jpg';
-
-import Card from '../card.js';
 
 class LastSection extends Component {
 
@@ -17,20 +13,20 @@ class LastSection extends Component {
 
     this.right = React.createRef();
     this.left = React.createRef();
-    this.card1={
+    this.card1 = {
       heading:'Estacionamiento',
       text:   'Descubra nuestros servicios,'+
               'nuestro estacionamiento es el más grande de la zona'+
               'y le ofrece una experiencia segura y cómoda'
-    },
-    this.card2={
+    }
+
+    this.card2 = {
       heading:'salón de eventos',
       text:'¡Alquila nuestro hermoso lugar para tu ocasión especial!'+
            'nuestro lugar capaz de albergar bodas, reuniones de cumpleaños'+
             'y eventos especiales y se ajustará a todas sus necesidades'
 
     }
-
   }
 
   componentDidMount(){
@@ -59,8 +55,6 @@ class LastSection extends Component {
     }
   }
 
-  // created so can be called in event handler so it can be removed(anonymos functions cant be removed )
-
   imageFunctionCaller = ()=>{
     this.imageAnimations();
   }
@@ -68,17 +62,15 @@ class LastSection extends Component {
   render() {
     return (
       <div className="more-services-description">
-
-      <LazyLoad offsetVertical={700} debounce={false}>
-        <div className="clip u-margin-top-huge">
-          <div className="clip--left" ref={this.left}></div>
-          <div className="clip--right" ref={this.right}></div>
-        </div>
-      </LazyLoad>
+        <LazyLoad offsetVertical={700} debounce={false}>
+          <div className="clip u-margin-top-huge">
+            <div className="clip--left" ref={this.left}></div>
+            <div className="clip--right" ref={this.right}></div>
+          </div>
+        </LazyLoad>
 
         <Card heading={this.card1.heading} text={this.card1.text} pic1={Pic1}  FadeIn={this.props.FadeIn} link="/parking"/>
         <Card heading={this.card2.heading} text={this.card2.text} pic1={Pic2}  FadeIn={this.props.FadeIn} link="/events"/>
-
       </div>
     );
   }

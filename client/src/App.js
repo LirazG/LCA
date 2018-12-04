@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 
 import ScrollToTop from './components/scroll-top-router.js';
@@ -70,7 +69,6 @@ class App extends Component {
               <Route exact path='/' component={Home}/>
               <Route path='/about' component={AboutUs}/>
               <Route exact path={'/hotel/reservation/:value'} component={HotelReservation} />
-
 
               <Route path='/hotel' component={Hotel}/>
 

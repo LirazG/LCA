@@ -1760,7 +1760,8 @@ body {
   color: #fff;
   font-size: 6rem;
   text-decoration: none;
-  position: fixed; }
+  position: fixed;
+  padding: 3rem; }
   .modal__icons__close {
     top: 0;
     right: 5%; }
@@ -2184,29 +2185,30 @@ body {
       width: 90%;
       margin: auto; } }
   .room__image-container {
-    height: 50%;
-    width: 100;
+    height: 23vw;
+    width: 100%;
     overflow: hidden; }
+    .room__image-container:hover {
+      cursor: pointer; }
     @media (max-width: 61.25em) {
       .room__image-container {
-        height: 50%; } }
+        height: 45vw; } }
     @media (max-width: 37.5em) {
       .room__image-container {
-        height: 45%; } }
+        height: 50vw; } }
     .room__image-container__picture {
       width: 100%;
       height: 100%;
       overflow: hidden; }
-      @media (min-width: 981px) and (max-width: 1350px) {
-        .room__image-container__picture {
-          width: 200%;
-          position: relative;
-          right: 50%; } }
-      @media (max-width: 61.25em) {
-        .room__image-container__picture {
-          width: 200%;
-          position: relative;
-          right: 50%; } }
+    .room__image-container__gallery {
+      display: block;
+      transform: translate3d(-50%, -50%, 0);
+      width: 80%;
+      height: 70%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 99999; }
   .room__info-list {
     min-height: 15rem;
     display: block; }

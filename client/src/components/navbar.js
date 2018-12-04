@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 import LogoSmall from '../img/logo-small.png';
-import ReserveFieldPic from '../img/grass-min.jpg';
 
 class Navbar extends Component {
 
@@ -134,8 +133,8 @@ class Navbar extends Component {
 
         <div className="navbar__rightsection">
           <div className="navbar__rightsection__content">
-            <a href="#" className="navbar__languagelink">English</a>
-            <a href="#" className="navbar__languagelink">Español</a>
+            <a className="navbar__languagelink">English</a>
+            <a className="navbar__languagelink">Español</a>
             <a onClick={this.reserveButtonAction} className="btn btn--white">Reservar</a>
           </div>
         </div>

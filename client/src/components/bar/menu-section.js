@@ -1,21 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazy-load';
-
 
 import MenuFront from '../../img/menu1.jpg';
 import MenuBack from '../../img/menu2.jpg';
 
+const MenuSection = () => {
 
-
-class MenuSection extends Component {
-
-  constructor(props){
-    super(props);
-
-  }
-
-
-  render() {
     return (
       <section className="bar__menu">
         <h3 className="heading2">Menu</h3>
@@ -32,7 +22,6 @@ class MenuSection extends Component {
         </LazyLoad>
       </section>
     );
-  }
 }
 
 export default MenuSection;

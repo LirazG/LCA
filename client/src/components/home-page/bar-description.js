@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
@@ -7,16 +7,7 @@ import BarView from '../../img/bar-flags-min.jpg';
 import BarPeople from '../../img/bar-people-min.jpg';
 import BarBeers from '../../img/bar-beers-min.jpg';
 
-
-class BarDescription extends Component {
-
-  constructor(props){
-    super(props);
-
-  }
-
-
-  render() {
+const BarDescription = () => {
     return (
       <div className="bar-description u-margin-top-big">
 
@@ -28,7 +19,7 @@ class BarDescription extends Component {
 
           <div className="col-1-of-3">
             <figure className="real-life-photo">
-            <img src={BarView} alt="real-photo-component" className="real-life-photo__image"/>
+            <img src={BarView} alt="flags" className="real-life-photo__image"/>
               <figcaption>
                 <h3 className="real-life-photo--header">Disfrutar gran vista</h3>
                 <p className="real-life-photo--text">
@@ -42,7 +33,7 @@ class BarDescription extends Component {
 
           <div className="col-1-of-3">
             <figure className="real-life-photo u-margin-top-big">
-            <img src={BarBeers} alt="real-photo-component" className="real-life-photo__image"/>
+            <img src={BarBeers} alt="beers" className="real-life-photo__image"/>
               <figcaption>
                 <h3 className="real-life-photo--header">Transmisiones en vivo</h3>
                 <p className="real-life-photo--text">
@@ -56,7 +47,7 @@ class BarDescription extends Component {
 
           <div className="col-1-of-3">
             <figure className="real-life-photo u-margin-top-huge">
-            <img src={BarPeople} alt="real-photo-component" className="real-life-photo__image"/>
+            <img src={BarPeople} alt="people-in-bar" className="real-life-photo__image"/>
               <figcaption>
                 <h3 className="real-life-photo--header">Relájate con amigos</h3>
                 <p className="real-life-photo--text">
@@ -72,7 +63,6 @@ class BarDescription extends Component {
         <Link to="/bar" className="btn btn--gold u-margin-top-huge sports-description__button--2">menú & galería</Link>
       </div>
     );
-  }
 }
 
 export default BarDescription;

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazy-load';
-
 import WelcomePic from './welcome-pic.js';
 
 class AboutUs extends Component {

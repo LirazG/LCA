@@ -3,8 +3,6 @@ import LazyLoad from 'react-lazy-load';
 
 import GalleryModel from './gallery-model.js';
 
-
-
 class Gallery extends Component {
 
   constructor(props) {
@@ -17,12 +15,11 @@ class Gallery extends Component {
     this.images = this.props.images;
   }
 
-
   renderImageContent(src, index) {
     return (
       <LazyLoad offsetVertical={200} debounce={false} key={src}>
         <div onClick={(e) => this.openModal(e, index)}>
-          <img src={src} key={src} alt='gallery-image' className="gallery__image"/>
+          <img src={src} key={src} alt='gallery-item' className="gallery__image"/>
         </div>
       </LazyLoad>
     ) ;
@@ -33,14 +30,14 @@ class Gallery extends Component {
   }
 
   closeModal(e) {
-    if (e != undefined) {
+    if (e !== undefined) {
       e.preventDefault();
     }
     this.setState ({ currentIndex: null });
   }
 
   findPrev(e) {
-    if (e != undefined) {
+    if (e !== undefined) {
       e.preventDefault();
     }
     this.setState(prevState => ({
@@ -49,7 +46,7 @@ class Gallery extends Component {
   }
 
   findNext(e) {
-    if (e != undefined) {
+    if (e !== undefined) {
       e.preventDefault();
     }
     this.setState(prevState => ({

@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 
 import * as Scroll from 'react-scroll';
 
-class Footer extends Component {
+const Footer = () => {
 
-  constructor(props){
-    super(props);
-
-  }
-
-  scrollToTop(){
+  const scrollToTop = () =>{
     Scroll.animateScroll.scrollToTop({smooth:'easeOutQuad'});
   }
 
-  render() {
     return (
       <footer className="footer u-margin-top-big">
         <div className="row">
@@ -62,12 +56,11 @@ class Footer extends Component {
 
           <span className="footer__scroll">
             <span className="footer__scroll--text">scroll top</span>
-            <span className="footer__scroll--arrow" onClick={this.scrollToTop}></span>
+            <span className="footer__scroll--arrow" onClick={scrollToTop}></span>
           </span>
 
       </footer>
     );
-  }
 }
 
 export default Footer;

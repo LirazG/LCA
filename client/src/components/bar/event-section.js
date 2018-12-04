@@ -1,19 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazy-load';
 
 import EventsGirl from '../../img/bar-girl-events.jpg';
 
-
-
-class EventSection extends Component {
-
-  constructor(props){
-    super(props);
-
-  }
-
-
-  render() {
+const EventSection = () => {
     return (
       <section className="bar__events u-margin-top-huge">
         <div className="row">
@@ -38,7 +28,6 @@ class EventSection extends Component {
         </div>
       </section>
     );
-  }
 }
 
 export default EventSection;

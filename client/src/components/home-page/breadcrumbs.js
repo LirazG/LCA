@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 
 class Breadcrumbs extends Component {
 
@@ -34,8 +32,7 @@ class Breadcrumbs extends Component {
 
     }
 
-
-    if(this.props.stateobj.key == 4){
+    if(this.props.stateobj.key === '4'){
       this.setState({
         n0:'breadcrumbs__bullet breadcrumbs__bullet--activated',
         n1:'breadcrumbs__bullet',
@@ -43,7 +40,7 @@ class Breadcrumbs extends Component {
         n3:'breadcrumbs__bullet',
         n4:'breadcrumbs__bullet',
       });
-    } else if (this.props.stateobj.key == 3){
+    } else if (this.props.stateobj.key === '3'){
       this.setState({
         n0:'breadcrumbs__bullet',
         n1:'breadcrumbs__bullet breadcrumbs__bullet--activated',
@@ -51,7 +48,7 @@ class Breadcrumbs extends Component {
         n3:'breadcrumbs__bullet',
         n4:'breadcrumbs__bullet',
       });
-    } else if (this.props.stateobj.key == 2){
+    } else if (this.props.stateobj.key === '2'){
       this.setState({
         n0:'breadcrumbs__bullet',
         n1:'breadcrumbs__bullet',
@@ -59,7 +56,7 @@ class Breadcrumbs extends Component {
         n3:'breadcrumbs__bullet',
         n4:'breadcrumbs__bullet',
       });
-    } else if (this.props.stateobj.key == 1){
+    } else if (this.props.stateobj.key === '1'){
       this.setState({
         n0:'breadcrumbs__bullet',
         n1:'breadcrumbs__bullet',
@@ -67,7 +64,7 @@ class Breadcrumbs extends Component {
         n3:'breadcrumbs__bullet breadcrumbs__bullet--activated',
         n4:'breadcrumbs__bullet',
       });
-    }  else if (this.props.stateobj.key == 0){
+    }  else if (this.props.stateobj.key === '0'){
       this.setState({
         n0:'breadcrumbs__bullet',
         n1:'breadcrumbs__bullet',
@@ -79,6 +76,7 @@ class Breadcrumbs extends Component {
   }
 
   render() {
+
     return (
       <aside className={this.state.appearance}>
         <span className="breadcrumbs__text">{this.props.stateobj.text}</span>

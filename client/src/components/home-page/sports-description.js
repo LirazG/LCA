@@ -51,8 +51,8 @@ class SportsDescription extends Component {
         <div className="col-1-of-2 sports-description__picture">
           <LazyLoad offsetVertical={700} debounce={false}>
             <span>
-              <img className="sports-description__picture--1" src={Pic1} alt="sports picture" />
-              <img className="sports-description__picture--2" src={Pic2} alt="sports picture2"/>
+              <img className="sports-description__picture--1" src={Pic1} alt="field1" />
+              <img className="sports-description__picture--2" src={Pic2} alt="field2"/>
             </span>
           </LazyLoad>
 

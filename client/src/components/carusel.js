@@ -31,26 +31,6 @@ class Carusel extends Component {
 
       this.caruselChanger(this.caruselCurrentActive);
     },3000);
-
-    // window.addEventListener('wheel',(e)=>{
-    //
-    //     clearInterval(this.interval);
-    //     clearTimeout(this.timeout);
-    //
-    //     this.timeout = setTimeout(()=>{
-    //       this.caruselCurrentActive = 1;
-    //       this.interval = setInterval(()=>{
-    //         if(this.caruselCurrentActive === 3){
-    //           this.caruselCurrentActive = 1;
-    //         } else {
-    //           this.caruselCurrentActive++;
-    //         }
-    //         this.caruselChanger(this.caruselCurrentActive);
-    //       },3000);
-    //     },500);
-    //
-    //
-    // });
   }
 
   componentWillUnmount(){
@@ -163,9 +143,9 @@ class Carusel extends Component {
       <LazyLoad offsetVertical={700} debounce={false} className="image__container">
         <div>
           <div className="image__container--arrow--1" onClick={this.caruselClickPlus}></div>
-          <img src={Pic1} alt="hotel-image" className={this.state.carusel1}/>
-          <img src={Pic2} alt="hotel-image" className={this.state.carusel2}/>
-          <img src={Pic3} alt="hotel-image" className={this.state.carusel3}/>
+          <img src={Pic1} alt="breakfest" className={this.state.carusel1}/>
+          <img src={Pic2} alt="woman-in-jacuzi" className={this.state.carusel2}/>
+          <img src={Pic3} alt="paris" className={this.state.carusel3}/>
           <span className="image__container--arrow--2" onClick={this.caruselClickMinus}></span>
         </div>
       </LazyLoad>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 class FlipCard extends Component {

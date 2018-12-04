@@ -9,7 +9,9 @@ class Room extends Component {
     super(props);
 
     this.state = {
-      fade: 'no-fade-card'
+      fade: 'no-fade-card',
+      modal:'form-success',
+      picture:'room__image-container'
     }
 
     this.roomAttributesList = [];
@@ -44,15 +46,36 @@ class Room extends Component {
     this.handleScroll(this.room.current,{fade:'fade-in-card'},{fade:'no-fade-card'},400);
   }
 
+  modalOpen = () =>{
+    this.setState({
+      modal:'form-success form-success--display',
+      picture:'room__image-container__gallery'
+    });
+  }
+
+  modalCancel = () =>{
+    this.setState({
+      modal:'form-success ',
+      picture:'room__image-container'
+    });
+  }
+
   render() {
 
     return (
+      <div>
+        <div className={this.state.modal} onClick={this.modalCancel}>
+          <div className={this.state.picture} >
+              <img className='room__image-container__picture' src={this.props.picture} alt="roomPicture" onClick={this.modalCancel}/>
+          </div>
+        </div>
 
-        <div className={this.state.fade + ' room u-margin-top-big room'} ref={this.room}>
+        <div className={this.state.fade + ' room u-margin-top-big'} ref={this.room}>
           <h2 className="heading2">{this.props.name.charAt(0).toUpperCase() + this.props.name.slice(1)}</h2>
-          <LazyLoad offsetVertical={700} debounce={false} className="room__image-container">
-              <img className="room__image-container__picture" src={this.props.picture} alt="roomPicture"/>
+          <LazyLoad offsetVertical={700} debounce={false} className='room__image-container' >
+              <img className='room__image-container__picture' src={this.props.picture} alt="roomPicture" onClick={this.modalOpen}/>
           </LazyLoad>
+
           <div className="room__info-container">
             <ul className="room__info-list u-margin-top-small">
               {this.roomAttributesList}
@@ -62,6 +85,7 @@ class Room extends Component {
           <Link to={'/hotel/reservation/' + this.props.name} className="btn btn--gold">Reservar !</Link>
         </div>
 
+      </div>
     );
   }
 }

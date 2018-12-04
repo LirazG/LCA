@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import Logo from '../../img/logo-bar.png';
 
-class Bar extends Component {
+const Bar = () => {
 
-  constructor(props){
-    super(props);
-
-  }
-
-  render() {
     return (
       <section className="row u-margin-top-medium bar__first-section u-margin-bottom-huge">
         <h3 className="heading3">El V.A.R resto bar</h3>
@@ -34,7 +27,7 @@ class Bar extends Component {
           <img src={Logo} alt="logo" className="bar__first-section__logo"/>
       </section>
     );
-  }
+
 }
 
 export default Bar;
