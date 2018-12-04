@@ -11,7 +11,7 @@ class Room extends Component {
     this.state = {
       fade: 'no-fade-card',
       modal:'form-success',
-      picture:'room__image-container'
+      picture:''
     }
 
     this.roomAttributesList = [];
@@ -33,6 +33,10 @@ class Room extends Component {
   }
 
   handleScroll(element,stateActive,stateRegular,offsetTopAddition = 0){
+    if(window.innerWidth < 500 || window.innerHeight < 500){
+      offsetTopAddition = 600;
+    }
+
     let elementPosition = element.offsetTop + element.offsetHeight;
     let viewPosition = window.pageYOffset + window.innerHeight + offsetTopAddition;
     if(elementPosition <= viewPosition){
@@ -56,7 +60,7 @@ class Room extends Component {
   modalCancel = () =>{
     this.setState({
       modal:'form-success ',
-      picture:'room__image-container'
+      picture:''
     });
   }
 

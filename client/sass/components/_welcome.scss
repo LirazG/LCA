@@ -1,9 +1,7 @@
 .welcome{
-
   overflow: hidden;
   height: 100vh;
   margin: auto -10rem;
-
 
   @include respond(big-tablet){
     height:80vh;
@@ -20,6 +18,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    @include respond(phone){
+      background-attachment: scroll;
+    }
 
     &--home{
       background-image:  linear-gradient(
