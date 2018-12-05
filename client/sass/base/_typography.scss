@@ -42,6 +42,8 @@ body{
 .heading3{
   line-height: 5rem;
   font-size: 4rem;
+  width:-webkit-fit-content;
+  width:-moz-fit-content;
   width:fit-content;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
@@ -79,6 +81,8 @@ body{
 }
 
 .heading5{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
@@ -111,6 +115,8 @@ body{
   font-size: 4rem;
   font-weight: 100;
   border-bottom: 1px solid $color-gold-text;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding-bottom: 0.5rem;
 
@@ -129,8 +135,15 @@ body{
   font-weight: 300;
   padding-top: 3rem;
   padding-bottom: 5rem;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+     -moz-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+       -o-transform: translateY(20px);
+          transform: translateY(20px);
   opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
   transition: all 1s;
 
   @include respond(tab-port){
@@ -144,7 +157,14 @@ body{
 
   &__activated{
     opacity: 1;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
     transition: all 1s;
   }
 }
@@ -154,6 +174,10 @@ body{
   font-size: 1.6rem;
   text-align: center;
   @media (min-width: 61.25em){
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -164,8 +188,19 @@ body{
   padding: 1rem 3rem;
   text-align: center;
 
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+
+     -moz-transform: translateY(20px);
+
+      -ms-transform: translateY(20px);
+
+       -o-transform: translateY(20px);
+
+          transform: translateY(20px);
   opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
   transition: all 1s;
 
   @include respond(tab-port){
@@ -180,7 +215,14 @@ body{
 
   &--activated{
     opacity: 1;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
     transition: all 1s;
   }
 
@@ -190,7 +232,11 @@ body{
 
 
 .visible{
-  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
   opacity: 1;
 }
 

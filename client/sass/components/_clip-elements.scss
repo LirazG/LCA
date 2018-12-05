@@ -15,17 +15,24 @@
     background-image: url('../src/img/salon-last-section-big.jpg');
     width:100vw;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
     margin-left: -10rem;
     display: inline-block;
     position: absolute;
     top:0;
     right:105%;
-    background-size: contain;
+    -webkit-background-size: contain;
+       -moz-background-size: contain;
+         -o-background-size: contain;
+            background-size: contain;
 
     @include respond (tab-port){
       width:110vw;
-      background-size: cover;
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+           -o-background-size: cover;
+              background-size: cover;
       background-position: 100% 100% ;
     }
   }
@@ -34,7 +41,8 @@
     background-image: url('../src/img/parking-last-section-big.jpg');
     width:100vw;
     height: 100%;
-    clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
     display: inline-block;
     position: absolute;
     top:0;
@@ -42,7 +50,10 @@
     background-position: 0 50%;
 
     @include respond (tab-port){
-      background-size: cover;
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+           -o-background-size: cover;
+              background-size: cover;
       background-position: 100% 100% ;
     }
 

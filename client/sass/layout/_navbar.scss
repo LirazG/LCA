@@ -2,16 +2,33 @@
   width:100%;
   height: 15vh;
   position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5rem 0 6rem 0;
   top:0;
   left: 0;
   text-align: center;
   background-color: transparent;
   z-index: 100;
+  -webkit-transition: background-color .5s, -webkit-box-shadow .1s;
+  transition: background-color .5s, -webkit-box-shadow .1s;
+  -o-transition: background-color .5s, box-shadow .1s;
+  -moz-transition: background-color .5s, box-shadow .1s, -moz-box-shadow .1s;
   transition: background-color .5s, box-shadow .1s;
-  transform-origin: top;
+  transition: background-color .5s, box-shadow .1s, -webkit-box-shadow .1s, -moz-box-shadow .1s;
+  -webkit-transform-origin: top;
+     -moz-transform-origin: top;
+      -ms-transform-origin: top;
+       -o-transform-origin: top;
+          transform-origin: top;
 
   @include respond (big-tablet){
     height: 10vh;
@@ -21,13 +38,20 @@
     position:fixed;
     top:20%;
     left:50%;
-    transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%,0,0);
+       -moz-transform: translate3d(-50%,0,0);
+            transform: translate3d(-50%,0,0);
     display: block;
-    border-radius: 5px;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
 
     background-color: rgba($color-blackish, 0.6);
     min-width: 50%;
     height:0px;
+    -webkit-transition: height .7s;
+    -o-transition: height .7s;
+    -moz-transition: height .7s;
     transition: height .7s;
   }
 
@@ -39,6 +63,9 @@
 
   &__checkbox:checked ~ &__background {
     height: 75vh;
+    -webkit-transition: height .7s;
+    -o-transition: height .7s;
+    -moz-transition: height .7s;
     transition: height .7s;
   }
 
@@ -46,12 +73,26 @@
     display: block;
     position: fixed;
     top:55%;
-    transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+       -moz-transform: translate3d(0,-50%,0);
+            transform: translate3d(0,-50%,0);
     margin: auto;
 
-    animation-name: navButton;
-    animation-duration: 1s;
-    animation-fill-mode:both;
+    -webkit-animation-name: navButton;
+
+       -moz-animation-name: navButton;
+
+         -o-animation-name: navButton;
+
+            animation-name: navButton;
+    -webkit-animation-duration: 1s;
+       -moz-animation-duration: 1s;
+         -o-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+       -moz-animation-fill-mode:both;
+         -o-animation-fill-mode:both;
+            animation-fill-mode:both;
   }
 
   &__checkbox:checked ~ &__itemlist > &__itemlist__item{
@@ -62,7 +103,9 @@
 //
   &__button{
     width:6rem;
-    transform: translate3d(-50%,0,0) !important;
+    -webkit-transform: translate3d(-50%,0,0) !important;
+       -moz-transform: translate3d(-50%,0,0) !important;
+            transform: translate3d(-50%,0,0) !important;
     display: none;
     position: fixed;
     top:2rem;
@@ -88,10 +131,18 @@
 
       &:hover &--item{
         &--1{
-          transform: translateY(-1px);
+          -webkit-transform: translateY(-1px);
+             -moz-transform: translateY(-1px);
+              -ms-transform: translateY(-1px);
+               -o-transform: translateY(-1px);
+                  transform: translateY(-1px);
         }
         &--3{
-          transform: translateY(1px);
+          -webkit-transform: translateY(1px);
+             -moz-transform: translateY(1px);
+              -ms-transform: translateY(1px);
+               -o-transform: translateY(1px);
+                  transform: translateY(1px);
         }
       }
     }
@@ -104,14 +155,24 @@
       width: 30px;
       background-color: $color-white;
       margin:0 auto 6px auto;
+      -webkit-transition: all .2s;
+      -o-transition: all .2s;
+      -moz-transition: all .2s;
       transition: all .2s;
     }
   }
 
   &__activated{
     background-color: rgba($color-blackish, 0.5);
-    box-shadow: 0px 1px 10px $color-blackish;
+    -webkit-box-shadow: 0px 1px 10px $color-blackish;
+       -moz-box-shadow: 0px 1px 10px $color-blackish;
+            box-shadow: 0px 1px 10px $color-blackish;
+    -webkit-transition: background-color .5s, -webkit-box-shadow .1s;
+    transition: background-color .5s, -webkit-box-shadow .1s;
+    -o-transition: background-color .5s, box-shadow .1s;
+    -moz-transition: background-color .5s, box-shadow .1s, -moz-box-shadow .1s;
     transition: background-color .5s, box-shadow .1s;
+    transition: background-color .5s, box-shadow .1s, -webkit-box-shadow .1s, -moz-box-shadow .1s;
   }
 
 
@@ -136,6 +197,8 @@
     }
 
     &__img--2{
+      width: -webkit-calc(5vw + 5rem);
+      width: -moz-calc(5vw + 5rem);
       width: calc(5vw + 5rem);
       display: none;
       margin-left: 2rem;
@@ -158,6 +221,9 @@
     @include respond(tab-port){
       display:none;
       opacity: 0;
+      -webkit-transition: opacity 1s;
+      -o-transition: opacity 1s;
+      -moz-transition: opacity 1s;
       transition: opacity 1s;
     }
 
@@ -181,6 +247,9 @@
         font-size: 1.9rem;
         position: relative;
         border-bottom: 0px solid $color-white;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        -moz-transition: all .3s;
         transition: all .3s;
 
         @include respond(big-tablet){
@@ -199,7 +268,10 @@
         }
 
         &:hover::after{
-          animation: navhover .2s forwards;
+          -webkit-animation: navhover .2s forwards;
+             -moz-animation: navhover .2s forwards;
+               -o-animation: navhover .2s forwards;
+                  animation: navhover .2s forwards;
         }
 
         &:hover{
@@ -212,6 +284,8 @@
 
   &__rightsection{
     display: block;
+    width: -webkit-calc(25% - 2rem);
+    width: -moz-calc(25% - 2rem);
     width: calc(25% - 2rem);
     margin-right: 2rem;
     &__content{

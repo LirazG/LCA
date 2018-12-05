@@ -16,7 +16,10 @@
     height:100%;
     background-position: 50% 80%;
     background-repeat: no-repeat;
-    background-size: cover;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
     background-attachment: fixed;
 
     @include respond(phone){
@@ -24,6 +27,28 @@
     }
 
     &--home{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/pool-big-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/pool-big-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/pool-big-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/pool-big-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
@@ -32,6 +57,28 @@
     }
 
     &--sports{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/football-big-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/football-big-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/football-big-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/football-big-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
@@ -48,6 +95,28 @@
     }
 
     &--parking{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/parking-big-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/parking-big-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/parking-big-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/parking-big-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
@@ -56,12 +125,35 @@
     }
 
     &--about{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/front-hotel-big-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/front-hotel-big-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/front-hotel-big-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/front-hotel-big-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
       ),
       url('../src/img/welcome-pictures/front-hotel-big-welcome.jpg');
-      filter: grayscale(.9);
+      -webkit-filter: grayscale(.9);
+              filter: grayscale(.9);
 
       @include respond(tab-port){
         background-position: 35%;
@@ -73,6 +165,28 @@
     }
 
     &--contact{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/contact-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/contact-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/contact-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/contact-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
@@ -90,6 +204,28 @@
     }
 
     &--events{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/events-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/events-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/events-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/events-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
@@ -100,6 +236,28 @@
     }
 
     &--bar{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/bar-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/bar-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/bar-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/bar-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)
@@ -117,6 +275,28 @@
     }
 
     &--hotel{
+      background-image:  -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba($color-blackish, 0.7)),
+        to(rgba($color-blackish, 0))
+      ),
+      url('../src/img/welcome-pictures/hotel-welcome.jpg');
+      background-image:  -webkit-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/hotel-welcome.jpg');
+      background-image:  -moz- oldlinear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/hotel-welcome.jpg');
+      background-image:  -o-linear-gradient(
+        rgba($color-blackish, 0.7),
+        rgba($color-blackish, 0)
+      ),
+      url('../src/img/welcome-pictures/hotel-welcome.jpg');
       background-image:  linear-gradient(
         rgba($color-blackish, 0.7),
         rgba($color-blackish, 0)

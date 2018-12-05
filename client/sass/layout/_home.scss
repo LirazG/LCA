@@ -1,33 +1,31 @@
 //home section
 
-//first section css is here to escape welcome section background-attachment fixed preformence problems
-.first-section{
-  display: block;
-  z-index: 100;
-  background-color: $color-grey-bg-test;
-  margin: 0 -10rem;
-  padding-top: 10rem;
-
-}
-
-
-// Hotel Description section
 .description{
 
   &__feature{
      text-align: center;
-     transform: translateY(50px);
+     -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+         -ms-transform: translateY(50px);
+          -o-transform: translateY(50px);
+             transform: translateY(50px);
+     -webkit-transition: all 1s;
+     -o-transition: all 1s;
+     -moz-transition: all 1s;
      transition: all 1s;
      opacity: 0;
+     width: -webkit-calc((100% - #{$col-side-margin}) / 2);
+     width: -moz-calc((100% - #{$col-side-margin}) / 2);
      width: calc((100% - #{$col-side-margin}) / 2);
      display: inline-block;
-
 
      &:first-of-type{
        margin-right:2rem;
      }
 
      @include respond(tab-port){
+       width: -webkit-calc((100% - #{$col-side-margin}) / 2);
+       width: -moz-calc((100% - #{$col-side-margin}) / 2);
        width: calc((100% - #{$col-side-margin}) / 2);
        display: inline-block;
        margin-top: 5rem;
@@ -44,13 +42,26 @@
      }
 
     &--active{
-      transform:translateY(0px);
+      -webkit-transform:translateY(0px);
+         -moz-transform:translateY(0px);
+          -ms-transform:translateY(0px);
+           -o-transform:translateY(0px);
+              transform:translateY(0px);
       opacity: 1;
+      -webkit-transition: all 1s;
+      -o-transition: all 1s;
+      -moz-transition: all 1s;
       transition: all 1s;
-      transition-timing-function:cubic-bezier(0.175, 0.585, 0.32, 1.475);
+      -webkit-transition-timing-function:cubic-bezier(0.175, 0.585, 0.32, 1.475);
+         -moz-transition-timing-function:cubic-bezier(0.175, 0.585, 0.32, 1.475);
+           -o-transition-timing-function:cubic-bezier(0.175, 0.585, 0.32, 1.475);
+              transition-timing-function:cubic-bezier(0.175, 0.585, 0.32, 1.475);
 
       &--delay{
-        transition-delay: .2s;
+        -webkit-transition-delay: .2s;
+           -moz-transition-delay: .2s;
+             -o-transition-delay: .2s;
+                transition-delay: .2s;
       }
     }
 
@@ -75,9 +86,13 @@
     @include clearfix;
 
     @include respond(tab-port){
+      width: -webkit-calc(5% + 5rem);
+      width: -moz-calc(5% + 5rem);
       width: calc(5% + 5rem);
     }
     @include respond(phone){
+      width: -webkit-calc(2% + 5rem);
+      width: -moz-calc(2% + 5rem);
       width: calc(2% + 5rem);
     }
   }
@@ -87,22 +102,46 @@
     z-index: 1;
     position: relative;
     width: 10%;
-    filter: drop-shadow(2px 45px 5px rgba(44, 44, 44, 0.25));
+    -webkit-filter: drop-shadow(2px 45px 5px rgba(44, 44, 44, 0.25));
+            filter: drop-shadow(2px 45px 5px rgba(44, 44, 44, 0.25));
     margin-top: -150px;
-    transform: translateY(150px);
+    -webkit-transform: translateY(150px);
+       -moz-transform: translateY(150px);
+        -ms-transform: translateY(150px);
+         -o-transform: translateY(150px);
+            transform: translateY(150px);
 
     @include respond(tab-port){
+      width: -webkit-calc(8% + 5rem);
+      width: -moz-calc(8% + 5rem);
       width: calc(8% + 5rem);
     }
 
     @include respond(phone){
+      width: -webkit-calc(7% + 5rem);
+      width: -moz-calc(7% + 5rem);
       width: calc(7% + 5rem);
     }
 
-    animation-name: bascketball;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
+    -webkit-animation-name: bascketball;
+
+       -moz-animation-name: bascketball;
+
+         -o-animation-name: bascketball;
+
+            animation-name: bascketball;
+    -webkit-animation-duration: 4s;
+       -moz-animation-duration: 4s;
+         -o-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+         -o-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: both;
+       -moz-animation-fill-mode: both;
+         -o-animation-fill-mode: both;
+            animation-fill-mode: both;
   }
 
   &__volley{
@@ -112,10 +151,14 @@
     width: 10%;
 
     @include respond(tab-port){
+      width: -webkit-calc(8% + 5rem);
+      width: -moz-calc(8% + 5rem);
       width: calc(8% + 5rem);
     }
 
     @include respond(phone){
+      width: -webkit-calc(6% + 5rem);
+      width: -moz-calc(6% + 5rem);
       width: calc(6% + 5rem);
     }
   }
@@ -146,7 +189,9 @@
 
     &--1{
       width: 100%;
-      border-radius: 2px;
+      -webkit-border-radius: 2px;
+         -moz-border-radius: 2px;
+              border-radius: 2px;
       margin-bottom: 3rem;
 
       @include respond(tab-port){
@@ -161,7 +206,9 @@
     }
 
     &--2{
-      border-radius: 4px;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
       width: 80%;
 
       @include respond(tab-port){
@@ -189,7 +236,11 @@
     left:0;
     z-index: -1;
     opacity: 0.15;
-    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+       -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+         -o-transform: rotate(20deg);
+            transform: rotate(20deg);
 
     @include respond(tab-port){
       width:200%;

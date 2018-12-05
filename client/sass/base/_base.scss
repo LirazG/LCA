@@ -3,7 +3,9 @@
 *::before {
   padding:0;
   margin:0;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html{
@@ -20,7 +22,9 @@ html{
 }
 
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: $color-grey-bg-test;
   overflow-x:hidden;
   cursor: default;

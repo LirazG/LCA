@@ -41,24 +41,49 @@
   display: inline-block;
   padding: 10px;
 
-  animation-name: blink;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: blink;
+     -moz-animation-name: blink;
+       -o-animation-name: blink;
+          animation-name: blink;
+  -webkit-animation-duration: 3s;
+     -moz-animation-duration: 3s;
+       -o-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 
   &--down{
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
 
     &--1{
-      animation-delay: .5s;
+      -webkit-animation-delay: .5s;
+         -moz-animation-delay: .5s;
+           -o-animation-delay: .5s;
+              animation-delay: .5s;
     }
 
     &--2{
-      animation-delay: 1s;
+      -webkit-animation-delay: 1s;
+         -moz-animation-delay: 1s;
+           -o-animation-delay: 1s;
+              animation-delay: 1s;
     }
 
     &--3{
-      animation-delay: 1.5s;
+      -webkit-animation-delay: 1.5s;
+         -moz-animation-delay: 1.5s;
+           -o-animation-delay: 1.5s;
+              animation-delay: 1.5s;
     }
   }
 }

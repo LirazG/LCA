@@ -4,8 +4,6 @@
     margin-top: 15rem;
   }
 
-
-
   &__div{
     text-align: center;
 
@@ -23,12 +21,26 @@
       font-size: 8rem;
       font-weight: 300;
       opacity:0;
-      transform: translateY(20px);
+      -webkit-transform: translateY(20px);
+         -moz-transform: translateY(20px);
+          -ms-transform: translateY(20px);
+           -o-transform: translateY(20px);
+              transform: translateY(20px);
+      -webkit-transition: all .9s;
+      -o-transition: all .9s;
+      -moz-transition: all .9s;
       transition: all .9s;
 
       &--activated{
         opacity:1;
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+           -moz-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+             -o-transform: translateY(0px);
+                transform: translateY(0px);
+        -webkit-transition: all .9s;
+        -o-transition: all .9s;
+        -moz-transition: all .9s;
         transition: all .9s;
       }
     }
@@ -39,8 +51,15 @@
     width:100vw;
     background-color: $color-grey-bg-test;
     position: relative;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    -moz-transition: all 2s;
     transition: all 2s;
-    transform-origin: right;
+    -webkit-transform-origin: right;
+       -moz-transform-origin: right;
+        -ms-transform-origin: right;
+         -o-transform-origin: right;
+            transform-origin: right;
     position: relative;
 
     @include respond(big-tablet){
@@ -53,8 +72,15 @@
     }
 
     &--activated &--curtain{
+      -webkit-transition: all 2s;
+      -o-transition: all 2s;
+      -moz-transition: all 2s;
       transition: all 2s;
-      transform-origin: right;
+      -webkit-transform-origin: right;
+         -moz-transform-origin: right;
+          -ms-transform-origin: right;
+           -o-transform-origin: right;
+              transform-origin: right;
       width:0;
     }
 
@@ -67,6 +93,9 @@
       display: block;
       z-index: 500;
       background: $color-grey-bg-test;
+      -webkit-transition: all 2s;
+      -o-transition: all 2s;
+      -moz-transition: all 2s;
       transition: all 2s;
     }
 
@@ -78,7 +107,10 @@
       top:0;
       left:0;
       background-position: 50% 55%;
-      background-size: cover;
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+           -o-background-size: cover;
+              background-size: cover;
     }
   }
 }

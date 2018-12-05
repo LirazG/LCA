@@ -9,7 +9,6 @@
     min-height: 50vh;
   }
 
-
   &__logo{
     @include respond(tab-port){
       margin-top: auto;
@@ -64,10 +63,20 @@
     text-align: center;
     color:$color-white;
     font-size: 6rem;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
     transition: all .2s;
 
     &:hover{
-      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+         -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+           -o-transform: scale(1.2);
+              transform: scale(1.2);
+      -webkit-transition: all .2s;
+      -o-transition: all .2s;
+      -moz-transition: all .2s;
       transition: all .2s;
     }
   }
@@ -100,6 +109,9 @@
       color: $color-white;
       font-size: 1.5rem;
       margin: 1rem;
+      -webkit-transition: all .2s;
+      -o-transition: all .2s;
+      -moz-transition: all .2s;
       transition: all .2s;
       @include respond(tab-port){
         font-size: 2rem;
@@ -107,6 +119,9 @@
 
       &:hover{
         color:$color-gold-text;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        -moz-transition: all .2s;
         transition: all .2s;
       }
     }
@@ -124,7 +139,11 @@
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 1.3rem;
       font-weight: 300;
-      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+         -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+           -o-transform: rotate(-90deg);
+              transform: rotate(-90deg);
       display: block;
       text-transform: uppercase;
       letter-spacing: .5px;
@@ -138,7 +157,9 @@
       cursor: pointer;
       width: 5rem;
       height: 5rem;
-      border-radius: 5rem;
+      -webkit-border-radius: 5rem;
+         -moz-border-radius: 5rem;
+              border-radius: 5rem;
       background-color: rgba($color-blackish, 0.6);
       position: relative;
 
@@ -147,10 +168,16 @@
         position: absolute;
         top:50%;
         left: 50%;
-        border-radius: .6rem;
+        -webkit-border-radius: .6rem;
+           -moz-border-radius: .6rem;
+                border-radius: .6rem;
         border:solid $color-white;
         border-width: 0 .8rem .8rem 0;
-        transform: translate(-50%,-35%) rotate(-135deg) ;
+        -webkit-transform: translate(-50%,-35%) rotate(-135deg) ;
+           -moz-transform: translate(-50%,-35%) rotate(-135deg) ;
+            -ms-transform: translate(-50%,-35%) rotate(-135deg) ;
+             -o-transform: translate(-50%,-35%) rotate(-135deg) ;
+                transform: translate(-50%,-35%) rotate(-135deg) ;
         padding:1rem;
 
       }

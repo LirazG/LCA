@@ -4,6 +4,9 @@
   z-index: 500;
   top:30%;
   left:0;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  -moz-transition: opacity .5s;
   transition: opacity .5s;
   opacity: 0;
 
@@ -13,6 +16,9 @@
 
   &--visible{
     opacity: 1;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    -moz-transition: opacity .5s;
     transition: opacity .5s;
   }
 
@@ -21,7 +27,11 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+       -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+         -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
     display: block;
     text-transform: uppercase;
     letter-spacing: .5px;
@@ -35,13 +45,23 @@
     background-color: $color-grey-text;
     display: block;
     margin: 4rem auto 4rem auto;
-    border-radius: 7px;
+    -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+            border-radius: 7px;
     cursor: pointer;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
     transition: all .2s;
 
     &--activated{
       background-color: transparent;
-      box-shadow: 0 0 0 3px $color-grey-text;
+      -webkit-box-shadow: 0 0 0 3px $color-grey-text;
+         -moz-box-shadow: 0 0 0 3px $color-grey-text;
+              box-shadow: 0 0 0 3px $color-grey-text;
+      -webkit-transition: all .2s;
+      -o-transition: all .2s;
+      -moz-transition: all .2s;
       transition: all .2s;
     }
   }

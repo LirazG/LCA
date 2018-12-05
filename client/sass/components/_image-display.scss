@@ -6,8 +6,15 @@
   &__item{
     width: 50rem;
     height: 35rem;
-    border-radius: 3px;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -o-transition: -o-transform .3s;
+    -moz-transition: transform .3s, -moz-transform .3s;
     transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s, -moz-transform .3s, -o-transform .3s;
     z-index: 1;
     position: absolute;
     overflow: none;
@@ -27,11 +34,24 @@
 
     &:hover,
     &:active{
-      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+         -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+           -o-transform: scale(1.2);
+              transform: scale(1.2);
+      -webkit-transition: -webkit-transform .3s;
+      transition: -webkit-transform .3s;
+      -o-transition: -o-transform .3s;
+      -moz-transition: transform .3s, -moz-transform .3s;
       transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s, -moz-transform .3s, -o-transform .3s;
       z-index: 2;
       @include respond(phone){
-        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+           -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+             -o-transform: scale(1.1);
+                transform: scale(1.1);
       }
     }
 

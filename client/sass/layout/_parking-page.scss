@@ -12,7 +12,9 @@
   &__container{
     width: 30rem;
     height: 30rem;
-    border-radius: 100%;
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
     overflow: hidden;
     position: absolute;
     left:0;
@@ -46,10 +48,13 @@
       content: '';
       width: 30rem;
       height: 30rem;
-      border-radius: 100%;
+      -webkit-border-radius: 100%;
+         -moz-border-radius: 100%;
+              border-radius: 100%;
       float: left;
       @include clearfix;
-      shape-outside: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+              shape-outside: circle(50% at 50% 50%);
       margin-left: 2rem;
       @include respond(tab-port){
         display: none;
@@ -73,10 +78,13 @@
       content: '';
       width: 30rem;
       height: 30rem;
-      border-radius: 100%;
+      -webkit-border-radius: 100%;
+         -moz-border-radius: 100%;
+              border-radius: 100%;
       float: right;
       @include clearfix;
-      shape-outside: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+              shape-outside: circle(50% at 50% 50%);
       margin-right: 2rem;
       @include respond(tab-port){
         display: none;

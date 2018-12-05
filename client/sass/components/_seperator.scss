@@ -3,7 +3,8 @@
   width: 100vw;
   height: 90vh;
   margin-left:-10rem;
-  clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
+  -webkit-clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
+          clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
 
   @include respond(tab-port){
     height:70vh;
@@ -23,7 +24,10 @@
     height: 100%;
     background-position: 50% 30%;
     background-attachment: fixed;
-    background-size: cover;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
     position: relative;
 
     @include respond(phone){

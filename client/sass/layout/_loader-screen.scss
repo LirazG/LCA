@@ -7,21 +7,31 @@
   width: 100%;
   height: 100%;
   background-image: rgb(0,0,0);
+  background-image: -webkit-radial-gradient(closest-corner, transparent -80%, $color-black 90%),url('../src/img/welcome-pictures/pool-big-welcome.jpg');
+  background-image: -moz- oldradial-gradient(closest-corner, transparent -80%, $color-black 90%),url('../src/img/welcome-pictures/pool-big-welcome.jpg');
+  background-image: -o-radial-gradient(closest-corner, transparent -80%, $color-black 90%),url('../src/img/welcome-pictures/pool-big-welcome.jpg');
   background-image: radial-gradient(closest-corner, transparent -80%, $color-black 90%),url('../src/img/welcome-pictures/pool-big-welcome.jpg');
-  background-size: cover;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 
   @include respond(phone){
     background-position: 50% 50%;
   }
 
-
   &__image{
     background-image: url('../src/img/logo.png');
-    background-size: cover;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
     position: fixed;
     top:40%;
     left:50%;
-    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate3d(-50%,-50%,0);
+       -moz-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);
     height: 20rem;
     width:50rem;
     z-index: 50001;
@@ -32,9 +42,18 @@
       position: fixed;
       top:100%;
       left:50%;
-      animation-name: loader;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
+      -webkit-animation-name: loader;
+         -moz-animation-name: loader;
+           -o-animation-name: loader;
+              animation-name: loader;
+      -webkit-animation-duration: 2s;
+         -moz-animation-duration: 2s;
+           -o-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+         -moz-animation-iteration-count: infinite;
+           -o-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
 
     }
   }

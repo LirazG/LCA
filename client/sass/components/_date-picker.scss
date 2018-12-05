@@ -19,7 +19,9 @@
     & > input{
       display: block;
       border:2px solid $color-gold-text;
-      border-radius: 3px;
+      -webkit-border-radius: 3px;
+         -moz-border-radius: 3px;
+              border-radius: 3px;
       padding:1rem;
     //  margin:auto;
       margin-bottom: 1rem;
@@ -32,7 +34,9 @@
     width: 100%;
     margin-bottom: 1rem;
     border:2px solid $color-gold-text;
-    border-radius: 3px;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
     padding:1rem;
     margin-top: 0.5rem;
   }
@@ -103,6 +107,8 @@
   &__time-list,
   &__time-box{
     width: 100% !important;
+    height: -webkit-calc(33rem + (1.7rem / 2)) !important;
+    height: -moz-calc(33rem + (1.7rem / 2)) !important;
     height: calc(33rem + (1.7rem / 2)) !important;
 
 

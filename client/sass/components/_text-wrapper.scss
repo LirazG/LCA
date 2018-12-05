@@ -13,19 +13,18 @@
       margin-bottom: 5rem;
     }
 
-
     &--img{
       display: block;
       height: 100%;
       width:100%;
-      filter: grayscale(.5);
-      border-radius: 4px;
-
+      -webkit-filter: grayscale(.5);
+              filter: grayscale(.5);
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
     }
   }
 }
-
-
 
 .text-wrapper > .paragraph{
   text-align: center;
