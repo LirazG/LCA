@@ -8,13 +8,12 @@
 
   @include respond(tab-port){
     height: 62rem;
-    margin-bottom: 35rem;
+    width: 80%;
+    margin: 35rem auto 0 auto;
   }
 
   @include respond(phone){
     width:60%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   &:hover &__side--front,

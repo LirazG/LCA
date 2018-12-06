@@ -60,13 +60,7 @@
       }
 
       &--element{
-        @include respond(tab-port){
-          margin-left: 20%;
-        }
 
-        @include respond(phone){
-          margin-left: 0;
-        }
       }
     }
   }

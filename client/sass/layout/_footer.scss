@@ -1,5 +1,8 @@
 .footer{
-  min-height: 70vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  min-height: 50vh;
   width:100vw;
   background-color: rgba($color-blackish, 0.6);
   padding:3rem;
@@ -9,47 +12,12 @@
     min-height: 50vh;
   }
 
-  &__logo{
-    @include respond(tab-port){
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: 20%;
-      margin-right: 20%;
-    }
-
-    @include respond(phone){
-      margin:auto;
-    }
+  @include respond(tab-port){
+    padding-right:10rem;
   }
 
-  &__second{
-    @include respond(tab-port){
-      margin-top: 5rem;
-      margin-bottom: 5rem;
-      margin-left: 15%;
-      margin-right: 10%;
-    }
-
-    @include respond(phone){
-      margin:auto;
-    }
-  }
-
-  &__third{
-    @include respond(tab-port){
-      margin-top: 12rem;
-      margin-bottom: 12rem;
-      margin-left: 15%;
-      margin-right: 15%;
-    }
-
-    @include respond(phone){
-      margin:auto;
-    }
-  }
-
-  &__forth{
-
+  @include respond(phone){
+    padding-right: 5rem;
   }
 
   &__follow{
@@ -82,15 +50,22 @@
   }
 
   &__img{
-    width: 90%;
-    padding-top:2rem;
+    width: 100%;
+
     @include respond(tab-port){
-      width:70%;
-      margin: auto;
+      width:50%;
+      -webkit-transform: translate3d(50%,0,0);
+         -moz-transform: translate3d(50%,0,0);
+              transform: translate3d(50%,0,0);
     }
 
     @include respond(phone){
       width:100%;
+      -webkit-transform: none;
+         -moz-transform: none;
+          -ms-transform: none;
+           -o-transform: none;
+              transform: none;
     }
 
   }

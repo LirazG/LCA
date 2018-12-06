@@ -45,7 +45,7 @@
     width: -moz-calc((100% - 2 * #{$col-side-margin}) / 3);
     width: calc((100% - 2 * #{$col-side-margin}) / 3);
     @include respond(tab-port){
-      width: 60% !important;
+      width: 100% !important;
     }
 
     @include respond(phone){

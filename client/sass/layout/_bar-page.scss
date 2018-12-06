@@ -99,13 +99,4 @@
     width: 100%;
   }
 
-  &__events .col-1-of-3{
-    @include respond(tab-port){
-      margin-left: 20%;
-    }
-
-    @include respond(phone){
-      margin-left: auto;
-    }
-  }
 }
