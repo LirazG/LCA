@@ -12,7 +12,6 @@
 
   @include respond(phone){
     margin-left: auto;
-    height:50vh;
   }
 
   @include respond(big-tablet){
@@ -22,7 +21,7 @@
   &--img{
     width: 100%;
     height: 100%;
-    background-position: 50% 30%;
+    background-position: 50%;
     background-attachment: fixed;
     -webkit-background-size: cover;
        -moz-background-size: cover;

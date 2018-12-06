@@ -141,7 +141,7 @@ class Home extends Component {
           <HotelDescription FadeIn={this.handleScroll}/>
         </section>
 
-        <Seperator bgimage={Seperator2} bgposition={'50% 0%'}/>
+        <Seperator bgimage={Seperator2} bgposition={'40% 0%'}/>
 
         <section className="sports" ref={this.sports}>
           <img className="sports__bascket" src={BascketBall} alt="bascket" />
@@ -151,7 +151,7 @@ class Home extends Component {
           <SportsDescription FadeIn={this.handleScroll} />
         </section>
 
-        <Seperator bgimage={Seperator3} bgposition={'50% 15%'}/>
+        <Seperator bgimage={Seperator3} bgposition={'60% 15%'}/>
 
         <section className="bar" ref={this.bar}>
           <MainHomeComponent FadeIn={this.handleScroll} img={ImgBarSection} PreTitle={'Servicios.III'} Title={'Resto bar'} SubTitle={'bebe una cerveza fría en nuestro bar!'}/>
