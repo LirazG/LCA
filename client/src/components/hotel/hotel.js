@@ -37,9 +37,9 @@ class Hotel extends Component {
     this.roomsOdd = [];
     for(let i = 0; i < RoomInfo.length; i++){
       if(i % 2 === 0){
-        this.roomsEven.push(<Room key={RoomInfo[i].details.name} picture={this.images[i]} attributes={RoomInfo[i].attributes} name={RoomInfo[i].details.name} price={RoomInfo[i].details.price}></Room>)
+        this.roomsEven.push(<Room key={RoomInfo[i].details.name} picture={this.images[i]} details={RoomInfo[i].details}></Room>)
       } else {
-        this.roomsOdd.push(<Room key={RoomInfo[i].details.name} picture={this.images[i]} attributes={RoomInfo[i].attributes} name={RoomInfo[i].details.name} price={RoomInfo[i].details.price}></Room>)
+        this.roomsOdd.push(<Room key={RoomInfo[i].details.name} picture={this.images[i]} details={RoomInfo[i].details}></Room>)
       }
     }
 
@@ -173,6 +173,13 @@ class Hotel extends Component {
         </div>
 
         <Seperator bgimage={SeperatorImg}/>
+
+        <div className="row">
+          <h4 className="paragraph-room u-text-center">
+            <i className="fas fa-info room__info-container__icon--icon"></i>
+            <b>*Avitacion Pima*</b> - se puede incluir una cama más a disponibilidad del hotel para 2 personas más (Coordinación previa)
+          </h4>
+        </div>
 
         <div className="row">
           <div className="col-1-of-2">

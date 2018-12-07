@@ -1,20 +1,65 @@
 .room{
-  height: 90rem;
+  height: 100rem;
+  border:2px solid $color-gold-text;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  position: relative;
 
   @include respond(tab-port){
     height: 110rem;
   }
 
   @include respond(phone){
-    height: 100rem;
+    height: 95rem;
     width: 90%;
     margin: auto;
   }
 
+  &__info-container{
+
+    &__list{
+      min-height:30vh;
+    }
+
+    &__icon{
+      width: 96%;
+      margin:1rem auto;
+
+      &--icon{
+        width: 5.5rem;
+        font-size: 4.5rem;
+        color:$color-gold-text;
+      }
+
+      &--price{
+        position: absolute;
+        bottom:4%;
+        right:5%;
+        @include respond(phone){
+          bottom:3%;
+        }
+      }
+
+      &--button{
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        @include respond(phone){
+          bottom:4%;
+        }
+      }
+    }
+  }
+
   &__image-container{
     height: 23vw;
-    width: 100%;
+    width: 96%;
     overflow: hidden;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    margin: auto;
 
     &:hover{
       cursor: pointer;
@@ -52,60 +97,9 @@
     }
   }
 
-  &__info-list{
-    min-height: 15rem;
-    display: block;
-
-    @media (min-width: 981px) and (max-width: 1350px){
-      min-height: 25rem;
-    }
-
-    @include respond(tab-port){
-      min-height: 25rem;
-    }
-
-    &--item{
-      font-size: 1.7rem;
-      width: 50%;
-      display: inline-block;
-      position: relative;
-      padding-left: 2rem;
-
-      @media (min-width: 981px) and (max-width: 1350px){
-        display: block;
-        width: 100%;
-      }
-
-      @include respond (tab-port){
-        display: block;
-        width: 100%;
-        text-align: center;
-      }
-
-      &::before{
-        content: '';
-        background-color: $color-blackish;
-        width: 7px;
-        height: 7px;
-        -webkit-border-radius: 100%;
-           -moz-border-radius: 100%;
-                border-radius: 100%;
-        position: absolute;
-        top:50%;
-        -webkit-transform: translate3d(0,-50%,0);
-           -moz-transform: translate3d(0,-50%,0);
-                transform: translate3d(0,-50%,0);
-        left:0;
-
-        @include respond (tab-port){
-          left: 25%;
-        }
-
-        @include respond (phone){
-          left: 10%;
-        }
-      }
-    }
+  .fa-user{
+    display: inline-block;
+    width: inherit;
+    margin-top: 1rem;
   }
-
 }

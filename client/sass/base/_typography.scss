@@ -75,7 +75,12 @@ body{
   @media(min-width: 61.25em){
     //for the text to stertch and not cause Asymetry
     width: 114%;
-    margin-left: -1rem;
+    margin-left: -2rem;
+  }
+
+  &--regular{
+    width: 100%;
+    margin-left: 0;
   }
 
 }
@@ -231,6 +236,18 @@ body{
        -o-transform: translateY(0px);
           transform: translateY(0px);
   opacity: 1;
+}
+
+.paragraph-room{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 300;
+  color: $color-blackish;
+
+  &--2{
+    padding-bottom: 0.5rem;
+    font-weight: 400;
+  }
 }
 
 .footer__text{

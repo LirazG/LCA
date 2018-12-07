@@ -15,9 +15,10 @@ class Room extends Component {
     }
 
     this.roomAttributesList = [];
+    this.numberOfGuests = [];
 
-    for(let i = 0; i < this.props.attributes.length; i++){
-      this.roomAttributesList.push(<li className="room__info-list--item" key={i}>{this.props.attributes[i]}</li>)
+    for(let i = 0; i < this.props.details.maxGuests; i++){
+      this.numberOfGuests.push(<i className="fas fa-user room__info-container__icon--icon" key={i}></i>)
     }
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -75,18 +76,40 @@ class Room extends Component {
         </div>
 
         <div className={this.state.fade + ' room u-margin-top-big'} ref={this.room}>
-          <h2 className="heading2">{this.props.name.charAt(0).toUpperCase() + this.props.name.slice(1)}</h2>
+          <h2 className="heading2">{this.props.details.name.charAt(0).toUpperCase() + this.props.details.name.slice(1)}</h2>
           <LazyLoad offsetVertical={700} debounce={false} className='room__image-container' >
               <img className='room__image-container__picture' src={this.props.picture} alt="roomPicture" onClick={this.modalOpen}/>
           </LazyLoad>
 
           <div className="room__info-container">
-            <ul className="room__info-list u-margin-top-small">
-              {this.roomAttributesList}
-            </ul>
-            <h3 className="heading3 u-text-center u-margin-bottom-medium">Pricio: <b>{this.props.price}</b> soles por noche</h3>
+          
+          <div className="room__info-container__list">
+            <div className="room__info-container__icon">
+              <h4 className="paragraph-room"><i className="fas fa-bed room__info-container__icon--icon"></i> - {this.props.details.bed}</h4>
+            </div>
+            <div className="room__info-container__icon">
+              <h4 className="paragraph-room"><i className="fas fa-shower room__info-container__icon--icon"></i> - {this.props.details.bathroom}</h4>
+            </div>
+            <div className="room__info-container__icon">
+              <h4 className="paragraph-room"><i className="fas fa-coffee room__info-container__icon--icon"></i> - Desayuno disponible, se paga en el alojamiento</h4>
+            </div>
+            <div className="room__info-container__icon">
+              {this.props.details.other.one ? <h4 className="paragraph-room"><i className="fas fa-info room__info-container__icon--icon"></i> - {this.props.details.other.one}</h4>:null}
+            </div>
           </div>
-          <Link to={'/hotel/reservation/' + this.props.name} className="btn btn--gold">Reservar !</Link>
+
+            <div className="room__info-container__icon--guests">
+              <p className="paragraph-room paragraph-room--2 u-text-center u-margin-top-medium">Huéspedes</p>
+              <div className="u-text-center">{this.numberOfGuests}</div>
+            </div>
+
+          </div>
+
+          <div className="room__info-container__icon--price">
+            <p className="paragraph-room paragraph-room--2 u-text-center">Precio</p>
+            <p className="paragraph-room u-text-center"><b>S/.{this.props.details.price}</b></p>
+          </div>
+          <Link to={'/hotel/reservation/' + this.props.details.name} className="btn btn--gold room__info-container__icon--button">Reservar !</Link>
         </div>
 
       </div>
