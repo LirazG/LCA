@@ -175,7 +175,7 @@ class Hotel extends Component {
         <Seperator bgimage={SeperatorImg}/>
 
         <div className="row">
-          <h4 className="paragraph-room u-text-center">
+          <h4 className="paragraph-room u-text-center u-margin-bottom-medium u-block-center">
             <i className="fas fa-info room__info-container__icon--icon"></i>
             <b>*Avitacion Pima*</b> - se puede incluir una cama más a disponibilidad del hotel para 2 personas más (Coordinación previa)
           </h4>

@@ -3,7 +3,6 @@ import LazyLoad from 'react-lazy-load';
 
 import FlipCard from '../flip-card.js';
 
-
 import VideoSrc1 from '../../img/Warming-up.mp4';
 import VideoSrc2 from '../../img/Warming-up.webm';
 import VideoSrc3 from '../../img/Warming-up.ogv';
@@ -11,7 +10,6 @@ import VideoSrc3 from '../../img/Warming-up.ogv';
 import Pic1 from '../../img/SStest.jpg';
 import Pic2 from '../../img/SStest1.jpg';
 import Pic3 from '../../img/seperator2.jpg';
-
 
 class Info extends Component {
 
@@ -47,7 +45,6 @@ class Info extends Component {
         ' 20.00 soles.',
         ' 25.00 soles.'
       ]
-
     }
 
     this.paragraph = React.createRef();
@@ -67,9 +64,6 @@ class Info extends Component {
   fadeCaller = ()=> {
     this.props.fadeIn.call(this,this.element,this.stateActive,this.stateRegular);
   }
-
-
-
 
   render() {
     return (
@@ -101,19 +95,19 @@ class Info extends Component {
           </LazyLoad>
 
           <div className="row sports-page__description__text">
-            <h2 className="heading2 heading2--white u-margin-bottom-medium">Nuestras Canchas</h2>
+            <h2 className="heading2 heading2--white u-margin-top-small">Nuestras Canchas</h2>
 
-            <div className="col-1-of-3 row sports-page__description__text--element">
+            <div className="col-1-of-3 sports-page__description__text--element">
               <h5 className="heading5 heading5--noborder">I.Cancha chica-fútbol</h5>
               <FlipCard pic={Pic1} list={this.state.properties1} fieldName={'small'} />
             </div>
 
-            <div className="col-1-of-3 row sports-page__description__text--element">
+            <div className="col-1-of-3 sports-page__description__text--element">
               <h5 className="heading5 heading5--noborder">II.Cancha grande-fútbol</h5>
               <FlipCard pic={Pic2} list={this.state.properties2} fieldName={'big'} />
             </div>
 
-            <div className="col-1-of-3 row sports-page__description__text--element">
+            <div className="col-1-of-3 sports-page__description__text--element">
               <h5 className="heading5 heading5--noborder">III.volley – basquet - fronton</h5>
               <FlipCard pic={Pic3} list={this.state.properties3} fieldName={'other'} />
             </div>

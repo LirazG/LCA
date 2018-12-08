@@ -55,6 +55,7 @@
 
     & .flip-card{
       height: 100vh;
+      margin:0rem auto 15rem auto;
       @include respond(phone){
         height: 70vh;
         width: 100%;

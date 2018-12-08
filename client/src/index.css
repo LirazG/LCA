@@ -577,7 +577,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2.7rem;
   font-weight: 300;
-  color: #2c2c2c; }
+  color: #2c2c2c;
+  margin-left: 0.5rem; }
   .paragraph-room--2 {
     padding-bottom: 0.5rem;
     font-weight: 400; }
@@ -1278,7 +1279,7 @@ body {
   margin: 0 -10rem; }
   .sports-page__description {
     position: relative;
-    min-height: 160vh; }
+    min-height: 85vw; }
     @media (min-height: 63.5em) {
       .sports-page__description {
         min-height: 110vh; } }
@@ -1288,9 +1289,11 @@ body {
     min-height: 65vh; } }
     .sports-page__description__bg-video {
       display: block;
-      width: 150%;
+      width: -webkit-calc(85vw + 70rem);
+      width: -moz-calc(85vw + 70rem);
+      width: calc(85vw + 70rem);
       position: absolute;
-      top: 0;
+      top: 10%;
       z-index: 1;
       left: 50%;
       -webkit-transform: translate3d(-50%, 0, 0);
@@ -1321,7 +1324,8 @@ body {
       z-index: 50; }
       @media (max-width: 61.25em) {
         .sports-page__description__text {
-          position: relative; } }
+          position: relative;
+          width: inherit; } }
 
 .loader {
   position: fixed;
@@ -1349,6 +1353,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center;
     position: fixed;
     top: 40%;
     left: 50%;
@@ -1625,7 +1630,8 @@ body {
     .bar__menu {
       height: 150vh; } }
   .bar__menu .flip-card {
-    height: 100vh; }
+    height: 100vh;
+    margin: 0rem auto 15rem auto; }
     @media (max-width: 37.5em) {
       .bar__menu .flip-card {
         height: 70vh;
@@ -2326,7 +2332,7 @@ body {
     text-align: center; }
 
 .flip-card {
-  height: 55rem;
+  height: 60rem;
   -webkit-perspective: 150rem;
   -moz-perspective: 150rem;
   perspective: 150rem;
@@ -2335,7 +2341,7 @@ body {
     .flip-card {
       height: 62rem;
       width: 80%;
-      margin: 35rem auto 0 auto; } }
+      margin: 15rem auto 15rem auto; } }
   @media (max-width: 37.5em) {
     .flip-card {
       width: 60%; } }
@@ -2359,7 +2365,7 @@ body {
     transform: rotateY(0deg); }
   .flip-card__side {
     background-color: rgba(255, 255, 255, 0.7);
-    height: 55rem;
+    height: 100%;
     -webkit-transition: all .8s ease;
     -o-transition: all .8s ease;
     -moz-transition: all .8s ease;
@@ -3038,7 +3044,7 @@ body {
     padding: 5px 0 !important; }
 
 .room {
-  height: 105rem;
+  height: 100rem;
   border: 2px solid #D9A816;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -3046,21 +3052,21 @@ body {
   position: relative; }
   @media (max-width: 61.25em) {
     .room {
-      height: 110rem; } }
+      height: 115rem; } }
   @media (max-width: 37.5em) {
     .room {
       height: 95rem;
       width: 90%;
       margin: auto; } }
   .room__info-container__list {
-    min-height: 30vh; }
+    min-height: 25vh; }
   .room__info-container__icon {
     width: 96%;
     margin: 1rem auto; }
     .room__info-container__icon--icon {
-      width: 5.5rem;
-      font-size: 4.5rem;
-      color: #D9A816; }
+      width: 5rem;
+      font-size: 3rem;
+      color: #2c2c2c; }
     .room__info-container__icon--price {
       position: absolute;
       bottom: 4%;

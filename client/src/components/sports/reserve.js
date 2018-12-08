@@ -15,7 +15,7 @@ class SportsReservation extends Component {
   constructor(props) {
     super(props);
 
-    this.currentField = window.location.pathname.slice(20);
+    this.currentField = this.props.location.field || window.location.pathname.slice(20);
 
     this.state={
       // date calender start value to current date

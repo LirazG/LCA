@@ -88,9 +88,9 @@ class Navbar extends Component {
           <div className="form-success__message__success">
             <div className="form-success__message__success--field-reserve">
               <h3 className="heading3">Canchas</h3>
-              <Link onClick={this.modalCancel} to='/sports/reservation/big' className="btn btn--red">Grande</Link>
-              <Link onClick={this.modalCancel} to='/sports/reservation/small' className="btn btn--red">Chica</Link>
-              <Link onClick={this.modalCancel} to='/sports/reservation/other' className="btn btn--red">Otros</Link>
+              <Link onClick={this.modalCancel} to={{pathname:'/sports/reservation/big',field:'big'}} className="btn btn--red">Grande</Link>
+              <Link onClick={this.modalCancel} to={{pathname:'/sports/reservation/small',field:'small'}} className="btn btn--red">Chica</Link>
+              <Link onClick={this.modalCancel} to={{pathname:'/sports/reservation/other',field:'other'}} className="btn btn--red">Otros</Link>
             </div>
             <div className="form-success__message__success--hotel-reserve">
               <h4 className="heading3">Hotel</h4>

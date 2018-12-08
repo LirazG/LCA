@@ -1,15 +1,14 @@
 .flip-card{
-  height:55rem;
+  height:60rem;
   -webkit-perspective: 150rem;
      -moz-perspective: 150rem;
           perspective: 150rem;
-  //position: relative;
   width: 100%;
 
   @include respond(tab-port){
     height: 62rem;
     width: 80%;
-    margin: 35rem auto 0 auto;
+    margin: 15rem auto 15rem auto;
   }
 
   @include respond(phone){
@@ -39,7 +38,7 @@
 
   &__side{
     background-color: rgba($color-white, 0.7);
-    height: 55rem;
+    height: 100%;
     -webkit-transition: all .8s ease;
     -o-transition: all .8s ease;
     -moz-transition: all .8s ease;

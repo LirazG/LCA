@@ -64,6 +64,9 @@ class Info extends Component {
 
 
   handleScroll(element,stateActive,stateRegular,offsetTopAddition = 0){
+    if(window.innerWidth < 980){
+      offsetTopAddition = 250;
+    }
     let elementPosition = element.offsetTop + element.offsetHeight;
     let viewPosition = window.pageYOffset+window.innerHeight + offsetTopAddition;
     if(elementPosition <= viewPosition){

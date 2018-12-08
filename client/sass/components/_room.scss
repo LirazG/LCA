@@ -1,5 +1,5 @@
 .room{
-  height: 105rem;
+  height: 100rem;
   border:2px solid $color-gold-text;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
@@ -7,7 +7,7 @@
   position: relative;
 
   @include respond(tab-port){
-    height: 110rem;
+    height: 115rem;
   }
 
   @include respond(phone){
@@ -19,7 +19,7 @@
   &__info-container{
 
     &__list{
-      min-height:30vh;
+      min-height:25vh;
     }
 
     &__icon{
@@ -27,9 +27,9 @@
       margin:1rem auto;
 
       &--icon{
-        width: 5.5rem;
-        font-size: 4.5rem;
-        color:$color-gold-text;
+        width: 5rem;
+        font-size: 3rem;
+        color:$color-blackish;
       }
 
       &--price{

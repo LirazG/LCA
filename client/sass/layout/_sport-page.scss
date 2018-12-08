@@ -3,7 +3,7 @@
 
   &__description{
     position: relative;
-    min-height:160vh;
+    min-height:85vw;
 
     @include respond(big-tablet){
       min-height: 110vh;
@@ -17,9 +17,11 @@
 
     &__bg-video{
       display: block;
-      width:150%;
+      width: -webkit-calc(85vw + 70rem);
+      width: -moz-calc(85vw + 70rem);
+      width: calc(85vw + 70rem);
       position: absolute;
-      top:0;
+      top:10%;
       z-index: 1;
       left:50%;
       -webkit-transform: translate3d(-50%,0,0);
@@ -57,10 +59,7 @@
 
       @include respond(tab-port){
         position: relative;
-      }
-
-      &--element{
-
+        width: inherit;
       }
     }
   }
