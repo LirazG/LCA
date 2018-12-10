@@ -22,10 +22,10 @@
     position: absolute;
     top:0;
     right:105%;
-    -webkit-background-size: contain;
-       -moz-background-size: contain;
-         -o-background-size: contain;
-            background-size: contain;
+    -webkit-background-size: 60% 100%;
+       -moz-background-size: 60% 100%;
+         -o-background-size: 60% 100%;
+            background-size: 60% 100%;
 
     @include respond (tab-port){
       width:110vw;

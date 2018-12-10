@@ -42,6 +42,7 @@ body{
 .heading3{
   line-height: 5rem;
   font-size: 4rem;
+  width: 26rem;
   width:-webkit-fit-content;
   width:-moz-fit-content;
   width:fit-content;
@@ -86,6 +87,10 @@ body{
 }
 
 .heading5{
+  //fallback
+  width: 10rem;
+  text-align: center;
+  //
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

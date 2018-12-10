@@ -6,6 +6,18 @@
   -webkit-clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
           clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
 
+  //for edge browser decrease height because not supporting clip path
+  &__height{
+    height: 60vh;
+    @include respond(tab-port){
+      height:45vh;
+    }
+
+    @include respond(phone){
+      height: 40vh;
+    }
+  }
+
   @include respond(tab-port){
     height:70vh;
   }

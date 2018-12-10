@@ -6,6 +6,7 @@ import FlipCard from '../flip-card.js';
 import VideoSrc1 from '../../img/Warming-up.mp4';
 import VideoSrc2 from '../../img/Warming-up.webm';
 import VideoSrc3 from '../../img/Warming-up.ogv';
+import VideoSrcImg from '../../img/Warming-up.jpg';
 
 import Pic1 from '../../img/SStest.jpg';
 import Pic2 from '../../img/SStest1.jpg';
@@ -91,6 +92,9 @@ class Info extends Component {
                 <source src={VideoSrc3} type="video/ogv" />
                 Your browser not supported
               </video>
+              <div className="sports-page__description__bg-video__content sports-page__description__bg-video__content--fallback">
+                <img src={VideoSrcImg} alt="fallback football"/>
+              </div>
             </div>
           </LazyLoad>
 

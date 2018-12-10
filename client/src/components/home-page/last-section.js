@@ -45,6 +45,12 @@ class LastSection extends Component {
       //
       let sidePosition = window.innerWidth > 600 ? 'left:25%;' : 'left:35%;';
 
+      const isIE = /*@cc_on!@*/false || !!document.documentMode;
+      const isEdge = !isIE && !!window.StyleMedia;
+      if(isEdge || isIE){
+        sidePosition = 'left:40%;'
+      }
+
       if(elementPosition < viewPosition-200 ){
           this.left.current.style = 'right:10%; transition:all .3s;';
           this.right.current.style = `${sidePosition} transition:all .3s;`
