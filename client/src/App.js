@@ -34,11 +34,13 @@ class App extends Component {
     if(document.getElementsByClassName('loader')[0]){
       document.getElementsByClassName('loader')[0].style.display = 'none';
     }
-    window.addEventListener('wheel',(e)=>{ this.handleScroll(e) });
+    window.addEventListener('mousewheel',(e)=>{ this.handleScroll(e) });
+    window.addEventListener("DOMMouseScroll",(e)=>{ this.handleScroll(e) });
   }
 
   componentWillUnmount(){
-    window.removeEventListener('wheel',(e)=>{ this.handleScroll(e) });
+    window.removeEventListener('mousewheel',(e)=>{ this.handleScroll(e) });
+    window.removeEventListener("DOMMouseScroll",(e)=>{ this.handleScroll(e) });
   }
 
 
@@ -47,7 +49,7 @@ class App extends Component {
     e.stopPropagation();
     e.preventDefault();
 
-    if(e.wheelDelta < 0){
+    if(e.wheelDelta < 0 || -e.detail < 0){
       this.counter = this.counter+200;
       Scroll.animateScroll.scrollMore(this.counter,{smooth:'easeOutQuad'});
     } else {

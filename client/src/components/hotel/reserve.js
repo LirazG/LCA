@@ -23,6 +23,10 @@ class HotelReservation extends Component {
       lastName:'',
       phone:'',
       email:'',
+      form1:'',
+      form2:'',
+      form3:'',
+      form4:'',
       errors:{},
       modal:"form-success",
       message:"form-success__message"
@@ -167,7 +171,34 @@ class HotelReservation extends Component {
         });
       })
         .catch(err =>{
-          this.setState({errors:err.response.data})
+          this.setState({errors:err.response.data},()=>{
+            console.log(this.state.errors,'hi');
+            const {errors} = this.state;
+
+            if(errors.firstName){
+              this.setState({form2:"form-invalid"});
+            } else {
+              this.setState({form2:"form-valid"});
+            }
+
+            if(errors.lastName){
+              this.setState({form3:"form-invalid"});
+            } else {
+              this.setState({form3:"form-valid"});
+            }
+
+            if(errors.phone){
+              this.setState({form1:"form-invalid"});
+            } else {
+              this.setState({form1:"form-valid"});
+            }
+
+            if(errors.email){
+              this.setState({form4:"form-invalid"});
+            } else {
+              this.setState({form4:"form-valid"});
+            }
+          })
         })
   }
 
@@ -249,7 +280,7 @@ class HotelReservation extends Component {
 
               <div className="react-datepicker-wrapper">
                 <label htmlFor="email">Email:</label>
-                <input maxLength="30"  className={this.state.form1} type="text" id="email" name="email" value={this.state.email} onChange={this.onChange} />
+                <input maxLength="30"  className={this.state.form4} type="text" id="email" name="email" value={this.state.email} onChange={this.onChange} />
                 {errors.email && (<div className="form-validation">{errors.email}</div>)}
               </div>
 

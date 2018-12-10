@@ -10,9 +10,6 @@ const admin = require('./routes/api/admin');
 
 const app = express();
 
-// enable ssl redirect
-app.use(sslRedirect());
-
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -36,6 +33,9 @@ app.use('/api/users',users);
 
 //serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
+  // enable ssl redirect
+  app.use(sslRedirect());
+
   //set static folder
   app.use(express.static('client/build'));
 
