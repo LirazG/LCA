@@ -34,6 +34,7 @@ class SportsReservation extends Component {
       form2:'',
       form3:'',
       form4:'',
+      reservationDisplay:'display-off',
       modal:'form-success ',
       message:"form-success__message ",
     }
@@ -98,7 +99,10 @@ class SportsReservation extends Component {
         ]
         this.setState({
           timeExclude: [...momentArray,...closedHoursArr]
-        },()=>{console.log(this.state.timeExclude)});
+        },()=>{
+          console.log(this.state.timeExclude);
+          this.setState({reservationDisplay:'display-on'})
+        });
       });
     }
 
@@ -180,7 +184,6 @@ class SportsReservation extends Component {
       if(newFieldReservation.hourCheckout === '23:59'){
         newFieldReservation.hourCheckout = '24';
       } else {
-        console.log(newFieldReservation.hourCheckout.slice(0, newFieldReservation.hourCheckout.length));
         newFieldReservation.hourCheckout = newFieldReservation.hourCheckout.slice(0, newFieldReservation.hourCheckout.length-3)
       }
 
@@ -260,7 +263,7 @@ class SportsReservation extends Component {
       night = 25;
     }
     for(let i = start; i < end ; i++){
-      if(i < 19){
+      if(i < 19 && i > 2){
         priceCounter = priceCounter + day;
       } else {
         priceCounter = priceCounter + night;
@@ -273,14 +276,14 @@ class SportsReservation extends Component {
         <div className="row">
           <h2 className="heading2">Reservar un campo</h2>
           <div className="u-text-center">
-            <h5 className="heading5--noborder">Precio día: <b>{day} soles</b> (08:00 - 19:00)</h5>
-            <h5 className="heading5--noborder">Precio noche: <b>{night} soles</b> (19:00 - 02:00)</h5>
-            <h5 className="heading5--noborder">*Mínimo de una hora</h5>
+            <h5 className="paragraph-room">Precio día: <b>{day} soles</b> (08:00 - 19:00)</h5>
+            <h5 className="paragraph-room">Precio noche: <b>{night} soles</b> (19:00 - 02:00)</h5>
+            <h5 className="paragraph-room">*Mínimo de una hora</h5>
           </div>
           <hr className="u-margin-top-big"/>
         </div>
 
-        <div className="row">
+        <div className={this.state.reservationDisplay + ' row'}>
           <div className="col-1-of-2 u-margin-top-medium">
             <form id="fields" className="form">
               <div className="react-datepicker-wrapper form__arrow__container">
