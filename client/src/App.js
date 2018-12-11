@@ -58,10 +58,7 @@ class App extends Component {
     }
   }
 
-
-
   render() {
-
     return (
       <Router>
         <ScrollToTop>
@@ -74,9 +71,9 @@ class App extends Component {
 
               <Route path='/hotel' component={Hotel}/>
 
-              <Route exact path='/sports/reservation/big' component={SportsReservation}/>
-              <Route exact path='/sports/reservation/small' component={SportsReservation}/>
-              <Route exact path='/sports/reservation/other' component={SportsReservation}/>
+              <Route exact path='/sports/reservation/big' key={'big'} component={SportsReservation}/>
+              <Route exact path='/sports/reservation/small' key={'small'} component={SportsReservation}/>
+              <Route exact path='/sports/reservation/other' key={'other'} component={SportsReservation}/>
               <Route path="/sports/reservation/*" component={Sports} />
 
               <Route path='/sports' component={Sports}/>

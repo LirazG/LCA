@@ -65,7 +65,6 @@ class SportsReservation extends Component {
   }
 
 
-
   //reservation dates functionallty
     handleDateChange(date) {
       this.setState({Date: date,timeExclude: []},()=>{
@@ -284,9 +283,11 @@ class SportsReservation extends Component {
         <div className="row">
           <div className="col-1-of-2 u-margin-top-medium">
             <form id="fields" className="form">
-
-              <div className="react-datepicker-wrapper">
+              <div className="react-datepicker-wrapper form__arrow__container">
               <label htmlFor="type">Tipo de cancha:</label>
+              <svg height="20" width="20" className="form__arrow__container--arrow">
+                <polygon points="0 0, 10 0, 5 5" style={{fill:'black'}}/>
+              </svg>
               <select id="type" form="fields" defaultValue={this.currentField} onChange={this.selectUrlHandler}>
                 <option value="big" >Cancha fútbol grande</option>
                 <option value="small" >Cancha fútbol chica</option>

@@ -445,10 +445,11 @@ body {
     margin-left: 0; }
 
 .heading5 {
-  width: 10rem;
+  width: 15rem;
   text-align: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
+  width: -webkit-fit-content;
   width: fit-content;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
@@ -461,6 +462,10 @@ body {
     .heading5 {
       font-size: 2.5rem; } }
   .heading5--noborder {
+    width: 10rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     border: none;
     font-size: 2.5rem;
     font-weight: 300;
@@ -476,8 +481,10 @@ body {
   font-size: 4rem;
   font-weight: 100;
   border-bottom: 1px solid #D9A816;
+  width: 60%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
+  width: -webkit-fit-content;
   width: fit-content;
   padding-bottom: 0.5rem; }
   @media (max-width: 61.25em) {
@@ -1937,7 +1944,11 @@ body {
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    -webkit-border-radius: 40rem;
+    -moz-border-radius: 40rem;
+    -webkit-border-radius: 40rem;
+    border-radius: 40rem; }
 
 .fade-in {
   opacity: 1;
@@ -2243,7 +2254,10 @@ body {
       height: 100%;
       position: absolute;
       top: 0;
-      left: 0; }
+      left: 0;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%; }
       @media (max-width: 61.25em) {
         .card__pic--img--1 {
           width: 100%;
@@ -2781,6 +2795,19 @@ body {
     .image-display__item--3 {
       top: 40%;
       left: 40%; }
+
+.form #type {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.form__arrow__container {
+  position: relative; }
+
+.form__arrow__container--arrow {
+  position: absolute;
+  top: 70%;
+  right: 0; }
 
 .form > textarea:focus,
 .form > input:focus {

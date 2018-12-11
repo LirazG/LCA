@@ -1,5 +1,21 @@
 .form{
 
+  & #type{
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+  }
+
+  &__arrow__container{
+    position: relative;
+  }
+
+  &__arrow__container--arrow{
+    position: absolute;
+    top: 70%;
+    right: 0;
+  }
+
   & > textarea:focus,
   & > input:focus{
       outline: none;

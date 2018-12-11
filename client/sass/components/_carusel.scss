@@ -81,6 +81,11 @@
       position: absolute;
       top:0;
       left:0;
+      //put b-r on the img + container to support safari overflow problems
+      -webkit-border-radius: 40rem;
+         -moz-border-radius: 40rem;
+              -webkit-border-radius: 40rem;
+                 border-radius: 40rem;
     }
   }
 }
