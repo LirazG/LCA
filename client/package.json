@@ -18,7 +18,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "compile:sass": "node-sass sass/main.scss src/index.css -w"
+    "watch:sass": "node-sass sass/main.scss src/index.precompressed.css -w",
+    "compile:sass": "node-sass sass/main.scss src/index.precompressed.css",
+    "compress:css": "node-sass src/index.precompressed.css src/index.css --output-style compressed",
+    "build:css":"npm run compile:sass && npm run compress:css"
   },
   "proxy": "http://localhost:5000"
 }
