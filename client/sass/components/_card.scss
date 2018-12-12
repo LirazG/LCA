@@ -107,9 +107,7 @@
     text-align: center;
 
     @include respond (tab-port){
-      width: -webkit-calc(90%);
-      width: -moz-calc(90%);
-      width: calc(90%);
+      width:90%;
       position: absolute;
       top:45%;
       left:50%;
@@ -121,7 +119,5 @@
     @include respond (phone){
       top:35%;
     }
-
-
   }
 }

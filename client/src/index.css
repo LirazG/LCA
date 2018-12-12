@@ -2092,18 +2092,13 @@ body {
 .seperator {
   position: relative;
   width: 100vw;
-  height: 90vh;
-  margin-left: -10rem;
-  -webkit-clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
-  clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%); }
-  .seperator__height {
-    height: 60vh; }
-    @media (max-width: 61.25em) {
-      .seperator__height {
-        height: 45vh; } }
-    @media (max-width: 37.5em) {
-      .seperator__height {
-        height: 40vh; } }
+  height: 60vh;
+  margin-left: -10rem; }
+  @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .seperator {
+      -webkit-clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
+      clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
+      height: 90vh; } }
   @media (max-width: 61.25em) {
     .seperator {
       height: 70vh; } }
@@ -2275,9 +2270,7 @@ body {
     text-align: center; }
     @media (max-width: 61.25em) {
       .card__text {
-        width: -webkit-calc(90%);
-        width: -moz-calc(90%);
-        width: calc(90%);
+        width: 90%;
         position: absolute;
         top: 45%;
         left: 50%;
@@ -2575,7 +2568,7 @@ body {
 
 .welcome {
   overflow: hidden;
-  height: 100vh;
+  height: 70vh;
   margin: auto -10rem; }
   @media (min-height: 63.5em) {
     .welcome {
