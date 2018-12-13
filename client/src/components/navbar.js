@@ -36,12 +36,8 @@ class Navbar extends Component {
   }
 
   navbarChanger(){
-    let trigger = window.innerHeight;
-    //if user uses phone then nav activated earlyer because of smaller welcome section
-    if(window.innerWidth < 600){
-      trigger = trigger * 0.7;
-    }
-    if(window.scrollY > trigger - 50){
+    let trigger = window.innerHeight * 0.8;
+    if(window.scrollY > trigger - 100){
       this.setState({navbar:'navbar navbar__activated'});
     } else {
       this.setState({navbar:'navbar'});
@@ -64,7 +60,6 @@ class Navbar extends Component {
   }
 
   reserveButtonAction = (e) => {
-    //e.preventDefault();
     this.setState({
       modal:"form-success form-success--display",
       message:"form-success__message form-success__message--display"
