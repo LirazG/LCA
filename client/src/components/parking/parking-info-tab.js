@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class ParkingInfoTab extends Component {
   constructor(props){
@@ -10,8 +12,6 @@ class ParkingInfoTab extends Component {
     this.state = {
 
     };
-
-
   }
 
   componentDidMount(){
@@ -22,15 +22,15 @@ class ParkingInfoTab extends Component {
       this.setState({activated:'transform-from-right'});
       this.stateRegular = {activated:'transform-from-right'};
     }
-
     this.stateActive = {activated:'transform-disactivated'}
 
-
-    window.addEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   fadeInCaller = ()=>{

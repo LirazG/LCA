@@ -9,6 +9,7 @@ class Sports extends Component {
 
   constructor(props) {
     super(props);
+    
     this.images = this.importAll(require.context('../../img/sports-page-img', false, /\.(png|jpe?g|svg)$/));
   }
 

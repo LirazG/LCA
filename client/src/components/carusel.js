@@ -35,7 +35,6 @@ class Carusel extends Component {
 
   componentWillUnmount(){
     clearInterval(this.interval);
-    window.removeEventListener('wheel',(e)=>{});
   }
 
   caruselChanger(caruselCurrentActive){
@@ -142,7 +141,7 @@ class Carusel extends Component {
     return (
       <LazyLoad offsetVertical={700} debounce={false} className="image__container">
         <div>
-          <div className="image__container--arrow--1" onClick={this.caruselClickPlus}></div>
+          <span className="image__container--arrow--1" onClick={this.caruselClickPlus}></span>
           <img src={Pic1} alt="breakfest" className={this.state.carusel1}/>
           <img src={Pic2} alt="woman-in-jacuzi" className={this.state.carusel2}/>
           <img src={Pic3} alt="paris" className={this.state.carusel3}/>

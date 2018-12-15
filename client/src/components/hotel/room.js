@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class Room extends Component {
 
@@ -26,11 +28,13 @@ class Room extends Component {
   }
 
   componentDidMount(){
-    window.addEventListener('scroll',this.handleScrollCaller);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.handleScrollCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.handleScrollCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.handleScrollCaller, passiveSupported ? { passive: true } : false);
   }
 
   handleScroll(element,stateActive,stateRegular,offsetTopAddition = 0){
@@ -82,7 +86,7 @@ class Room extends Component {
           </LazyLoad>
 
           <div className="room__info-container">
-          
+
           <div className="room__info-container__list">
             <div className="room__info-container__icon">
               <h4 className="paragraph-room"><i className="fas fa-bed room__info-container__icon--icon"></i> - {this.props.details.bed}</h4>

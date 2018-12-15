@@ -51,15 +51,15 @@
     width:100vw;
     background-color: $color-grey-bg-test;
     position: relative;
-    -webkit-transition: all 2s;
-    -o-transition: all 2s;
-    -moz-transition: all 2s;
-    transition: all 2s;
-    -webkit-transform-origin: right;
-       -moz-transform-origin: right;
-        -ms-transform-origin: right;
-         -o-transform-origin: right;
-            transform-origin: right;
+    -webkit-transition: transform 2s;
+    -o-transition: transform 2s;
+    -moz-transition: transform 2s;
+    -webkit-transition: -webkit-transform 2s;
+    transition: -webkit-transform 2s;
+    -o-transition: -o-transform 2s;
+    -moz-transition: transform 2s, -moz-transform 2s;
+    transition: transform 2s;
+    transition: transform 2s, -webkit-transform 2s, -moz-transform 2s, -o-transform 2s;
     position: relative;
 
     @include respond(big-tablet){
@@ -72,16 +72,17 @@
     }
 
     &--activated &--curtain{
-      -webkit-transition: all 2s;
-      -o-transition: all 2s;
-      -moz-transition: all 2s;
-      transition: all 2s;
-      -webkit-transform-origin: right;
-         -moz-transform-origin: right;
-          -ms-transform-origin: right;
-           -o-transform-origin: right;
-              transform-origin: right;
-      width:0;
+      -webkit-transition: transform 2s;
+      -o-transition: transform 2s;
+      -moz-transition: transform 2s;
+      -webkit-transition: -webkit-transform 2s;
+      transition: -webkit-transform 2s;
+      -o-transition: -o-transform 2s;
+      -moz-transition: transform 2s, -moz-transform 2s;
+      transition: transform 2s;
+      transition: transform 2s, -webkit-transform 2s, -moz-transform 2s, -o-transform 2s;
+      //removes curtain to reveal picture
+      transform: scale3d(0,1,1);
     }
 
     &--curtain{
@@ -97,6 +98,11 @@
       -o-transition: all 2s;
       -moz-transition: all 2s;
       transition: all 2s;
+      -webkit-transform-origin: right;
+         -moz-transform-origin: right;
+          -ms-transform-origin: right;
+           -o-transform-origin: right;
+              transform-origin: right;
     }
 
 

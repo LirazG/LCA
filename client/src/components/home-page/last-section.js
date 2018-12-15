@@ -5,6 +5,9 @@ import Card from '../card.js';
 // card pics
 import Pic1 from '../../img/parking-icon.jpg';
 import Pic2 from '../../img/salon-icon.jpg';
+//middlewares
+import middlewares from '../../middleware/middleware';
+
 
 class LastSection extends Component {
 
@@ -30,11 +33,13 @@ class LastSection extends Component {
   }
 
   componentDidMount(){
-    window.addEventListener('scroll',this.imageFunctionCaller);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.imageFunctionCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.imageFunctionCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.imageFunctionCaller, passiveSupported ? { passive: true } : false);
   }
 
   imageAnimations(){

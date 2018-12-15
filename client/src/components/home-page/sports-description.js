@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Pic1 from '../../img/sport-description.jpg';
 import Pic2 from '../../img/sport-description2.jpg';
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class SportsDescription extends Component {
 
@@ -20,11 +22,13 @@ class SportsDescription extends Component {
     this.element = this.paragraph.current;
     this.stateActive= {paragraph:'paragraph-sports paragraph-sports--activated'};
     this.stateRegular= {paragraph:'paragraph-sports'};
-    window.addEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   // created so can be called in event handler so it can be removed(anonymos functions cant be removed )

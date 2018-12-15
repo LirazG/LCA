@@ -22,6 +22,8 @@ import Seperator1 from '../../img/seperator1.jpg';
 import Seperator2 from '../../img/seperator2.jpg';
 import Seperator3 from '../../img/seperator3.jpg';
 
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class Home extends Component {
   constructor(props){
@@ -45,16 +47,18 @@ class Home extends Component {
 
   componentDidMount(){
     this.refArr=[this.more.current,this.bar.current,this.sports.current,this.hotel.current,this.history.current];
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
 
-    window.addEventListener('scroll',this.verticalCaller);
-    window.addEventListener('scroll',this.horizonCaller);
-    window.addEventListener('scroll',this.breadCaller);
+    window.addEventListener('scroll',this.verticalCaller, passiveSupported ? { passive: true } : false);
+    window.addEventListener('scroll',this.horizonCaller, passiveSupported ? { passive: true } : false);
+    window.addEventListener('scroll',this.breadCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.verticalCaller);
-    window.removeEventListener('scroll',this.horizonCaller);
-    window.removeEventListener('scroll',this.breadCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.verticalCaller, passiveSupported ? { passive: true } : false);
+    window.removeEventListener('scroll',this.horizonCaller, passiveSupported ? { passive: true } : false);
+    window.removeEventListener('scroll',this.breadCaller, passiveSupported ? { passive: true } : false);
   }
 
 // change breadcrumbs state according to sections position by passing value to props
@@ -90,9 +94,9 @@ class Home extends Component {
       let elementPosition = element.offsetTop+element.offsetHeight -100;
       let viewPosition = window.pageYOffset+window.innerHeight;
       if(elementPosition <= viewPosition && window.innerWidth > 450){
-        element.style.transform = `translate(70vw,${-(elementPosition-viewPosition)/4}px)`;
+        element.style.transform = `translate3d(70vw,${-(elementPosition-viewPosition)/4}px,0)`;
       } else if(elementPosition <= viewPosition && window.innerWidth < 450){
-        element.style.transform = `translate(80vw,${-(elementPosition-viewPosition)/5}px)`;
+        element.style.transform = `translate3d(80vw,${-(elementPosition-viewPosition)/5}px,0)`;
       }
     }
   }
@@ -102,9 +106,9 @@ class Home extends Component {
       let elementPosition = element.offsetTop + element.offsetHeight;
       let viewPosition = window.pageYOffset + window.innerHeight;
       if(elementPosition-200 <= viewPosition && window.innerWidth > 450){
-        element.style.transform = `translate(${(elementPosition-viewPosition)}px,-15vh) rotate(${(elementPosition-viewPosition)}deg)`;
+        element.style.transform = `translate3d(${(elementPosition-viewPosition)}px,-15vh,0) rotate(${(elementPosition-viewPosition)}deg)`;
       } else if(elementPosition-200 <= viewPosition && window.innerWidth < 450){
-        element.style.transform = `translate(${(elementPosition-viewPosition)}px,-10vh) rotate(${(elementPosition-viewPosition)}deg)`;
+        element.style.transform = `translate3d(${(elementPosition-viewPosition)}px,-10vh,0) rotate(${(elementPosition-viewPosition)}deg)`;
       }
     }
   }

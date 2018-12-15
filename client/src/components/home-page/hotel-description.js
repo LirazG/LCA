@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Carusel from '../carusel.js';
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class HotelDescription extends Component {
 
@@ -28,13 +30,16 @@ class HotelDescription extends Component {
     this.regularState1 = {feature1:'description__feature',feature2:'description__feature'};
     this.activeState2 = {feature3:'description__feature description__feature--active',feature4:'description__feature description__feature--active description__feature description__feature--active--delay'};
     this.regularState2 = {feature3:'description__feature',feature4:'description__feature'};
-    window.addEventListener('scroll',this.fadeInCaller);
-    window.addEventListener('scroll',this.fadeInCaller2);
+
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
+    window.addEventListener('scroll',this.fadeInCaller2, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.fadeInCaller);
-    window.removeEventListener('scroll',this.fadeInCaller2);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
+    window.removeEventListener('scroll',this.fadeInCaller2, passiveSupported ? { passive: true } : false);
   }
 
   // created so can be called in event handler so it can be removed(anonymos functions cant be removed )
@@ -49,7 +54,6 @@ class HotelDescription extends Component {
 
   render() {
     return (
-
       <div className="row description">
         <div className="col-1-of-2 description__image">
           <Carusel />

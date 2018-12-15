@@ -11,6 +11,8 @@ import VideoSrcImg from '../../img/Warming-up.jpg';
 import Pic1 from '../../img/SStest.jpg';
 import Pic2 from '../../img/SStest1.jpg';
 import Pic3 from '../../img/seperator2.jpg';
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class Info extends Component {
 
@@ -55,11 +57,13 @@ class Info extends Component {
     this.element = this.paragraph.current;
     this.stateActive={paragraph:'paragraph paragraph__activated'};
     this.stateRegular={paragraph:'paragraph'};
-    window.addEventListener('scroll',this.fadeCaller);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.fadeCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.fadeCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.fadeCaller, passiveSupported ? { passive: true } : false);
   }
 
   fadeCaller = ()=> {

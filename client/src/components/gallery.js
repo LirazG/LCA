@@ -56,7 +56,6 @@ class Gallery extends Component {
 
 
   render() {
-
     return (
       <section className="u-margin-top-huge">
         <h1 className="heading2 u-margin-bottom-small">Galería</h1>

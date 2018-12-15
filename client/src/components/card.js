@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+//middlewares
+import middlewares from '../middleware/middleware';
 
 class Card extends Component {
 
@@ -18,11 +20,13 @@ class Card extends Component {
     this.elem = this.element.current;
     this.activeState = {st:' fade-in-card'} ;
     this.regularState= {st:' no-fade-card' };
-    window.addEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   // created so can be called in event handler so it can be removed(anonymos functions cant be removed )

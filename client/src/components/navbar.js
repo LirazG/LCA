@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 import LogoSmall from '../img/logo-small.png';
+//middlewares
+import middlewares from '../middleware/middleware';
 
 class Navbar extends Component {
 
   constructor(){
-
     super();
 
     this.state = {
@@ -24,13 +25,15 @@ class Navbar extends Component {
     this.deactivate = (e)=>{this.navbarDeactivateSmallScreens(e)};
     this.clearOnResize = (e)=> this.checkbox.current.checked = false;
 
-    window.addEventListener('scroll',this.navbarChanger);
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.navbarChanger, passiveSupported ? { passive: true } : false);
     window.addEventListener('click',this.deactivate);
     window.addEventListener('resize',this.clearOnResize);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.navbarChanger);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.navbarChanger, passiveSupported ? { passive: true } : false);
     window.removeEventListener('click',this.deactivate);
     window.removeEventListener('resize',this.clearOnResize);
   }

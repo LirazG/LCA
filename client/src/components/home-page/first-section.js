@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
-
+//picture
 import Front from '../../img/welcome-pictures/front-hotel-big-welcome.jpg';
+//middlewares
+import middlewares from '../../middleware/middleware';
 
 class firstSection extends Component {
 
@@ -17,11 +19,14 @@ class firstSection extends Component {
     this.element = this.paragraph.current;
     this.stateActive={paragraph:'paragraph paragraph__activated'};
     this.stateRegular={paragraph:'paragraph'};
-    window.addEventListener('scroll',this.fadeInCaller);
+
+    let passiveSupported = middlewares.checkPassiveOptionBrowser();
+    window.addEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll',this.fadeInCaller);
+    let passiveSupported = false;
+    window.removeEventListener('scroll',this.fadeInCaller, passiveSupported ? { passive: true } : false);
   }
 
 
