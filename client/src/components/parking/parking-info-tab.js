@@ -46,7 +46,7 @@ class ParkingInfoTab extends Component {
         </LazyLoad>
 
         <div className={this.props.textclass}>
-            <h3 className="heading5--noborder">{this.props.heading}</h3>
+            <h5 className="heading5--noborder">{this.props.heading}</h5>
             <p className="paragraph-sports paragraph-sports--activated">{this.props.text}</p>
         </div>
       </div>

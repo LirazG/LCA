@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import WelcomePic from './welcome-pic.js';
 import CustomForm from './custom-form.js';
 
-class AboutUs extends Component {
-
-  render() {
+const ContactUs = () => {
     return (
       <main className="contact-us">
         <WelcomePic classProp={'welcome__img welcome__img--contact'} />
@@ -69,7 +67,6 @@ class AboutUs extends Component {
 
       </main>
     );
-  }
 }
 
-export default AboutUs;
+export default ContactUs;

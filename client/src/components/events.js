@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazy-load';
 
 import WelcomePic from './welcome-pic.js';
@@ -9,9 +9,7 @@ import Pic2 from '../img/events-display-2.jpg';
 import Pic3 from '../img/events-display-1.jpg';
 
 
-class Events extends Component {
-
-  render() {
+const Events = () => {
     return (
       <main className="events">
         <WelcomePic classProp={'welcome__img welcome__img--events'} />
@@ -51,7 +49,6 @@ class Events extends Component {
         <ShapedCard className={' shaped-card--2'}/>
       </main>
     );
-  }
 }
 
 export default Events;

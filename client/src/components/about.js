@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import WelcomePic from './welcome-pic.js';
 
-class AboutUs extends Component {
-
-  render() {
+const AboutUs = () => {
     return (
       <main className="about-us">
         <WelcomePic classProp={'welcome__img welcome__img--about'} />
@@ -44,7 +42,6 @@ class AboutUs extends Component {
         </div>
       </main>
     );
-  }
 }
 
 export default AboutUs;
