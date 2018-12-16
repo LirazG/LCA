@@ -48,20 +48,20 @@ class LastSection extends Component {
       let elementPosition = element.offsetParent.offsetTop;
       let viewPosition = window.pageYOffset+window.innerHeight;
       //
-      let sidePosition = window.innerWidth > 600 ? 'left:25%;' : 'left:35%;';
+      let sidePosition = window.innerWidth > 600 ? 'transform:translate3d(-65%,0,0);' : 'transform:translate3d(-55%,0,0);';
 
       const isIE = /*@cc_on!@*/false || !!document.documentMode;
       const isEdge = !isIE && !!window.StyleMedia;
       if(isEdge || isIE){
-        sidePosition = 'left:40%;'
+        sidePosition = 'transform:translate3d(-45%,0,0);'
       }
 
       if(elementPosition < viewPosition-200 ){
-          this.left.current.style = 'right:10%; transition:all .3s;';
-          this.right.current.style = `${sidePosition} transition:all .3s;`
+        this.left.current.style = 'transform:translate3d(90%,0,0); transition:all .3s;';
+        this.right.current.style = `${sidePosition} transition:all .3s;`
       } else {
-        this.left.current.style = 'right:105%; transition:all .3s;';
-        this.right.current.style = 'left:90%; transition:all .3s;';
+        this.left.current.style = ' transition:all .3s;';
+        this.right.current.style = ' transition:all .3s;';
       }
     }
   }

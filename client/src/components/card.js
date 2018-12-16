@@ -32,7 +32,7 @@ class Card extends Component {
   // created so can be called in event handler so it can be removed(anonymos functions cant be removed )
 
   fadeInCaller = () =>{
-    this.props.FadeIn.call(this,this.elem,this.activeState,this.regularState,350)
+    this.props.FadeIn.call(this,this.elem,this.activeState,this.regularState,150)
   }
 
   render() {

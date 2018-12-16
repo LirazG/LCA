@@ -6,8 +6,10 @@
      -moz-border-radius: 50rem;
           border-radius: 50rem;
   margin:auto;
-  -webkit-filter:drop-shadow(0px 5px 10px $color-grey-text);
-          filter:drop-shadow(0px 5px 10px $color-grey-text);
+  -webkit-box-shadow: (0px 5px 15px rgba($color-black, 0.5));
+     -moz-box-shadow: (0px 5px 15px rgba($color-black, 0.5));
+          box-shadow: (0px 5px 15px rgba($color-black, 0.5));
+  position: relative;
 
   @include respond (tab-port){
     margin-top: 15rem;
@@ -21,15 +23,44 @@
     width: 90%;
   }
 
+  &::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    -webkit-border-radius: 50rem;
+       -moz-border-radius: 50rem;
+            border-radius: 50rem;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-box-shadow: (1px 1px 10px rgba($color-black, 0.5));
+       -moz-box-shadow: (1px 1px 10px rgba($color-black, 0.5));
+            box-shadow: (1px 1px 10px rgba($color-black, 0.5));
+  }
+
+  &:hover::after{
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+  }
 
   &:hover{
-    -webkit-transform: translateY(-36px);
-       -moz-transform: translateY(-36px);
-        -ms-transform: translateY(-36px);
-         -o-transform: translateY(-36px);
-            transform: translateY(-36px);
-    -webkit-filter:drop-shadow(0px 5px 5px $color-grey-text);
-            filter:drop-shadow(0px 5px 5px $color-grey-text);
+    -webkit-transform: translate3d(0,-36px,0);
+       -moz-transform: translate3d(0,-36px,0);
+        -ms-transform: translate3d(0,-36px,0);
+         -o-transform: translate3d(0,-36px,0);
+            transform: translate3d(0,-36px,0);
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+
     @include respond (phone){
       -webkit-transform:translateY(0);
          -moz-transform:translateY(0);
@@ -39,6 +70,7 @@
       -webkit-filter:none;
               filter:none;
     }
+
   }
 
 
@@ -89,9 +121,7 @@
         width: 100%;
         height: 100%;
       }
-
     }
-
   }
 
   &__text{

@@ -31,6 +31,6 @@ body {
   padding:0 10rem;
 
   @include respond(phone){
-      padding:0;
+    padding:0;
   }
 }

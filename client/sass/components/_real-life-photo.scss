@@ -14,6 +14,13 @@
     }
   }
 
+  @include respond(tab-port){
+    display: block;
+    margin: auto;
+    width:80%;
+    height:80%;
+  }
+
   @include respond(phone){
     width:95%;
     height:95%;
