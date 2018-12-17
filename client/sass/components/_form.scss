@@ -89,6 +89,11 @@
 .form-validation{
   font-size: 1.5rem;
   color: $color-primary-red-light;
+
+  &--big{
+    font-size: 3rem;
+    font-weight: 400;
+  }
 }
 
 //////////////////////modal css

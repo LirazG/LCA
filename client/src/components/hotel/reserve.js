@@ -172,7 +172,7 @@ class HotelReservation extends Component {
       })
         .catch(err =>{
           this.setState({errors:err.response.data},()=>{
-            console.log(this.state.errors,'hi');
+            console.log(this.state.errors,'error list');
             const {errors} = this.state;
 
             if(errors.firstName){
@@ -223,7 +223,7 @@ class HotelReservation extends Component {
         <WelcomePic classProp={'welcome__img welcome__img--hotel'}/>
         <div className="row">
           <h2 className="heading2">Reservar avitacion - {this.props.match.params.value.charAt(0).toUpperCase() + this.props.match.params.value.slice(1)}</h2>
-          <h5 className="heading5--noborder u-text-center u-margin-bottom-medium">Precio: <b>{this.roomPrice} soles</b> por noche</h5>
+          <h5 className="heading5--noborder u-block-center u-margin-bottom-medium">Precio: <b>{this.roomPrice} soles</b> por noche</h5>
             <div className="reservation-picture">
               <img className="reservation-picture__image" src={this.roomImage} alt="room-display"/>
             </div>
@@ -304,6 +304,7 @@ class HotelReservation extends Component {
 
         <div className="row u-text-center">
           <h2 className="heading2">Sección de pago</h2>
+          {errors.msg && (<div className="form-validation form-validation--big"> lo siento, la habitación ha sido tomada por esta fecha </div>)}
           <button onClick={this.formSubmit} type="submit" className="btn btn--gold u-margin-top-medium">Reservar !</button>
         </div>
 

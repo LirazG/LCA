@@ -45,16 +45,16 @@ class App extends Component {
 
 
   handleScroll(e){
-    setTimeout(()=>{this.counter = 0},1000);
+    setTimeout(()=>{this.counter = 0},2000);
     e.stopPropagation();
     e.preventDefault();
 
     if(e.wheelDelta < 0 || -e.detail < 0){
       this.counter = this.counter+200;
-      Scroll.animateScroll.scrollMore(this.counter,{smooth:'easeOutQuad'});
+      Scroll.animateScroll.scrollMore(this.counter,{smooth:'easeOutQuad',isDynamic:true});
     } else {
       this.counter = this.counter-200;
-      Scroll.animateScroll.scrollMore(this.counter,{smooth:'easeOutQuad'});
+      Scroll.animateScroll.scrollMore(this.counter,{smooth:'easeOutQuad',isDynamic:true});
     }
   }
 

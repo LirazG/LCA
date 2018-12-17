@@ -48,17 +48,12 @@ class Home extends Component {
   componentDidMount(){
     this.refArr=[this.more.current,this.bar.current,this.sports.current,this.hotel.current,this.history.current];
     let passiveSupported = middlewares.checkPassiveOptionBrowser();
-
-    window.addEventListener('scroll',this.verticalCaller, passiveSupported ? { passive: true } : false);
-    window.addEventListener('scroll',this.horizonCaller, passiveSupported ? { passive: true } : false);
-    window.addEventListener('scroll',this.breadCaller, passiveSupported ? { passive: true } : false);
+    window.addEventListener('scroll',this.callAll, passiveSupported ? { passive: true } : false);
   }
 
   componentWillUnmount(){
     let passiveSupported = false;
-    window.removeEventListener('scroll',this.verticalCaller, passiveSupported ? { passive: true } : false);
-    window.removeEventListener('scroll',this.horizonCaller, passiveSupported ? { passive: true } : false);
-    window.removeEventListener('scroll',this.breadCaller, passiveSupported ? { passive: true } : false);
+    window.removeEventListener('scroll',this.callAll, passiveSupported ? { passive: true } : false);
   }
 
 // change breadcrumbs state according to sections position by passing value to props
@@ -125,6 +120,13 @@ class Home extends Component {
 
   breadCaller = ()=>{
     this.breadValue(this.refArr);
+  }
+
+  // gathers the scroll functions for the page to one event listener
+  callAll = () => {
+    this.horizonCaller();
+    this.verticalCaller();
+    this.breadCaller();
   }
 
 

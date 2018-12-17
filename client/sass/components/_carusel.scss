@@ -35,11 +35,11 @@
       -webkit-border-radius: 1rem;
          -moz-border-radius: 1rem;
               border-radius: 1rem;
-      -webkit-transform: rotate(-45deg) translateY(-50%);
-         -moz-transform: rotate(-45deg) translateY(-50%);
-          -ms-transform: rotate(-45deg) translateY(-50%);
-           -o-transform: rotate(-45deg) translateY(-50%);
-              transform: rotate(-45deg) translateY(-50%);
+      -webkit-transform: rotate(-45deg) translate3d(0,-50%,0);
+         -moz-transform: rotate(-45deg) translate3d(0,-50%,0);
+          -ms-transform: rotate(-45deg) translate3d(0,-50%,0);
+           -o-transform: rotate(-45deg) translate3d(0,-50%,0);
+              transform: rotate(-45deg) translate3d(0,-50%,0);
       opacity: .5;
 
       &:hover{
@@ -61,11 +61,11 @@
         -webkit-border-radius: 1rem;
            -moz-border-radius: 1rem;
                 border-radius: 1rem;
-        -webkit-transform: rotate(135deg) translateY(50%);
-           -moz-transform: rotate(135deg) translateY(50%);
-            -ms-transform: rotate(135deg) translateY(50%);
-             -o-transform: rotate(135deg) translateY(50%);
-                transform: rotate(135deg) translateY(50%);
+        -webkit-transform: rotate(135deg) translate3d(0,50%,0);
+           -moz-transform: rotate(135deg) translate3d(0,50%,0);
+            -ms-transform: rotate(135deg) translate3d(0,50%,0);
+             -o-transform: rotate(135deg) translate3d(0,50%,0);
+                transform: rotate(135deg) translate3d(0,50%,0);
         opacity: .5;
 
         &:hover{

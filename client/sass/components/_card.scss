@@ -62,13 +62,11 @@
             box-shadow: none;
 
     @include respond (phone){
-      -webkit-transform:translateY(0);
-         -moz-transform:translateY(0);
-          -ms-transform:translateY(0);
-           -o-transform:translateY(0);
-              transform:translateY(0);
-      -webkit-filter:none;
-              filter:none;
+      -webkit-transform:translate3d(0,0,0);
+         -moz-transform:translate3d(0,0,0);
+          -ms-transform:translate3d(0,0,0);
+           -o-transform:translate3d(0,0,0);
+              transform:translate3d(0,0,0);
     }
 
   }
@@ -148,6 +146,10 @@
 
     @include respond (phone){
       top:35%;
+    }
+
+    & .btn {
+      z-index: 1;
     }
   }
 }

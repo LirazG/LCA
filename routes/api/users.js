@@ -37,7 +37,6 @@ router.get('/reserve/field', (req,res) => {
     });
 });
 
-
 //@route   POST api/users/submit
 //@desc    subbmit question
 //@access  public
@@ -80,13 +79,9 @@ router.get('/reserve/room', (req,res)=>{
     .catch(err => {return res.status(400)})
 });
 
-
-
 //@route   POST api/users/reserve/room
 //@desc    subbmit room reservation
 //@access  public(for now)
-
-
 router.post('/reserve/room',(req,res)=>{
   const { errors, isValid } = validateRoomReservation(req.body);
   //validate form Input

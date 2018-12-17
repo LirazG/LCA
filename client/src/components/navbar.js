@@ -80,6 +80,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className={this.state.navbar}>
+      <div className="navbar__black-bg"></div>
 
         <div className={this.state.modal} onClick={this.modalCancel}></div>
         <div className={this.state.message}>

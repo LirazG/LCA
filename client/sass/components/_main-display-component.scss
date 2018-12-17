@@ -21,11 +21,11 @@
       font-size: 8rem;
       font-weight: 300;
       opacity:0;
-      -webkit-transform: translateY(20px);
-         -moz-transform: translateY(20px);
-          -ms-transform: translateY(20px);
-           -o-transform: translateY(20px);
-              transform: translateY(20px);
+      -webkit-transform: translate3d(0,20px,0);
+         -moz-transform: translate3d(0,20px,0);
+          -ms-transform: translate3d(0,20px,0);
+           -o-transform: translate3d(0,20px,0);
+              transform: translate3d(0,20px,0);
       -webkit-transition: all .9s;
       -o-transition: all .9s;
       -moz-transition: all .9s;
@@ -33,11 +33,11 @@
 
       &--activated{
         opacity:1;
-        -webkit-transform: translateY(0px);
-           -moz-transform: translateY(0px);
-            -ms-transform: translateY(0px);
-             -o-transform: translateY(0px);
-                transform: translateY(0px);
+        -webkit-transform: translate3d(0,0px,0);
+           -moz-transform: translate3d(0,0px,0);
+            -ms-transform: translate3d(0,0px,0);
+             -o-transform: translate3d(0,0px,0);
+                transform: translate3d(0,0px,0);
         -webkit-transition: all .9s;
         -o-transition: all .9s;
         -moz-transition: all .9s;

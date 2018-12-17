@@ -148,11 +148,11 @@
                 border-radius: .6rem;
         border:solid $color-white;
         border-width: 0 .8rem .8rem 0;
-        -webkit-transform: translate(-50%,-35%) rotate(-135deg) ;
-           -moz-transform: translate(-50%,-35%) rotate(-135deg) ;
-            -ms-transform: translate(-50%,-35%) rotate(-135deg) ;
-             -o-transform: translate(-50%,-35%) rotate(-135deg) ;
-                transform: translate(-50%,-35%) rotate(-135deg) ;
+        -webkit-transform: translate3d(-50%,-35%,0) rotate(-135deg) ;
+           -moz-transform: translate3d(-50%,-35%,0) rotate(-135deg) ;
+            -ms-transform: translate3d(-50%,-35%,0) rotate(-135deg) ;
+             -o-transform: translate3d(-50%,-35%,0) rotate(-135deg) ;
+                transform: translate3d(-50%,-35%,0) rotate(-135deg) ;
         padding:1rem;
 
       }
