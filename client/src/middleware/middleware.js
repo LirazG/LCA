@@ -17,4 +17,23 @@
   return passiveSupported;
 }
 
+middlewares.handleScroll = function (element, stateActive, stateRegular, offsetTopAddition = 0, activateWillChange = false) {
+
+  let elementPosition = element.offsetTop + element.offsetHeight;
+  let viewPosition = window.pageYOffset + window.innerHeight + offsetTopAddition;
+  if(activateWillChange){
+
+    if( (elementPosition - element.offsetHeight - 200 <= viewPosition + element.offsetHeight) && (elementPosition >= viewPosition)){
+      this.setState({willChange:' will-change'});
+    } else {
+      this.setState({willChange:' no-will-change'});
+    }
+  }
+  if(elementPosition <= viewPosition){
+    this.setState(stateActive);
+  } else {
+    this.setState(stateRegular);
+  }
+}
+
 export default middlewares;

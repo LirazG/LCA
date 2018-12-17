@@ -77,3 +77,25 @@
 .display-on{
   display: block;
 }
+
+.will-change{
+  @supports (will-change: transform){
+    will-change: transform, opacity;
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+  }
+}
+
+.no-will-change{
+  @supports (will-change: transform){
+    will-change: none;
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+  }
+}

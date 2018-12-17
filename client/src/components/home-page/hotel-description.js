@@ -14,7 +14,8 @@ class HotelDescription extends Component {
       feature1:'description__feature',
       feature2:'description__feature',
       feature3:'description__feature',
-      feature4:'description__feature'
+      feature4:'description__feature',
+      willChange:' no-will-change'
     };
 
     this.feature1 = React.createRef();
@@ -45,28 +46,28 @@ class HotelDescription extends Component {
   // created so can be called in event handler so it can be removed(anonymos functions cant be removed )
 
   fadeInCaller = () =>{
-    this.props.FadeIn.call(this,this.element1,this.activeState1,this.regularState1,50)
+    this.props.FadeIn.call(this,this.element1,this.activeState1,this.regularState1,50,true);
   }
 
   fadeInCaller2 = () =>{
-    this.props.FadeIn.call(this,this.element3,this.activeState2,this.regularState2,50)
+    this.props.FadeIn.call(this,this.element3,this.activeState2,this.regularState2,50,true);
   }
 
   render() {
     return (
       <div className="row description">
         <div className="col-1-of-2 description__image">
-          <Carusel />
+          <Carusel/>
         </div>
 
         <div className="col-1-of-2">
           <div className="row">
-            <div className={this.state.feature1} ref={this.feature1}>
+            <div className={this.state.feature1 + this.state.willChange} ref={this.feature1}>
               <i className="fas fa-swimmer description__feature--icon"></i>
               <h4 className="heading4">Piscina</h4>
               <p className="paragraph-details">Disfruta de nuestra piscina en los calurosos días de verano!</p>
             </div>
-            <div className={this.state.feature2} ref={this.feature2}>
+            <div className={this.state.feature2 + this.state.willChange} ref={this.feature2}>
               <i className="fas fa-utensils description__feature--icon"></i>
               <h4 className="heading4">Desayuno</h4>
               <p className="paragraph-details">Desayuno fresco incluido en su estancia para cada tipo de habitación</p>
@@ -74,13 +75,13 @@ class HotelDescription extends Component {
           </div>
 
           <div className="row">
-            <div className={this.state.feature3} ref={this.feature3}>
+            <div className={this.state.feature3 + this.state.willChange} ref={this.feature3}>
               <i className="fas fa-wifi description__feature--icon"></i>
               <h4 className="heading4">Wifi incluido</h4>
               <p className="paragraph-details">Acceso inalámbrico a Internet incluido en todas partes del hotel para tu comodidad</p>
             </div>
 
-            <div className={this.state.feature4} ref={this.feature4}>
+            <div className={this.state.feature4 + this.state.willChange} ref={this.feature4}>
               <i className="fas fa-paw description__feature--icon"></i>
               <h4 className="heading4">Animal Amigable</h4>
               <p className="paragraph-details">Nuestro hotel es amigable con los animales y ofrece la mejor experiencia para usted</p>

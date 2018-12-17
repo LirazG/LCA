@@ -73,17 +73,6 @@ class Home extends Component {
     }
   }
 
-
-  handleScroll(element,stateActive,stateRegular,offsetTopAddition = 0){
-    let elementPosition = element.offsetTop+element.offsetHeight;
-    let viewPosition = window.pageYOffset+window.innerHeight + offsetTopAddition;
-    if(elementPosition <= viewPosition){
-      this.setState(stateActive);
-    } else {
-      this.setState(stateRegular);
-    }
-  }
-
   verticalScrollTranslate(element){
     if(element){
       let elementPosition = element.offsetTop+element.offsetHeight -100;
@@ -137,14 +126,14 @@ class Home extends Component {
         <WelcomePic classProp={'welcome__img welcome__img--home'} />
 
         <section className="history" ref={this.history}>
-          <FirstSection FadeIn={this.handleScroll} />
+          <FirstSection FadeIn={middlewares.handleScroll} />
         </section>
 
         <Seperator bgimage={Seperator1} bgposition={'50% 30%'}/>
 
         <section className="hotel" ref={this.hotel}>
-          <MainHomeComponent FadeIn={this.handleScroll} img={ImgHotelSection} PreTitle={'Servicios.I'} Title={'Hotel'} SubTitle={'Descubre nuestra hotel boutique'}/>
-          <HotelDescription FadeIn={this.handleScroll}/>
+          <MainHomeComponent FadeIn={middlewares.handleScroll} img={ImgHotelSection} PreTitle={'Servicios.I'} Title={'Hotel'} SubTitle={'Descubre nuestra hotel boutique'}/>
+          <HotelDescription FadeIn={middlewares.handleScroll}/>
         </section>
 
         <Seperator bgimage={Seperator2} bgposition={'40% 0%'}/>
@@ -152,21 +141,21 @@ class Home extends Component {
         <section className="sports" ref={this.sports}>
           <img className="sports__bascket" src={BascketBall} alt="bascket" />
           <img className="sports__volley" src={VolleyBall} alt="volleyball" ref={this.volley} style={this.style}/>
-          <MainHomeComponent FadeIn={this.handleScroll} img={ImgSportsSection} PreTitle={'Servicios.II'} Title={'Deportes'} SubTitle={'Ven y juega en nuestros canchas!'}/>
+          <MainHomeComponent FadeIn={middlewares.handleScroll} img={ImgSportsSection} PreTitle={'Servicios.II'} Title={'Deportes'} SubTitle={'Ven y juega en nuestros canchas!'}/>
           <img className="sports__soccer" src={Soccer} alt="soccer" ref={this.soccer} />
-          <SportsDescription FadeIn={this.handleScroll} />
+          <SportsDescription FadeIn={middlewares.handleScroll} />
         </section>
 
         <Seperator bgimage={Seperator3} bgposition={'60% 15%'}/>
 
         <section className="bar" ref={this.bar}>
-          <MainHomeComponent FadeIn={this.handleScroll} img={ImgBarSection} PreTitle={'Servicios.III'} Title={'Resto bar'} SubTitle={'bebe una cerveza fría en nuestro bar!'}/>
-          <BarDescription FadeIn={this.handleScroll}/>
+          <MainHomeComponent FadeIn={middlewares.handleScroll} img={ImgBarSection} PreTitle={'Servicios.III'} Title={'Resto bar'} SubTitle={'bebe una cerveza fría en nuestro bar!'}/>
+          <BarDescription FadeIn={middlewares.handleScroll}/>
         </section>
 
         <section className="last-section u-margin-top-huge" ref={this.more} >
-          <MainHomeComponent FadeIn={this.handleScroll}  PreTitle={'Servicios.IIII'} Title={'Mas Servicios'} SubTitle={'Estacionamiento & sala de eventos'}/>
-          <LastSection FadeIn={this.handleScroll}/>
+          <MainHomeComponent FadeIn={middlewares.handleScroll}  PreTitle={'Servicios.IIII'} Title={'Mas Servicios'} SubTitle={'Estacionamiento & sala de eventos'}/>
+          <LastSection FadeIn={middlewares.handleScroll}/>
         </section>
       </main>
     );
