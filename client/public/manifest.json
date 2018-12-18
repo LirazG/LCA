@@ -1,15 +1,17 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "author":"Liraz Gur Arie",
+  "manifest_version": 2,
+  "short_name": "L.C.A",
+  "name": "La Casa De Algodón",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "192x192 512x512",
+      "type": "image/png"
     }
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#D9A816",
+  "background_color": "#000000"
 }
