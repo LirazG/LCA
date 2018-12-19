@@ -73,7 +73,7 @@ class LastSection extends Component {
   render() {
     return (
       <div className="more-services-description">
-        <LazyLoad offsetVertical={700} debounce={false}>
+        <LazyLoad offsetVertical={700} debounce={false} once>
           <div className="clip u-margin-top-huge">
             <div className="clip--left" ref={this.left}></div>
             <div className="clip--right" ref={this.right}></div>

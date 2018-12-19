@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LazyLoad from 'react-lazy-load';
 
 //components for the home page
 import WelcomePic from '../welcome-pic.js';
@@ -139,10 +140,17 @@ class Home extends Component {
         <Seperator bgimage={Seperator2} bgposition={'40% 0%'}/>
 
         <section className="sports" ref={this.sports}>
-          <img className="sports__bascket" src={BascketBall} alt="bascket" />
-          <img className="sports__volley" src={VolleyBall} alt="volleyball" ref={this.volley} style={this.style}/>
+          <LazyLoad offsetVertical={700} debounce={false} once>
+            <span>
+              <img className="sports__bascket" src={BascketBall} alt="bascket" />
+              <img className="sports__volley" src={VolleyBall} alt="volleyball" ref={this.volley} style={this.style}/>
+            </span>
+          </LazyLoad>
+
           <MainHomeComponent FadeIn={middlewares.handleScroll} img={ImgSportsSection} PreTitle={'Servicios.II'} Title={'Deportes'} SubTitle={'Ven y juega en nuestros canchas!'}/>
-          <img className="sports__soccer" src={Soccer} alt="soccer" ref={this.soccer} />
+          <LazyLoad offsetVertical={700} debounce={false} once>
+            <img className="sports__soccer" src={Soccer} alt="soccer" ref={this.soccer} />
+          </LazyLoad>
           <SportsDescription FadeIn={middlewares.handleScroll} />
         </section>
 

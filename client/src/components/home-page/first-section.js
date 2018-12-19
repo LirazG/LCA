@@ -51,7 +51,7 @@ class firstSection extends Component {
           </p>
 
           <div className="text-wrapper__img">
-            <LazyLoad offsetVertical={1000} debounce={false}>
+            <LazyLoad offsetVertical={0} debounce={false} once>
               <img className="text-wrapper__img--img" src={Front} alt="front_hotel" />
             </LazyLoad>
           </div>

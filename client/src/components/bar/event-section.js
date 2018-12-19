@@ -17,7 +17,7 @@ const EventSection = () => {
             <h4 className="heading4 u-text-center">+51 946 443 445</h4>
           </div>
           <div className="col-2-of-3">
-            <LazyLoad offsetVertical={700} debounce={false} >
+            <LazyLoad offsetVertical={700} debounce={false} once>
               <div className="image-display">
                 <img src={EventsGirl} alt="event-bar-girl" className="image-display__item image-display__item--1"/>
                 <img src={EventsGirl} alt="event-bar-girl" className="image-display__item image-display__item--2"/>

@@ -88,7 +88,7 @@ class Info extends Component {
 
         <div className="sports-page__description">
 
-          <LazyLoad offsetVertical={700} debounce={false}>
+          <LazyLoad offsetVertical={700} debounce={false} once>
             <div className="sports-page__description__bg-video">
               <video className="sports-page__description__bg-video__content" autoPlay muted loop>
                 <source src={VideoSrc1} type="video/mp4" />

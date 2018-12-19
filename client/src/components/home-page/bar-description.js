@@ -11,15 +11,16 @@ const BarDescription = () => {
     return (
       <div className="bar-description u-margin-top-big">
 
-      <LazyLoad offsetVertical={700} debounce={false} >
+      <LazyLoad offsetVertical={700} debounce={false} once>
         <img src={LogoBar} alt="logo-bar" className="u-margin-bottom-big bar-description__logo"/>
       </LazyLoad>
 
         <div className="row">
-
           <div className="col-1-of-3">
             <figure className="real-life-photo">
-            <img src={BarView} alt="flags" className="real-life-photo__image"/>
+              <LazyLoad offsetVertical={700} debounce={false} once>
+                <img src={BarView} alt="flags" className="real-life-photo__image"/>
+              </LazyLoad>
               <figcaption>
                 <h3 className="real-life-photo--header">Disfrutar gran vista</h3>
                 <p className="real-life-photo--text">
@@ -33,7 +34,9 @@ const BarDescription = () => {
 
           <div className="col-1-of-3">
             <figure className="real-life-photo u-margin-top-big">
-            <img src={BarBeers} alt="beers" className="real-life-photo__image"/>
+              <LazyLoad offsetVertical={700} debounce={false} once>
+                <img src={BarBeers} alt="beers" className="real-life-photo__image"/>
+              </LazyLoad>
               <figcaption>
                 <h3 className="real-life-photo--header">Transmisiones en vivo</h3>
                 <p className="real-life-photo--text">
@@ -47,7 +50,9 @@ const BarDescription = () => {
 
           <div className="col-1-of-3">
             <figure className="real-life-photo u-margin-top-huge">
-            <img src={BarPeople} alt="people-in-bar" className="real-life-photo__image"/>
+              <LazyLoad offsetVertical={700} debounce={false} once>
+                <img src={BarPeople} alt="people-in-bar" className="real-life-photo__image"/>
+              </LazyLoad>
               <figcaption>
                 <h3 className="real-life-photo--header">Relájate con amigos</h3>
                 <p className="real-life-photo--text">

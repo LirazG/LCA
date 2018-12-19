@@ -139,7 +139,7 @@ class Carusel extends Component {
 
   render() {
     return (
-      <LazyLoad offsetVertical={700} debounce={false} className="image__container">
+      <LazyLoad offsetVertical={700} debounce={false} className="image__container" once>
         <div>
           <span className="image__container--arrow--1" onClick={this.caruselClickPlus}></span>
           <img src={Pic1} alt="breakfest" className={this.state.carusel1}/>

@@ -9,7 +9,7 @@ const MenuSection = () => {
     return (
       <section className="bar__menu">
         <h3 className="heading2">Menu</h3>
-        <LazyLoad offsetVertical={700} debounce={false} >
+        <LazyLoad offsetVertical={700} debounce={false} once>
           <div className="flip-card">
             <div className="flip-card__side flip-card__side--front">
               <img src={MenuFront} alt="menu" className="bar__menu--pic"/>

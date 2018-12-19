@@ -41,7 +41,7 @@ class ParkingInfoTab extends Component {
 
     return (
       <div className={"parking-info " + this.state.activated } ref={this.parentElement}>
-        <LazyLoad offsetVertical={700} debounce={false} className={this.props.containerclass}>
+        <LazyLoad offsetVertical={800} debounce={false} className={this.props.containerclass} once>
           <img src={this.props.img} alt="parkingpicture" className="parking-info__container--img"/>
         </LazyLoad>
 

@@ -54,10 +54,10 @@ const Footer = () => {
           <p className="footer__text">© Website built by Liraz Gur Arie</p>
         </div>
 
-          <span className="footer__scroll">
-            <span className="footer__scroll--text">scroll top</span>
-            <span className="footer__scroll--arrow" onClick={scrollToTop}></span>
-          </span>
+        <span className="footer__scroll">
+          <span className="footer__scroll--text">scroll top</span>
+          <span className="footer__scroll--arrow" onClick={scrollToTop}></span>
+        </span>
 
       </footer>
     );

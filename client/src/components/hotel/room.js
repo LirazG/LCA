@@ -81,7 +81,7 @@ class Room extends Component {
 
         <div className={this.state.fade + ' room u-margin-top-big'} ref={this.room}>
           <h2 className="heading2">{this.props.details.name.charAt(0).toUpperCase() + this.props.details.name.slice(1)}</h2>
-          <LazyLoad offsetVertical={700} debounce={false} className='room__image-container' >
+          <LazyLoad offsetVertical={700} debounce={false} className='room__image-container' once>
               <img className='room__image-container__picture' src={this.props.picture} alt="roomPicture" onClick={this.modalOpen}/>
           </LazyLoad>
 

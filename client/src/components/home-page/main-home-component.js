@@ -62,7 +62,7 @@ class MainHomeComponent extends Component {
 
             <div className={this.state.picture} ref={this.picture}>
               <div className="main-display-component__img--curtain"></div>
-              <LazyLoad offsetVertical={700} debounce={false}>
+              <LazyLoad offsetVertical={700} debounce={false} once>
                 <div className="main-display-component__img--img" style={{ backgroundImage: `url(${this.props.img})`}}></div>
               </LazyLoad>
             </div>

@@ -31,7 +31,7 @@ const Events = () => {
           </div>
 
           <div className="col-2-of-3">
-            <LazyLoad offsetVertical={700} debounce={false} >
+            <LazyLoad offsetVertical={700} debounce={false} once>
               <div className="image-display">
                 <img src={Pic3} alt="event-pic" className="image-display__item image-display__item--1"/>
                 <img src={Pic2} alt="event-pic" className="image-display__item image-display__item--2"/>
